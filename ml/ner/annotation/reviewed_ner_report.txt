@@ -1,0 +1,30 @@
+================================================================================
+HUMAN NER REVIEWED DATASET VALIDATION REPORT
+================================================================================
+Reviewed Dataset File: D:\Abhera(Mini)\ml\ner\annotation\annotated_ner_reviewed.jsonl
+Total Sample Narratives Queued: 400
+Total Reviewed Records: 20 (5.0% complete)
+Remaining Records: 380
+Unique Record IDs: 20 (Duplicate IDs: 0)
+Records with Zero Entities: 0
+--------------------------------------------------------------------------------
+TOTAL FINAL ENTITY SPANS: 66
+FINAL ENTITY COUNTS BY TYPE:
+  - PERP_REL    : 24
+  - LOCATION    : 9
+  - TIME_FREQ   : 14
+  - PLATFORM    : 4
+  - EVIDENCE    : 15
+  - LAW_SEC     : 0
+--------------------------------------------------------------------------------
+STRUCTURAL VALIDATION QUALITY AUDIT:
+  - Passed Full Validation: NO (INCOMPLETE OR HAS ERRORS)
+  - Invalid Spans / Offset Mismatches: 0
+  - Duplicate Spans: 0
+  - Overlapping Spans: 0
+  - Malformed Records: 0
+  - Total Validation Errors: 0
+--------------------------------------------------------------------------------
+DETAILED VALIDATION ERROR LOG:
+  - None. All reviewed records passed structural validation perfectly.
+================================================================================

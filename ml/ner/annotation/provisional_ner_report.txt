@@ -1,0 +1,46 @@
+================================================================================
+PROVISIONAL MACHINE-VALIDATED NER DATASET REPORT (PART 11 STEP 9)
+================================================================================
+DATASET STATUS NOTICE:
+PROVISIONAL MACHINE-VALIDATED NER DATASET — NOT HUMAN-GROUNDED-TRUTH
+Under strict zero-fabrication guidelines, machine-accepted annotations are kept
+distinct from human-adjudicated ground truth and must be human-reviewed before final training.
+--------------------------------------------------------------------------------
+1. DATASET SUMMARY & METRICS:
+   - Number of Source Sample Records: 400
+   - Number of Accepted Candidate Entities: 464
+   - Records Containing Accepted Entities: 292 (73.0%)
+   - Records Without Accepted Entities: 108 (27.0%)
+   - Remaining Human-Review Candidates: 493
+   - Rejected Candidates Count: 0
+
+2. ACCEPTED ENTITY COUNTS BY LABEL:
+   - TIME_FREQ : 116
+   - PLATFORM  : 65
+   - PERP_REL  : 207
+   - LAW_SEC   : 0
+   - LOCATION  : 76
+   - EVIDENCE  : 0
+
+3. INTEGRITY & VALIDATION AUDIT:
+   - Validation Failures Count: 0
+   - Duplicate Spans Count: 0
+   - Overlapping Spans Count: 0
+   - Malformed Records Count: 0
+   - Passed Full Integrity Audit: YES
+
+4. EXAMPLES OF ACCEPTED ANNOTATIONS:
+   - Record 'WSL_0669': 'landlord' -> PERP_REL [3:11]
+   - Record 'WSL_0057': 'former colleague' -> PERP_REL [2:18]
+   - Record 'WSL_0057': 'workplace' -> LOCATION [47:56]
+   - Record 'WSL_0057': 'every evening' -> TIME_FREQ [57:70]
+   - Record 'WSL_0852': 'constantly' -> TIME_FREQ [36:46]
+   - Record 'WSL_0852': 'fake profile' -> PLATFORM [66:78]
+   - Record 'WSL_0852': 'message' -> PLATFORM [82:89]
+   - Record 'WSL_0723': 'ex-partner' -> PERP_REL [3:13]
+
+5. ARTIFACT LOCATIONS:
+   - Provisional Dataset: D:\Abhera(Mini)\ml\ner\annotation\provisional_ner_dataset.jsonl
+   - Remaining Human Review Queue: D:\Abhera(Mini)\ml\ner\annotation\provisional_ner_human_review_remaining.jsonl
+   - Preparation Report: D:\Abhera(Mini)\ml\ner\annotation\provisional_ner_report.txt
+================================================================================

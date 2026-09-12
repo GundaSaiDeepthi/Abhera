@@ -1,0 +1,50 @@
+{
+  "labels": [
+    "O",
+    "B-PERP_REL",
+    "I-PERP_REL",
+    "B-LOCATION",
+    "I-LOCATION",
+    "B-TIME_FREQ",
+    "I-TIME_FREQ",
+    "B-PLATFORM",
+    "I-PLATFORM",
+    "B-EVIDENCE",
+    "I-EVIDENCE",
+    "B-LAW_SEC",
+    "I-LAW_SEC"
+  ],
+  "num_labels": 13,
+  "label2id": {
+    "O": 0,
+    "B-PERP_REL": 1,
+    "I-PERP_REL": 2,
+    "B-LOCATION": 3,
+    "I-LOCATION": 4,
+    "B-TIME_FREQ": 5,
+    "I-TIME_FREQ": 6,
+    "B-PLATFORM": 7,
+    "I-PLATFORM": 8,
+    "B-EVIDENCE": 9,
+    "I-EVIDENCE": 10,
+    "B-LAW_SEC": 11,
+    "I-LAW_SEC": 12
+  },
+  "id2label": {
+    "0": "O",
+    "1": "B-PERP_REL",
+    "2": "I-PERP_REL",
+    "3": "B-LOCATION",
+    "4": "I-LOCATION",
+    "5": "B-TIME_FREQ",
+    "6": "I-TIME_FREQ",
+    "7": "B-PLATFORM",
+    "8": "I-PLATFORM",
+    "9": "B-EVIDENCE",
+    "10": "I-EVIDENCE",
+    "11": "B-LAW_SEC",
+    "12": "I-LAW_SEC"
+  },
+  "problem_type": "token_classification",
+  "tokenizer": "bert-base-uncased"
+}

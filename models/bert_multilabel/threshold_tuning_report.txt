@@ -1,0 +1,51 @@
+================================================================================
+BERT MULTI-LABEL CLASSIFIER VALIDATION THRESHOLD TUNING REPORT
+================================================================================
+Validation Dataset: val_data.csv (162 samples)
+Tuning Strategy: Independent F1 Score Maximization on Validation Split (0.10 to 0.90, step 0.01)
+--------------------------------------------------------------------------------
+1. OPTIMAL PER-LABEL THRESHOLDS IDENTIFIED (VALIDATION SET)
+--------------------------------------------------------------------------------
+Label 'DV': Optimal Threshold = 0.65
+  - @ 0.50 Threshold : Prec = 0.5918, Rec = 0.8529, F1 = 0.6988 (TP=29, FP=20, FN=5)
+  - @ 0.65 Threshold : Prec = 1.0000, Rec = 0.8529, F1 = 0.9206 (TP=29, FP=0, FN=5)
+
+Label 'SH': Optimal Threshold = 0.60
+  - @ 0.50 Threshold : Prec = 0.4455, Rec = 1.0000, F1 = 0.6164 (TP=45, FP=56, FN=0)
+  - @ 0.60 Threshold : Prec = 0.9714, Rec = 0.7556, F1 = 0.8500 (TP=34, FP=1, FN=11)
+
+Label 'ST': Optimal Threshold = 0.64
+  - @ 0.50 Threshold : Prec = 0.2683, Rec = 1.0000, F1 = 0.4231 (TP=22, FP=60, FN=0)
+  - @ 0.64 Threshold : Prec = 0.8636, Rec = 0.8636, F1 = 0.8636 (TP=19, FP=3, FN=3)
+
+Label 'CA': Optimal Threshold = 0.72
+  - @ 0.50 Threshold : Prec = 0.5484, Rec = 1.0000, F1 = 0.7083 (TP=34, FP=28, FN=0)
+  - @ 0.72 Threshold : Prec = 0.9189, Rec = 1.0000, F1 = 0.9577 (TP=34, FP=3, FN=0)
+
+Label 'WH': Optimal Threshold = 0.54
+  - @ 0.50 Threshold : Prec = 0.3871, Rec = 1.0000, F1 = 0.5581 (TP=24, FP=38, FN=0)
+  - @ 0.54 Threshold : Prec = 1.0000, Rec = 0.9167, F1 = 0.9565 (TP=22, FP=0, FN=2)
+
+Label 'OV': Optimal Threshold = 0.78
+  - @ 0.50 Threshold : Prec = 0.4167, Rec = 0.9524, F1 = 0.5797 (TP=20, FP=28, FN=1)
+  - @ 0.78 Threshold : Prec = 0.9048, Rec = 0.9048, F1 = 0.9048 (TP=19, FP=2, FN=2)
+
+--------------------------------------------------------------------------------
+2. OVERALL VALIDATION METRICS COMPARISON (BEFORE vs AFTER THRESHOLD TUNING)
+--------------------------------------------------------------------------------
+Metric                    | Fixed Threshold (0.5)  | Optimized Thresholds   | Absolute Change
+--------------------------------------------------------------------------------
+Micro Precision           | 0.4307                 | 0.9458                 | +0.5151        
+Micro Recall              | 0.9667                 | 0.8722                 | -0.0944        
+Micro F1 Score            | 0.5959                 | 0.9075                 | +0.3116        
+Macro Precision           | 0.4430                 | 0.9431                 | +0.5002        
+Macro Recall              | 0.9676                 | 0.8823                 | -0.0853        
+Macro F1 Score            | 0.5974                 | 0.9089                 | +0.3115        
+Exact Match Accuracy      | 0.0988                 | 0.8210                 | +0.7222        
+--------------------------------------------------------------------------------
+3. SUMMARY & FINDINGS
+--------------------------------------------------------------------------------
+Tuning per-label classification thresholds on the validation set drastically improves Micro Precision,
+Macro Precision, and overall F1 Score by suppressing excessive False Positives while maintaining strong recall.
+Exact Match Accuracy shows significant improvement as multi-label false positive over-predictions are reduced.
+================================================================================

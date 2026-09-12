@@ -1,0 +1,4 @@
+{"id": "WSL_0669", "text": "My landlord made lewd comments about my body.", "entities": [{"start": 3, "end": 11, "label": "PERP_REL", "text": "landlord"}]}
+{"id": "WSL_0057", "text": "A former colleague has been parking outside my workplace every evening.", "entities": []}
+{"id": "WSL_0852", "text": "A man I rejected tracks my location constantly and also created a fake profile to message me.", "entities": [{"start": 2, "end": 16, "label": "PERP_REL", "text": "man I rejected"}]}
+{"id": "WSL_0896", "text": "My community sent moneylenders to threaten me for repayment.", "entities": [{"start": 18, "end": 30, "label": "PERP_REL", "text": "moneylenders"}]}

@@ -1,0 +1,61 @@
+================================================================================
+NER TRAINING DATASET PREPARATION & FEASIBILITY REPORT
+================================================================================
+DATASET STATUS NOTICE:
+PROVISIONAL MACHINE-VALIDATED ANNOTATIONS — NOT HUMAN GROUND TRUTH
+This dataset is constructed from second-pass auto-accepted candidates.
+Human review must be completed for full ground-truth compliance.
+--------------------------------------------------------------------------------
+1. SPLIT SUMMARY & METRICS:
+   - Total Source Records: 400
+   - Train Split Size: 280 records (70.0%)
+   - Validation Split Size: 60 records (15.0%)
+   - Test Split Size: 60 records (15.0%)
+   - Split Methodology: Record-level random partitioning (seed=42)
+   - Total Subword Tokens: 7227
+   - Total Character Entity Spans: 464
+
+2. ENTITY SPAN DISTRIBUTION BY LABEL:
+   - PERP_REL    :  207 spans 
+   - LOCATION    :   76 spans 
+   - TIME_FREQ   :  116 spans 
+   - PLATFORM    :   65 spans 
+   - EVIDENCE    :    0 spans [MISSING EXAMPLES]
+   - LAW_SEC     :    0 spans [MISSING EXAMPLES]
+
+3. TOKEN-LEVEL BIO TAG DISTRIBUTION:
+   - O              :   6178 tokens
+   - B-PERP_REL     :    207 tokens
+   - I-PERP_REL     :    264 tokens
+   - B-LOCATION     :     76 tokens
+   - I-LOCATION     :      5 tokens
+   - B-TIME_FREQ    :    116 tokens
+   - I-TIME_FREQ    :    269 tokens
+   - B-PLATFORM     :     65 tokens
+   - I-PLATFORM     :     47 tokens
+   - B-EVIDENCE     :      0 tokens
+   - I-EVIDENCE     :      0 tokens
+   - B-LAW_SEC      :      0 tokens
+   - I-LAW_SEC      :      0 tokens
+
+4. MISSING LABELS & DATASET LIMITATIONS:
+   - Missing Entity Classes: 'EVIDENCE' (0 spans) and 'LAW_SEC' (0 spans).
+   - Reason: 'EVIDENCE' candidates (257) were conservatively flagged for human boundary review
+     and kept out of the auto-accept pool to prevent noisy span boundaries.
+   - 'LAW_SEC' mentions were absent in narrative texts (present only in CSV metadata columns).
+   - Zero-Fabrication Rule: No synthetic examples were invented for missing classes.
+
+5. FEASIBILITY ASSESSMENT FOR SUPERVISED NER TRAINING:
+   - Total Validation Errors: 0
+   - Token Alignment Quality: Excellent (100% of accepted spans aligned cleanly to BERT WordPiece tokens).
+   - Training Feasibility: SUITABLE for preliminary token-classification fine-tuning on supported classes
+     (PERP_REL, TIME_FREQ, LOCATION, PLATFORM). Models trained on this dataset will NOT be able to predict
+     EVIDENCE or LAW_SEC entities until human review completes those categories.
+
+6. ARTIFACT LOCATION MAP:
+   - Train Split: D:\Abhera(Mini)\ml\ner\training\train.jsonl
+   - Validation Split: D:\Abhera(Mini)\ml\ner\training\validation.jsonl
+   - Test Split: D:\Abhera(Mini)\ml\ner\training\test.jsonl
+   - Label Mapping Config: D:\Abhera(Mini)\ml\ner\training\label_mapping.json
+   - Feasibility Report: D:\Abhera(Mini)\ml\ner\training_data_report.txt
+================================================================================

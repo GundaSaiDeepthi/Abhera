@@ -1,0 +1,49 @@
+================================================================================
+AUTOMATIC NER CANDIDATE QUALITY AUDIT REPORT (PART 11 STEP 7)
+================================================================================
+Target Dataset: annotated_ner_draft.jsonl (400 records)
+Guidelines Reference: D:\Abhera(Mini)\ml\ner\NER_ANNOTATION_GUIDELINES.md
+--------------------------------------------------------------------------------
+1. EXECUTIVE TRIAGE AUDIT SUMMARY:
+   - Total Sample Records Inspected: 400
+   - Total Candidate Entities Audited: 957
+   - AUTO_ACCEPT_CANDIDATE Count: 474 (49.5%)
+   - NEEDS_HUMAN_REVIEW Count: 483 (50.5%)
+   - AUTO_REJECT_CANDIDATE Count: 0 (0.0%)
+   - Percentage Requiring Human Review: 50.47%
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+2. AUDIT TRIAGE BREAKDOWN BY ENTITY LABEL:
+Label      | Total  | AUTO_ACCEPT  | NEEDS_REVIEW   | AUTO_REJECT 
+--------------------------------------------------------------------------------
+PLATFORM   | 91     | 65           | 26             | 0           
+TIME_FREQ  | 150    | 116          | 34             | 0           
+PERP_REL   | 316    | 208          | 108            | 0           
+EVIDENCE   | 257    | 0            | 257            | 0           
+LAW_SEC    | 0      | 0            | 0              | 0           
+LOCATION   | 143    | 85           | 58             | 0           
+--------------------------------------------------------------------------------
+3. MOST COMMON REASONS FOR FLAGGING HUMAN REVIEW:
+   - ( 18x) Contextual location phrase 'work'. Requires human verification.
+   - ( 14x) Ambiguous EVIDENCE candidate phrase 'sexual jokes'. Requires human verification.
+   - ( 14x) Uncommon perpetrator description 'family'. Requires human verification.
+   - ( 13x) Ambiguous digital communication reference 'group chat'. Requires human review.
+   - ( 11x) Uncommon perpetrator description 'team lead'. Requires human verification.
+   - ( 10x) Contextual temporal phrase 'right after our marriage'. Requires human review.
+   - ( 10x) Uncommon perpetrator description 'physiotherapist'. Requires human verification.
+   - (  9x) Ambiguous EVIDENCE candidate phrase 'lewd comments'. Requires human verification.
+   - (  9x) Uncommon perpetrator description 'parents'. Requires human verification.
+   - (  8x) Verbal/action-based EVIDENCE candidate 'beats me'. Requires human review to distinguish action vs evidence span.
+--------------------------------------------------------------------------------
+4. DATASET-LEVEL SYSTEMATIC PATTERN ANALYSIS:
+   - EVIDENCE Overuse: Candidate generation over-annotated action phrases & full clauses as EVIDENCE.
+     Conservative audit flagged 240+ EVIDENCE spans for human boundary review.
+   - PERP_REL Broad Spans: Generic perpetrator noun phrases (e.g. 'a man', 'someone') were flagged for review.
+   - High Precision on TIME_FREQ, LOCATION & PLATFORM: Explicit keywords (e.g. 'office', 'whatsapp', 'every morning')
+     achieved high auto-acceptance confidence.
+--------------------------------------------------------------------------------
+5. AUDIT FILE ARTIFACTS GENERATED:
+   - Full Audit Log: D:\Abhera(Mini)\ml\ner\annotation\ner_candidate_audit.jsonl
+   - Human Review Queue: D:\Abhera(Mini)\ml\ner\annotation\ner_human_review_queue.jsonl
+   - Auto-Accept Candidates: D:\Abhera(Mini)\ml\ner\annotation\ner_auto_accept_candidates.jsonl
+   - Auto-Reject Candidates: D:\Abhera(Mini)\ml\ner\annotation\ner_auto_reject_candidates.jsonl
+================================================================================

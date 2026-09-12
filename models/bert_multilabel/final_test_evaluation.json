@@ -1,0 +1,97 @@
+{
+  "evaluation_split": "test",
+  "total_test_samples": 164,
+  "threshold_strategy": "validation_derived_optimal_thresholds",
+  "optimal_thresholds": {
+    "DV": 0.65,
+    "SH": 0.6,
+    "ST": 0.64,
+    "CA": 0.72,
+    "WH": 0.54,
+    "OV": 0.78
+  },
+  "metrics": {
+    "exact_match_accuracy": 0.8353658536585366,
+    "elementwise_accuracy": 0.9695121951219512,
+    "micro_precision": 0.9575757575757575,
+    "micro_recall": 0.8729281767955801,
+    "micro_f1": 0.9132947976878613,
+    "macro_precision": 0.9581867057673509,
+    "macro_recall": 0.8645245957745958,
+    "macro_f1": 0.9036603502390822
+  },
+  "per_label_metrics": [
+    {
+      "label": "DV",
+      "threshold": 0.65,
+      "precision": 0.9354838709677419,
+      "recall": 0.8285714285714286,
+      "f1": 0.8787878787878788,
+      "tp": 29,
+      "fp": 2,
+      "fn": 6,
+      "tn": 127,
+      "support": 35
+    },
+    {
+      "label": "SH",
+      "threshold": 0.6,
+      "precision": 1.0,
+      "recall": 0.8444444444444444,
+      "f1": 0.9156626506024096,
+      "tp": 38,
+      "fp": 0,
+      "fn": 7,
+      "tn": 119,
+      "support": 45
+    },
+    {
+      "label": "ST",
+      "threshold": 0.64,
+      "precision": 1.0,
+      "recall": 0.8125,
+      "f1": 0.896551724137931,
+      "tp": 26,
+      "fp": 0,
+      "fn": 6,
+      "tn": 132,
+      "support": 32
+    },
+    {
+      "label": "CA",
+      "threshold": 0.72,
+      "precision": 0.95,
+      "recall": 0.9743589743589743,
+      "f1": 0.9620253164556962,
+      "tp": 38,
+      "fp": 2,
+      "fn": 1,
+      "tn": 123,
+      "support": 39
+    },
+    {
+      "label": "WH",
+      "threshold": 0.54,
+      "precision": 0.8636363636363636,
+      "recall": 1.0,
+      "f1": 0.9268292682926829,
+      "tp": 19,
+      "fp": 3,
+      "fn": 0,
+      "tn": 142,
+      "support": 19
+    },
+    {
+      "label": "OV",
+      "threshold": 0.78,
+      "precision": 1.0,
+      "recall": 0.7272727272727273,
+      "f1": 0.8421052631578948,
+      "tp": 8,
+      "fp": 0,
+      "fn": 3,
+      "tn": 153,
+      "support": 11
+    }
+  ]
+}

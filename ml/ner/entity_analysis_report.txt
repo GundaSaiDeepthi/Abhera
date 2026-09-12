@@ -1,0 +1,51 @@
+================================================================================
+NAMED ENTITY RECOGNITION (NER) DATASET SUPPORT ANALYSIS REPORT (PART 11 STEP 1)
+================================================================================
+A. DATASET INSPECTED: D:\Abhera(Mini)\data\womens_safety_dataset.csv
+B. NUMBER OF RECORDS: 1086
+C. DETECTED COLUMNS (11): id, narrative_text, DV, SH, ST, CA, WH, OV, ipc_bns_section, evidence_notes, source
+--------------------------------------------------------------------------------
+DATA TYPES & MISSING VALUES:
+  - id                   | Type: object     | Missing: 0
+  - narrative_text       | Type: object     | Missing: 0
+  - DV                   | Type: int64      | Missing: 0
+  - SH                   | Type: int64      | Missing: 0
+  - ST                   | Type: int64      | Missing: 0
+  - CA                   | Type: int64      | Missing: 0
+  - WH                   | Type: int64      | Missing: 0
+  - OV                   | Type: int64      | Missing: 0
+  - ipc_bns_section      | Type: object     | Missing: 0
+  - evidence_notes       | Type: object     | Missing: 0
+  - source               | Type: object     | Missing: 0
+--------------------------------------------------------------------------------
+D. ENTITY-RELATED INFORMATION FOUND IN DATASET:
+  - Explicit Token/Span Entity Annotations: ABSENT
+  - Token-level BIO Tags: ABSENT
+  - Character Start/End Offset Fields: ABSENT
+  - Document-Level Statutory Section Field ('ipc_bns_section'): PRESENT (e.g., ['354 IPC / 74 BNS', '354D IPC / IT Act', '354D IPC / 78 BNS'])
+  - Document-Level Evidence Notes Field ('evidence_notes'): PRESENT (e.g., ['public/private harassment incident', 'combined ST and CA', 'repeated unwanted contact/presence'])
+--------------------------------------------------------------------------------
+E. CANDIDATE ENTITY TYPES SUPPORTED BY EXPLICIT EVIDENCE:
+  - NONE (No explicit token-level entity span annotations exist in the dataset).
+--------------------------------------------------------------------------------
+F. ENTITY TYPES THAT CANNOT CURRENTLY BE SUPPORTED (UNSUPPORTED):
+  - PERPETRATOR_RELATION (e.g., boss, husband, brother-in-law, stranger)
+  - LOCATION (e.g., office, home, bus stand, college, online)
+  - TIME_FREQUENCY (e.g., every morning, daily, for over a year, after hours)
+  - DIGITAL_PLATFORM (e.g., social media, email, fake profile, direct messages)
+  - PHYSICAL_HARM_EVIDENCE (e.g., belt, slapped, locked inside, injuries)
+  - LEGAL_SECTION (Statutory sections are in 'ipc_bns_section' column, but NOT annotated as text spans within narrative_text)
+--------------------------------------------------------------------------------
+G. CAN BIO ANNOTATIONS BE CREATED LEGITIMATELY FROM EXISTING DATASET?
+  - NO. Attempting to create BIO tags via heuristic substring matching or LLM guessing
+    would introduce unvalidated, synthetic label noise and fabricate ground-truth data.
+--------------------------------------------------------------------------------
+H. IS SUPERVISED NER TRAINING CURRENTLY FEASIBLE?
+  - NO. Supervised NER training requires token-level entity spans and gold-standard BIO labels,
+    which are absent in data/womens_safety_dataset.csv.
+--------------------------------------------------------------------------------
+I. REQUIRED ADDITIONAL ANNOTATION DATA FOR NER FEASIBILITY:
+  - To support supervised NER fine-tuning in future phases, a dedicated NER annotation dataset
+    is required containing token-level BIO tags (e.g. CoNLL-2003 or JSONL format with 'start', 'end', 'label'
+    spans for Perpetrator, Location, Time/Frequency, Digital Platform, Evidence, and Statutory Sections).
+================================================================================

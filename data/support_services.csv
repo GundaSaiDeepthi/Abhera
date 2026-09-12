@@ -1,0 +1,13 @@
+service_type,name,contact_number,state,district,applicable_label
+Helpline,National Commission for Women (NCW) 24x7 Helpline,14490,National,All India,"DV, SH, OV"
+Helpline,Women Helpline (Sambal - Mission Shakti),181,National,All India,"DV, OV"
+Helpline,Emergency Response Support System (ERSS),112,National,All India,All Emergencies (Police/Fire/Medical/Women Safety)
+Helpline,Anti-Obscene Calls / Women Helpline,1091,National,All India,"SH, ST,OV,CA"
+Helpline,National Cyber Crime Helpline,1930,National,All India,"ST, CA,OV"
+Portal,National Cyber Crime Reporting Portal,https://www.cybercrime.gov.in,National,All India,"SH, ST, CA, OV"
+Portal,SHe-Box (Sexual Harassment electronic Box),https://shebox.wcd.gov.in,National,All India,"WH(POSH act),CA"
+Helpline,Childline India,1098,National,All India,"Child Abuse, Child Trafficking, Minor Victims"
+Helpline,National Human Rights Commission (NHRC) Helpline,14433,National,All India,"Human Rights Violations, General Grievance"
+Portal,Mission Shakti Portal,https://missionshakti.wcd.gov.in,National,All India,"Scheme Information, OSC Locator, Shelter Referral, Domestic Violence"
+Shelter,Shakti Shalini (NGO Shelter & Helpline),10920 / 011-24373737,Delhi,New Delhi,"Domestic Violence, Shelter, Counselling, Survivor Support"
+OSC,Delhi Commission for Women (DCW) Helpline,011-23379181,Delhi,New Delhi,"Domestic Violence, Rape, Sexual Assault, POCSO, Cybercrime"

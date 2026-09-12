@@ -1,0 +1,67 @@
+================================================================================
+HELD-OUT NER TEST SET EVALUATION REPORT
+================================================================================
+1. EVALUATION PROTOCOL VERIFICATION:
+   - Held-Out Test Set: D:\Abhera(Mini)\ml\ner\training\test.jsonl
+   - Test Records Evaluated: 60 records (100% held-out during training & model selection)
+   - Total Ground-Truth Test Entities: 71 entity spans
+   - Weight Immutability Check: PASSED (Model parameters remained unchanged)
+   - Model Output Directory: D:\Abhera(Mini)\models\ner
+
+2. PERFORMANCE COMPARISON (VALIDATION vs. HELD-OUT TEST):
+   Metric               | Validation Set (Epoch 11) | Held-Out Test Set
+   ----------------------------------------------------------------------
+   Micro Precision      | 0.9859                    | 1.0000
+   Micro Recall         | 1.0000                    | 0.9848
+   Micro F1             | 0.9929                    | 0.9924
+   Macro F1 (Active)    | 0.9929                    | 0.9900
+
+3. ENTITY-LEVEL TEST SET METRICS BY CLASS:
+   Entity Class | Support | TP | FP | FN | Precision | Recall   | F1 Score | Status
+   -----------------------------------------------------------------------------------------
+   PERP_REL     |      24 | 24 |  0 |  0 |    1.0000 |   1.0000 |   1.0000 | Fully Evaluated
+   LOCATION     |      13 | 12 |  0 |  1 |    1.0000 |   0.9231 |   0.9600 | Fully Evaluated
+   TIME_FREQ    |      17 | 17 |  0 |  0 |    1.0000 |   1.0000 |   1.0000 | Fully Evaluated
+   PLATFORM     |      12 | 12 |  0 |  0 |    1.0000 |   1.0000 |   1.0000 | Fully Evaluated
+   EVIDENCE     |       0 |  0 |  0 |  0 |    0.0000 |   0.0000 |   0.0000 | ZERO-SHOT (0 Test Examples)
+   LAW_SEC      |       0 |  0 |  0 |  0 |    0.0000 |   0.0000 |   0.0000 | ZERO-SHOT (0 Test Examples)
+
+4. OVERALL TEST SET SUMMARY METRICS:
+   - Micro Precision : 1.0000 (100.00%)
+   - Micro Recall    : 0.9848 (98.48%)
+   - Micro F1        : 0.9924 (99.24%)
+   - Macro F1 (Active): 0.9900 (99.00%)
+   - Macro F1 (All)   : 0.6600 (66.00%)
+
+5. ERROR & MISCLASSIFICATION BREAKDOWN:
+   - Correct Exact Matches (TP) : 65
+   - Missed Entities (FN)       : 1
+   - Spurious Predictions (FP)  : 0
+   - Boundary Overlap Errors    : 0
+   - Label Class Errors         : 0
+
+6. QUALITATIVE ERROR ANALYSIS & EXAMPLES:
+   [SAMPLE CORRECTLY DETECTED ENTITIES (TRUE POSITIVES)]
+   - Record WSL_0954: [PERP_REL] 'my former' in "My former colleague created a fake dating profile using my pictures...."
+   - Record WSL_0954: [PLATFORM] 'a fake dating' in "My former colleague created a fake dating profile using my pictures...."
+   - Record WSL_0498: [PLATFORM] 'publicly' in "An anonymous account made lewd comments about me publicly online and knows perso..."
+   - Record WSL_0747: [PERP_REL] 'my' in "My landlord forced himself on me despite me saying no clearly...."
+   - Record WSL_0291: [LOCATION] 'my' in "A man from my building keeps messaging me obsessively despite being blocked...."
+
+   [MISSED ENTITIES (FALSE NEGATIVES)]
+   - Record WSL_0761: [LOCATION] 'my' in "My ex-boyfriend keeps following me from college to my bus stop every day."
+
+   [SPURIOUS PREDICTIONS (FALSE POSITIVES)]: None (0 spurious predictions)
+
+   [BOUNDARY OVERLAP ERRORS]: None (0 boundary errors)
+
+   [LABEL CLASS ERRORS]: None (0 label errors)
+
+7. ZERO-SHOT CLASS EXPLICIT STATEMENT:
+   EVIDENCE and LAW_SEC have zero supervised test examples in this held-out set.
+   No synthetic examples were fabricated during training or evaluation.
+
+8. ARTIFACT LOCATION MAP:
+   - Test Evaluation Report: D:\Abhera(Mini)\ml\ner\training\ner_test_evaluation_report.txt
+   - Machine-Readable Test Metrics: D:\Abhera(Mini)\models\ner\test_metrics.json
+================================================================================

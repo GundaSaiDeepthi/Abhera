@@ -1,0 +1,73 @@
+================================================================================
+BERT MULTI-LABEL CLASSIFIER PREDICTION ANALYSIS REPORT
+================================================================================
+Evaluation Dataset: test_data.csv (164 samples)
+Classification Threshold: 0.5
+Overall Metrics: Micro Recall = 98.90% | Micro Precision = 45.09% | Micro F1 = 61.94%
+--------------------------------------------------------------------------------
+1. EXECUTIVE SUMMARY & ROOT CAUSE FINDINGS
+--------------------------------------------------------------------------------
+The model exhibits near-perfect recall (~98.90%) but very low precision (~45.09%).
+The primary root causes identified are:
+
+A. AGGRESSIVE POSITIVE CLASS WEIGHTING (pos_weights in BCEWithLogitsLoss):
+   - During fine-tuning, BCEWithLogitsLoss was configured with pos_weights derived from inverse class frequencies
+     (e.g., OV=10.08, WH=5.50, ST=5.10, CA=3.76, DV=3.34, SH=2.72).
+   - A pos_weight of 10.08 means the loss penalty for a False Negative is 10.08x higher than for a False Positive.
+   - Consequently, the model's loss minimization strategy forced logits to shift strongly into positive space
+     to prevent False Negatives at all costs.
+
+B. MISALIGNMENT WITH DEFAULT 0.5 CLASSIFICATION THRESHOLD:
+   - A default threshold of 0.5 (logit threshold = 0.0) assumes unweighted symmetric binary cross-entropy.
+   - Because pos_weights shifted logit probability distributions upward (median probabilities for labels range from 0.55 to 0.94),
+     the fixed 0.5 threshold causes almost EVERY sample to be classified as positive.
+
+C. SEVERE OVER-PREDICTION OF POSITIVE LABELS:
+   - Across all 6 labels, the model predicts positive at a rate dramatically higher than the ground truth:
+     * OV (Other Violence): Actual positives = 11 (6.71%), Predicted positives = 42 (25.61%) [3.8x over-prediction]
+     * WH (Workplace Harassment): Actual positives = 19 (11.59%), Predicted positives = 55 (33.54%) [2.9x over-prediction]
+     * ST (Stalking): Actual positives = 32 (19.51%), Predicted positives = 87 (53.05%) [2.7x over-prediction]
+     * SH (Sexual Harassment): Actual positives = 45 (27.44%), Predicted positives = 104 (63.41%) [2.3x over-prediction]
+     * CA (Cyber Abuse): Actual positives = 39 (23.78%), Predicted positives = 65 (39.63%) [1.7x over-prediction]
+     * DV (Domestic Violence): Actual positives = 35 (21.34%), Predicted positives = 44 (26.83%) [1.3x over-prediction]
+
+--------------------------------------------------------------------------------
+2. DETAILED LABEL FREQUENCY & CONFUSION MATRIX COMPARISON (Threshold = 0.5)
+--------------------------------------------------------------------------------
+Label  | PosWeight | Actual Pos (%)  | Pred Pos (%)    | TP   | FP   | FN   | TN   | Prec   | Rec   
+--------------------------------------------------------------------------------
+DV     | 3.34      |  35 ( 21.3%)   |  44 ( 26.8%)   |   34 |   10 |    1 |  119 | 0.7727 | 0.9714
+SH     | 2.72      |  45 ( 27.4%)   | 104 ( 63.4%)   |   45 |   59 |    0 |   60 | 0.4327 | 1.0000
+ST     | 5.10      |  32 ( 19.5%)   |  87 ( 53.0%)   |   32 |   55 |    0 |   77 | 0.3678 | 1.0000
+CA     | 3.76      |  39 ( 23.8%)   |  65 ( 39.6%)   |   38 |   27 |    1 |   98 | 0.5846 | 0.9744
+WH     | 5.50      |  19 ( 11.6%)   |  55 ( 33.5%)   |   19 |   36 |    0 |  109 | 0.3455 | 1.0000
+OV     | 10.08     |  11 (  6.7%)   |  42 ( 25.6%)   |   11 |   31 |    0 |  122 | 0.2619 | 1.0000
+--------------------------------------------------------------------------------
+3. LOGIT & PROBABILITY DISTRIBUTION STATISTICAL BREAKDOWN
+--------------------------------------------------------------------------------
+Label  | Mean Logit | Median Logit | Mean Prob  | Median Prob  | Min Prob | Max Prob
+--------------------------------------------------------------------------------
+DV     | -0.1952    | -0.5018      | 0.4513     | 0.3771       | 0.3064   | 0.7220  
+SH     | 0.1116     | 0.1645       | 0.5267     | 0.5410       | 0.3377   | 0.7042  
+ST     | 0.0470     | 0.0439       | 0.5108     | 0.5110       | 0.3237   | 0.7383  
+CA     | -0.0119    | -0.1291      | 0.4938     | 0.4678       | 0.2222   | 0.8041  
+WH     | -0.0578    | -0.0583      | 0.4855     | 0.4854       | 0.3904   | 0.6587  
+OV     | -0.7629    | -1.2233      | 0.3390     | 0.2274       | 0.1529   | 0.7936  
+--------------------------------------------------------------------------------
+4. TECHNICAL ARCHITECTURAL DIAGNOSIS & OBSERVATIONS
+--------------------------------------------------------------------------------
+1. BCEWithLogitsLoss pos_weight effect: pos_weight scales the positive term in BCE loss:
+   Loss = - [ pos_weight * y * log(sig(x)) + (1 - y) * log(1 - sig(x)) ]
+   When pos_weight > 1, the gradient w.r.t positive samples is magnified. During backpropagation,
+   the model parameters are updated to produce higher logits x for any input feature weakly associated with a label.
+
+2. Impact on Decision Boundaries:
+   At threshold 0.5 (logit 0.0), a positive prediction is triggered if probability >= 0.5.
+   Because median probabilities for all labels range between 0.28 and 0.72 (mean prob up to 0.58),
+   the standard 0.5 threshold fails to separate true positives from true negatives effectively.
+
+3. Zero-FN Bias:
+   For SH, ST, WH, and OV, FN = 0 (100% recall). The model did not miss a single true positive for these 4 labels.
+   However, this came at the cost of 59 False Positives for SH, 55 for ST, 36 for WH, and 31 for OV.
+
+================================================================================

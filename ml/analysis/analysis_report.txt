@@ -1,0 +1,45 @@
+======================================================================
+WOMEN'S SAFETY INCIDENT DATASET ANALYSIS REPORT
+======================================================================
+Dataset File Path: D:\Abhera(Mini)\data\womens_safety_dataset.csv
+Total Records: 1086
+Columns (11): id, narrative_text, DV, SH, ST, CA, WH, OV, ipc_bns_section, evidence_notes, source
+----------------------------------------------------------------------
+MISSING VALUES BY COLUMN:
+  - id: 0 missing (0.00%)
+  - narrative_text: 0 missing (0.00%)
+  - DV: 0 missing (0.00%)
+  - SH: 0 missing (0.00%)
+  - ST: 0 missing (0.00%)
+  - CA: 0 missing (0.00%)
+  - WH: 0 missing (0.00%)
+  - OV: 0 missing (0.00%)
+  - ipc_bns_section: 0 missing (0.00%)
+  - evidence_notes: 0 missing (0.00%)
+  - source: 0 missing (0.00%)
+----------------------------------------------------------------------
+NARRATIVE COLUMN IDENTIFIED: 'narrative_text'
+  - Unique Narratives: 1086
+  - Duplicate Narratives: 0
+  - Exact Duplicate Rows (all columns): 0
+----------------------------------------------------------------------
+INCIDENT LABELS DETECTED (6): DV, SH, ST, CA, WH, OV
+LABEL DISTRIBUTION & CLASS COUNT:
+  - DV: 250 examples (23.02%)
+  - SH: 292 examples (26.89%)
+  - ST: 178 examples (16.39%)
+  - CA: 228 examples (20.99%)
+  - WH: 167 examples (15.38%)
+  - OV: 98 examples (9.02%)
+----------------------------------------------------------------------
+MULTI-LABEL CO-OCCURRENCE BREAKDOWN:
+  - Single Label Incidents: 960 (88.40%)
+  - Multi-Label Incidents (>1 label): 126 (11.60%)
+  - Zero Label Incidents (Unclassified): 0 (0.00%)
+----------------------------------------------------------------------
+CLASS IMBALANCE ANALYSIS:
+  - Imbalance Ratio (Max/Min): 2.98:1
+  - Analysis: The dataset contains multi-label annotations across safety categories.
+    Harassment (SH) and Domestic Violence (DV) hold highest representation,
+    while Other Violence (OV) and Workplace Harassment (WH) are less frequent.
+======================================================================
