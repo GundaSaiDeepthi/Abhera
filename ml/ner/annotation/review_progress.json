@@ -1,0 +1,18 @@
+{
+  "total_records": 400,
+  "reviewed_records": 20,
+  "remaining_records": 380,
+  "annotation_percentage": 5.0,
+  "entities_by_type": {
+    "PERP_REL": 24,
+    "LOCATION": 9,
+    "TIME_FREQ": 14,
+    "PLATFORM": 4,
+    "EVIDENCE": 15,
+    "LAW_SEC": 0
+  },
+  "total_entities": 66,
+  "records_with_zero_entities": 0,
+  "passed_validation": false,
+  "validation_errors": 0
+}

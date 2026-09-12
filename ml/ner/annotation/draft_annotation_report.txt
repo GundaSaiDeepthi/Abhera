@@ -1,0 +1,44 @@
+================================================================================
+DRAFT NER ANNOTATION IMPORT & AUDIT REVIEW REPORT (PART 11 STEP 4)
+================================================================================
+NOTICE: This document reports on DRAFT proposed annotations imported from
+annotated_ner_draft_review.csv. These are DRAFT proposed annotations requiring
+thorough human review before any future supervised NER training can take place.
+Under strict zero-fabrication rules, this draft is NOT yet ground-truth data.
+--------------------------------------------------------------------------------
+1. DRAFT CSV IMPORT & OVERVIEW:
+   - Draft CSV File: D:\Abhera(Mini)\ml\ner\annotation\annotated_ner_draft_review.csv
+   - Target Sample JSONL: D:\Abhera(Mini)\ml\ner\annotation\annotation_sample.jsonl
+   - Draft JSONL Created: D:\Abhera(Mini)\ml\ner\annotation\annotated_ner_draft.jsonl
+   - Total CSV Records Imported: 400
+   - Unique Record IDs: 400
+   - Duplicate Record IDs: 0
+   - Records with Zero Proposed Entities: 2
+
+2. PROPOSED ENTITY SPANS & TYPE BREAKDOWN:
+   - Total Proposed Entities: 957
+   - Valid Spans: 957
+   - Invalid / Offset Errors: 0
+   - Overlapping Spans: 0
+   - Duplicate Spans: 0
+   - Proposed Entity Counts by Type:
+     * TIME_FREQ : 150
+     * EVIDENCE  : 257
+     * LOCATION  : 143
+     * LAW_SEC   : 0
+     * PLATFORM  : 91
+     * PERP_REL  : 316
+
+3. STRUCTURAL VALIDATION AUDIT RESULTS:
+   - Passed Full Structural Validation: YES
+   - Total Parsing / Mismatch Errors: 0
+   - Total Validator Rule Violations: 0
+
+4. DETAILED ERROR LOG (UNSILENCED):
+   - None. All records matched narrative texts, character offsets, and valid schemas perfectly.
+
+5. NEXT STEPS & HUMAN REVIEW REQUIREMENT:
+   - Human domain experts must review annotated_ner_draft.jsonl using annotation_app.py
+     to verify, edit, or confirm proposed spans before saving to final annotated_ner.jsonl.
+   - NO NER model training or evaluation may occur until human review is finalized.
+================================================================================

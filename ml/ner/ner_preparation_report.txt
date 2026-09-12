@@ -1,0 +1,41 @@
+================================================================================
+NAMED ENTITY RECOGNITION (NER) DATASET PREPARATION REPORT (PART 11 STEP 2)
+================================================================================
+1. CURRENT DATASET STATUS & VERIFICATION:
+   - Dataset File: D:\Abhera(Mini)\data\womens_safety_dataset.csv
+   - Total Incident Narratives: 1086
+   - Columns Present (11): id, narrative_text, DV, SH, ST, CA, WH, OV, ipc_bns_section, evidence_notes, source
+   - Explicit Span/BIO Annotations Present: NO
+
+2. REASONING FOR ZERO-FABRICATION POLICY:
+   - The dataset contains narrative texts and multi-label document classifications.
+   - It does NOT contain token-level BIO tags or ground-truth character offset spans.
+   - Synthesizing BIO labels via regex rules or LLM guesswork is strictly prohibited,
+     as it introduces unvalidated label noise and violates zero-hallucination standards.
+
+3. REQUIRED ANNOTATION SCHEMA (PLACEHOLDER SPECIFICATION):
+   - PERP_REL    : Perpetrator Relation (e.g., husband, boss, stranger)
+   - LOCATION    : Harassment Location (e.g., office, home, bus stand)
+   - TIME_FREQ   : Time or Frequency (e.g., every morning, daily)
+   - PLATFORM    : Digital Platform (e.g., social media, email, fake profile)
+   - EVIDENCE    : Physical Harm or Evidence (e.g., belt, slapped, locked inside)
+   - LAW_SEC     : Statutory Law Section (e.g., 354 IPC, POSH Act)
+
+4. VALIDATION CHECKS IMPLEMENTED (IN prepare_ner_dataset.py):
+   - Valid start/end offsets (0 <= start < end <= text_length)
+   - Text slice matching declared entity string
+   - Approved entity label schema adherence
+   - Detection of duplicate entity spans
+   - Detection of overlapping entity character spans
+   - Rejection of malformed records & empty fields
+
+5. PLANNED END-TO-END CONVERSION WORKFLOW FOR FUTURE HUMAN ANNOTATIONS:
+   [Human Annotators (.jsonl)] -> [NERAnnotationValidator] -> [Span-to-BIO Alignment]
+   -> [BERT WordPiece Tokenizer Alignment] -> [70/15/15 Train/Val/Test Split]
+   -> [Supervised Token Classification Model Training (bert-base-uncased-NER)]
+
+6. FEASIBILITY CONCLUSION & PRE-TRAINING REQUIREMENTS:
+   - Can NER Training Begin Now? NO.
+   - Required Action Before Training: A human-annotated dataset adhering to the schema
+     and validated by NERAnnotationValidator must be created using ner_annotation_template.jsonl.
+================================================================================

@@ -1,0 +1,57 @@
+{
+  "evaluation_split": "test",
+  "total_test_samples": 164,
+  "threshold": 0.5,
+  "exact_match_accuracy": 0.1524390243902439,
+  "elementwise_accuracy": 0.7764227642276422,
+  "micro_precision": 0.4508816120906801,
+  "micro_recall": 0.988950276243094,
+  "micro_f1": 0.6193771626297578,
+  "macro_precision": 0.4608683940580492,
+  "macro_recall": 0.990964590964591,
+  "macro_f1": 0.6103297582107127,
+  "per_label_metrics": [
+    {
+      "label": "DV",
+      "precision": 0.7727272727272727,
+      "recall": 0.9714285714285714,
+      "f1": 0.8607594936708862,
+      "support": 35
+    },
+    {
+      "label": "SH",
+      "precision": 0.4326923076923077,
+      "recall": 1.0,
+      "f1": 0.6040268456375839,
+      "support": 45
+    },
+    {
+      "label": "ST",
+      "precision": 0.367816091954023,
+      "recall": 1.0,
+      "f1": 0.5378151260504201,
+      "support": 32
+    },
+    {
+      "label": "CA",
+      "precision": 0.5846153846153846,
+      "recall": 0.9743589743589743,
+      "f1": 0.7307692307692307,
+      "support": 39
+    },
+    {
+      "label": "WH",
+      "precision": 0.34545454545454546,
+      "recall": 1.0,
+      "f1": 0.5135135135135135,
+      "support": 19
+    },
+    {
+      "label": "OV",
+      "precision": 0.2619047619047619,
+      "recall": 1.0,
+      "f1": 0.41509433962264153,
+      "support": 11
+    }
+  ]
+}

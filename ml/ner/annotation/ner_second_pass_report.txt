@@ -1,0 +1,50 @@
+================================================================================
+SECOND-PASS CONSERVATIVE NER CANDIDATE AUDIT REPORT (PART 11 STEP 8)
+================================================================================
+Target Dataset: annotated_ner_draft.jsonl (400 records)
+Guidelines Reference: D:\Abhera(Mini)\ml\ner\NER_ANNOTATION_GUIDELINES.md
+--------------------------------------------------------------------------------
+1. SECOND-PASS TRIAGE SUMMARY:
+   - Total Sample Records Inspected: 400
+   - Total Candidate Entities Audited: 957
+   - SECOND_PASS_AUTO_ACCEPT Count: 464 (48.48%)
+   - SECOND_PASS_HUMAN_REVIEW Count: 493 (51.52%)
+   - SECOND_PASS_AUTO_REJECT Count: 0 (0.00%)
+   - Decision Sum Verification: 464 + 493 + 0 = 957 (Matches 957)
+
+2. SECOND-PASS BREAKDOWN BY ENTITY TYPE & DECISION:
+Label      | Total  | AUTO_ACCEPT    | HUMAN_REVIEW   | AUTO_REJECT 
+--------------------------------------------------------------------------------
+PLATFORM   | 91     | 65             | 26             | 0           
+PERP_REL   | 316    | 207            | 109            | 0           
+LAW_SEC    | 0      | 0              | 0              | 0           
+TIME_FREQ  | 150    | 116            | 34             | 0           
+LOCATION   | 143    | 76             | 67             | 0           
+EVIDENCE   | 257    | 0              | 257            | 0           
+--------------------------------------------------------------------------------
+3. EXAMPLES OF SECOND-PASS DECISIONS:
+   A. ACCEPTED CANDIDATES (HIGH CONFIDENCE):
+      * 'landlord' (PERP_REL)
+      * 'former colleague' (PERP_REL)
+      * 'workplace' (LOCATION)
+      * 'every evening' (TIME_FREQ)
+      * 'constantly' (TIME_FREQ)
+   B. HUMAN REVIEW CANDIDATES (MEDIUM / LOW CONFIDENCE):
+      * 'lewd comments' (EVIDENCE) -> Ambiguous EVIDENCE phrase 'lewd comments'. Flagged for human review.
+      * 'community' (PERP_REL) -> Generic perpetrator phrase 'community'. Requires human decision on span boundaries.
+      * 'moneylenders' (PERP_REL) -> Generic perpetrator phrase 'moneylenders'. Requires human decision on span boundaries.
+      * 'threatening to post' (EVIDENCE) -> Ambiguous EVIDENCE phrase 'threatening to post'. Flagged for human review.
+      * 'private photos' (EVIDENCE) -> Action-based EVIDENCE phrase 'private photos'. Flagged for human review.
+   C. AUTO-REJECTED CANDIDATES (STRUCTURAL / CONTEXTUAL INVALID):
+--------------------------------------------------------------------------------
+4. EXPLANATION OF CONSERVATIVE RULES APPLIED:
+   - Zero-Fabrication Rule: No candidates were automatically merged into the reviewed ground-truth dataset.
+   - Evidence Conservatism: 100% of clause-length and ambiguous action-based EVIDENCE candidates were flagged for human boundary review.
+   - Strict Offset Matching: Verified exact slice narrative_text[start:end] == candidate_text.
+   - Word Boundary Rule: Rejects spans that break mid-word.
+--------------------------------------------------------------------------------
+5. VALIDATION & INTEGRITY CHECKS:
+   - Draft File Unchanged (annotated_ner_draft.jsonl): YES (400 records preserved)
+   - Classification Model Unchanged (models/bert_multilabel/): YES
+   - Validation Errors Count: 0
+================================================================================

@@ -1,0 +1,60 @@
+================================================================================
+BERT-BASED NER TOKEN CLASSIFICATION TRAINING REPORT
+================================================================================
+1. MODEL & DATASET CONFIGURATION:
+   - Base Model: bert-base-uncased
+   - Model Output Directory: D:\Abhera(Mini)\models\ner
+   - Training Examples: 280 records
+   - Validation Examples: 60 records
+   - Test Examples: 60 records (HELD OUT - UNTOUCHED)
+   - Total BIO Labels: 13
+   - Random Seed: 42
+
+2. HYPERPARAMETERS:
+   - Learning Rate: 3e-05
+   - Batch Size: 16
+   - Epochs Trained: 12
+   - Weight Decay: 0.01
+   - Max Sequence Length: 256
+
+3. EPOCH-BY-EPOCH METRICS:
+   Epoch | Train Loss | Val Loss   | Val Token Acc | Val Entity Prec | Val Entity Rec | Val Entity F1
+   ------------------------------------------------------------------------------------------
+       1 |     1.9201 |     0.7694 |        0.8417 |          0.0000 |         0.0000 |        0.0000
+       2 |     0.6125 |     0.3136 |        0.9194 |          0.7105 |         0.3857 |        0.5000
+       3 |     0.2405 |     0.1029 |        0.9829 |          0.8356 |         0.8714 |        0.8531
+       4 |     0.0872 |     0.0334 |        0.9950 |          0.9437 |         0.9571 |        0.9504
+       5 |     0.0368 |     0.0214 |        0.9950 |          0.9583 |         0.9857 |        0.9718
+       6 |     0.0223 |     0.0125 |        0.9970 |          0.9583 |         0.9857 |        0.9718
+       7 |     0.0165 |     0.0097 |        0.9970 |          0.9857 |         0.9857 |        0.9857
+       8 |     0.0120 |     0.0108 |        0.9970 |          0.9722 |         1.0000 |        0.9859
+       9 |     0.0106 |     0.0104 |        0.9970 |          0.9722 |         1.0000 |        0.9859
+      10 |     0.0090 |     0.0093 |        0.9980 |          0.9859 |         1.0000 |        0.9929
+      11 |     0.0089 |     0.0091 |        0.9980 |          0.9859 |         1.0000 |        0.9929
+      12 |     0.0082 |     0.0092 |        0.9970 |          0.9722 |         1.0000 |        0.9859
+
+4. BEST CHECKPOINT SUMMARY:
+   - Best Epoch: 11
+   - Best Validation Loss: 0.0091
+   - Best Validation Precision: 0.9859
+   - Best Validation Recall: 1.0000
+   - Best Validation Entity F1: 0.9929
+
+5. BEST CHECKPOINT PER-ENTITY BREAKDOWN:
+   - PERP_REL    : Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000 (TP: 39, FP: 0, FN: 0)
+   - LOCATION    : Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000 (TP: 9, FP: 0, FN: 0)
+   - TIME_FREQ   : Precision: 0.9444 | Recall: 1.0000 | F1: 0.9714 (TP: 17, FP: 1, FN: 0)
+   - PLATFORM    : Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000 (TP: 5, FP: 0, FN: 0)
+   - EVIDENCE    : Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000 (TP: 0, FP: 0, FN: 0) [ZERO-SHOT / NO EXAMPLES]
+   - LAW_SEC     : Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000 (TP: 0, FP: 0, FN: 0) [ZERO-SHOT / NO EXAMPLES]
+
+6. MANDATORY DATASET & MODEL LIMITATIONS NOTICE:
+   EVIDENCE and LAW_SEC were retained in the label mapping but have no supervised training examples
+   in the current provisional dataset. No synthetic examples were created.
+
+7. ARTIFACTS MAP:
+   - Model Checkpoint: D:\Abhera(Mini)\models\ner
+   - Training Config: D:\Abhera(Mini)\models\ner\training_config.json
+   - Metrics Summary: D:\Abhera(Mini)\models\ner\training_metrics.json
+   - Training Report: D:\Abhera(Mini)\ml\ner\training\ner_training_report.txt
+================================================================================

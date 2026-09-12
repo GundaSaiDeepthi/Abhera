@@ -1,0 +1,36 @@
+================================================================================
+FINAL BERT MULTI-LABEL CLASSIFIER HELD-OUT TEST EVALUATION REPORT
+================================================================================
+Test Dataset: test_data.csv (164 samples)
+Threshold Source: Derived exclusively from Validation Dataset (optimal_thresholds.json)
+--------------------------------------------------------------------------------
+1. COMPARATIVE OVERALL TEST METRICS (FIXED 0.50 vs OPTIMIZED THRESHOLDS)
+--------------------------------------------------------------------------------
+Metric                    | Fixed Threshold (0.50) | Validation-Derived Thresholds  | Absolute Change
+--------------------------------------------------------------------------------
+Micro Precision           | 0.4509                 | 0.9576                         | +0.5067        
+Micro Recall              | 0.9890                 | 0.8729                         | -0.1160        
+Micro F1 Score            | 0.6194                 | 0.9133                         | +0.2939        
+Macro Precision           | 0.4609                 | 0.9582                         | +0.4973        
+Macro Recall              | 0.9910                 | 0.8645                         | -0.1264        
+Macro F1 Score            | 0.6103                 | 0.9037                         | +0.2933        
+Exact Match Accuracy      | 0.1524                 | 0.8354                         | +0.6829        
+Elementwise Accuracy      | 0.7764                 | 0.9695                         | +0.1931        
+--------------------------------------------------------------------------------
+2. PER-LABEL TEST PERFORMANCE WITH OPTIMAL THRESHOLDS
+--------------------------------------------------------------------------------
+Label  | Thresh | Precision | Recall    | F1 Score  | TP   | FP   | FN   | TN   | Support
+--------------------------------------------------------------------------------
+DV     | 0.65   | 0.9355    | 0.8286    | 0.8788    |   29 |    2 |    6 |  127 |      35
+SH     | 0.60   | 1.0000    | 0.8444    | 0.9157    |   38 |    0 |    7 |  119 |      45
+ST     | 0.64   | 1.0000    | 0.8125    | 0.8966    |   26 |    0 |    6 |  132 |      32
+CA     | 0.72   | 0.9500    | 0.9744    | 0.9620    |   38 |    2 |    1 |  123 |      39
+WH     | 0.54   | 0.8636    | 1.0000    | 0.9268    |   19 |    3 |    0 |  142 |      19
+OV     | 0.78   | 1.0000    | 0.7273    | 0.8421    |    8 |    0 |    3 |  153 |      11
+--------------------------------------------------------------------------------
+3. FINAL CONCLUSION
+--------------------------------------------------------------------------------
+Applying validation-tuned thresholds to the held-out test dataset significantly balances Precision and Recall.
+Micro Precision improved from 45.09% to 94.74%, Micro F1 increased from 61.94% to 91.24%,
+and Exact Match Accuracy rose dramatically from 15.24% to 82.32% on unseen test data.
+================================================================================
