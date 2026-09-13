@@ -2278,11 +2278,67 @@ body {
   margin-top: 0.5rem;
 }
 
+.user-details-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
 .followup-card, .detail-card {
   background: var(--pure-white);
   border: 1px solid var(--light-border);
-  padding: 1rem 1.25rem;
+  padding: 1.1rem 1.35rem;
   border-radius: 10px;
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.detail-card-idx {
+  background-color: var(--soft-blue);
+  color: var(--primary-blue);
+  font-weight: 800;
+  font-size: 0.72rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+}
+
+.detail-label-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--slate-text);
+  text-transform: uppercase;
+}
+
+.detail-label-tag.answer-tag {
+  color: var(--primary-blue);
+}
+
+.detail-question-text {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--navy-black);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.detail-answer-block {
+  border-top: 1px solid var(--light-border);
+  padding-top: 0.65rem;
+  margin-top: 0.4rem;
+}
+
+.detail-answer-text {
+  font-size: 0.92rem;
+  color: var(--charcoal);
+  font-weight: 500;
+  line-height: 1.55;
+  margin-top: 0.2rem;
 }
 
 .blue-icon-circle {

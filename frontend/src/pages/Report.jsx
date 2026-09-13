@@ -807,31 +807,60 @@ const Report = () => {
     // SECTION 04: DETAILS YOU PROVIDED (PDF)
     drawSectionHeader('04', 'Details You Provided', 'Direct user questionnaire responses recorded during the session.');
     if (Array.isArray(norm.userDetails) && norm.userDetails.length > 0) {
-      norm.userDetails.forEach((item) => {
+      norm.userDetails.forEach((item, idx) => {
+        const numStr = String(idx + 1).padStart(2, '0');
+
         doc.setFont('helvetica', 'bold');
-        doc.setFontSize(9.5);
-        const qLines = doc.splitTextToSize(`Q: ${item.question}`, contentWidth - 14);
+        doc.setFontSize(9);
+        const qLines = doc.splitTextToSize(item.question, contentWidth - 16);
 
         doc.setFont('helvetica', 'normal');
-        doc.setFontSize(9.5);
-        const aLines = doc.splitTextToSize(`A: ${item.answer}`, contentWidth - 14);
+        doc.setFontSize(9);
+        const aLines = doc.splitTextToSize(item.answer, contentWidth - 16);
 
-        const cardH = (qLines.length + aLines.length) * 5.0 + 8;
+        const cardH = 7 + (qLines.length * 4.5) + 5 + 4 + (aLines.length * 4.5) + 5;
         checkAddPage(cardH + 4);
 
         setFillColorHex(doc, ABHERA_COLORS.card);
         setDrawColorHex(doc, ABHERA_COLORS.border);
         doc.roundedRect(margin, y, contentWidth, cardH, 2, 2, 'FD');
 
-        doc.setFontSize(9.5);
+        setFillColorHex(doc, ABHERA_COLORS.softBlue);
+        doc.roundedRect(margin + 5, y + 4.5, 9, 5, 1, 1, 'F');
+        doc.setFontSize(7.5);
+        doc.setFont('helvetica', 'bold');
+        setTextColorHex(doc, ABHERA_COLORS.primary);
+        doc.text(numStr, margin + 6.8, y + 8);
+
+        doc.setFontSize(7);
+        doc.setFont('helvetica', 'bold');
+        setTextColorHex(doc, ABHERA_COLORS.slate);
+        doc.text('QUESTION', margin + 17, y + 8);
+
+        let curY = y + 14;
+        doc.setFontSize(9);
         doc.setFont('helvetica', 'bold');
         setTextColorHex(doc, ABHERA_COLORS.navy);
-        doc.text(qLines, margin + 6, y + 6);
-        const qH = qLines.length * 5.0;
+        doc.text(qLines, margin + 6, curY);
 
+        curY += (qLines.length * 4.5) + 2;
+
+        setDrawColorHex(doc, ABHERA_COLORS.border);
+        doc.setLineWidth(0.2);
+        doc.line(margin + 6, curY, margin + contentWidth - 6, curY);
+        curY += 4.5;
+
+        doc.setFontSize(7);
+        doc.setFont('helvetica', 'bold');
+        setTextColorHex(doc, ABHERA_COLORS.primary);
+        doc.text('ANSWER', margin + 6, curY);
+        curY += 4.5;
+
+        doc.setFontSize(9);
         doc.setFont('helvetica', 'normal');
         setTextColorHex(doc, ABHERA_COLORS.charcoal);
-        doc.text(aLines, margin + 6, y + 6 + qH);
+        doc.text(aLines, margin + 6, curY);
+
         y += cardH + 5;
       });
     } else {
@@ -1518,11 +1547,15 @@ const Report = () => {
               <div className="user-details-cards">
                 {userDetails.map((item, idx) => (
                   <div key={idx} className="detail-card report-white-card">
-                    <div className="detail-question">
-                      <span className="blue-icon-circle"><HelpCircle size={14} /></span>
-                      <span>{item.question}</span>
+                    <div className="detail-card-header">
+                      <span className="detail-card-idx font-mono">{String(idx + 1).padStart(2, '0')}</span>
+                      <span className="detail-label-tag">QUESTION</span>
                     </div>
-                    <div className="detail-answer">{item.answer}</div>
+                    <div className="detail-question-text">{item.question}</div>
+                    <div className="detail-answer-block">
+                      <span className="detail-label-tag answer-tag">ANSWER</span>
+                      <div className="detail-answer-text">{item.answer}</div>
+                    </div>
                   </div>
                 ))}
               </div>
