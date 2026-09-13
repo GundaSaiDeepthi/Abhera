@@ -50,21 +50,21 @@ const AbheraEmblem = ({ size = 28, className = '' }) => (
       strokeLinecap="round"
     />
 
-    {/* 4. BALANCED WEIGHING SCALE BEAM (Antique Gold Accent #B69A61) */}
+    {/* 4. BALANCED WEIGHING SCALE BEAM (Premium Gold Accent #B89A5A) */}
     <line
       x1="11"
       y1="19"
       x2="37"
       y2="19"
-      stroke="var(--antique-gold, #B3955A)"
+      stroke="var(--premium-gold, #B89A5A)"
       strokeWidth="2.4"
       strokeLinecap="round"
     />
 
-    {/* 5. Center Fulcrum Diamond Pivot (Antique Gold) */}
+    {/* 5. Center Fulcrum Diamond Pivot (Premium Gold) */}
     <polygon
       points="24,15.5 26.5,19 24,22.5 21.5,19"
-      fill="var(--antique-gold, #B3955A)"
+      fill="var(--premium-gold, #B89A5A)"
     />
 
     {/* 6. Left Scale Pan & Suspension Cords */}
@@ -91,16 +91,16 @@ const AbheraEmblem = ({ size = 28, className = '' }) => (
       strokeLinejoin="round"
     />
 
-    {/* 8. Apex Statutory Diamond Seal (Antique Gold Accent) */}
+    {/* 8. Apex Statutory Diamond Seal (Premium Gold Accent) */}
     <polygon
       points="24,5 26,8 24,11 22,8"
-      fill="var(--antique-gold, #B3955A)"
+      fill="var(--premium-gold, #B89A5A)"
     />
 
     {/* 9. Open Statutory Book / Pedestal Base */}
     <path
       d="M15 39.5L24 36L33 39.5V42L24 38.5L15 42V39.5Z"
-      fill="var(--antique-gold, #B3955A)"
+      fill="var(--antique-gold, #B89B5E)"
       fillOpacity="0.9"
     />
   </svg>

@@ -107,11 +107,18 @@ const Home = () => {
               <span>AI-ASSISTED LEGAL GUIDANCE</span>
             </div>
 
-            <h1 className="hero-main-title">
-              <span className="brand-name">ABHERA</span>
-              <span className="tagline-part serif-heading">Your Story. Understood.</span>
-              <span className="tagline-part serif-heading tagline-secondary">Your Rights. Empowered.</span>
-            </h1>
+            <div className="hero-branding-block">
+              <div className="hero-logo-wrapper">
+                <AbheraEmblem size={88} className="hero-scales-logo" />
+              </div>
+              <div className="hero-title-group">
+                <h1 className="brand-name">ABHERA</h1>
+                <div className="hero-tagline-group">
+                  <span className="tagline-part serif-heading">Your Story. Understood.</span>
+                  <span className="tagline-part serif-heading tagline-secondary">Your Rights. Empowered.</span>
+                </div>
+              </div>
+            </div>
 
             <p className="hero-description">
               Describe what happened in your own words. ABHERA helps structure your experience, identify relevant information, and connect it with verified legal and support resources.

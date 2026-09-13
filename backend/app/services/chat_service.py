@@ -120,14 +120,17 @@ class ChatService:
         session.messages = messages_list
         flag_modified(session, "messages")
 
-        # Build full narrative from user messages
+        # Build full narrative for ML evaluation while preserving initial narrative text
         user_messages_texts = [
             m.get("content") or m.get("text")
             for m in messages_list
             if m.get("role") == "user" or m.get("sender") == "user"
         ]
         full_narrative = "\n".join([t for t in user_messages_texts if t])
-        submission.narrative_text = full_narrative
+
+        # Initial incident description is STRICTLY the first user message in the session
+        initial_narrative = user_messages_texts[0] if user_messages_texts else clean_text
+        submission.narrative_text = initial_narrative
 
         # 1. BERT Classifier Integration
         predicted_labels = list(session.predicted_labels or [])
@@ -187,7 +190,7 @@ class ChatService:
         # 3. Dynamic Question Engine Integration
         question_response = process_submission(
             submission_id=session.submission_id,
-            narrative_text=full_narrative,
+            narrative_text=initial_narrative,
             bert_results=predicted_labels,
             ner_entities=existing_entities_list,
             db=db,
@@ -212,9 +215,10 @@ class ChatService:
             # Execute Legal Mapping, Support Mapping, Anti-Hallucination & Report Generator
             report_obj = generate_incident_report(
                 submission_id=session.submission_id,
-                narrative_text=full_narrative,
+                narrative_text=initial_narrative,
                 bert_results=predicted_labels,
                 ner_entities=existing_entities_list,
+                user_answers=session.answers,
                 state=submission.state,
                 district=submission.district,
                 db=db,

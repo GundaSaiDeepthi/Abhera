@@ -88,6 +88,11 @@ const Chatbot = () => {
     setError(null);
     const cleanText = text.trim();
 
+    // If previous conversation was COMPLETED, reset state to start a fresh intake/submission
+    if (conversationStatus === 'COMPLETED') {
+      resetConversation();
+    }
+
     const userMessage = {
       id: `user-${Date.now()}`,
       role: 'user',
@@ -101,7 +106,7 @@ const Chatbot = () => {
     setLoading(true);
 
     try {
-      let currentSessId = sessionId;
+      let currentSessId = conversationStatus === 'COMPLETED' ? null : sessionId;
       if (!currentSessId) {
         currentSessId = await ensureSession();
       }
@@ -183,7 +188,7 @@ const Chatbot = () => {
           <div>
             <h1 className="header-main-title font-serif">ABHERA</h1>
             <span className="header-sub-tag font-sans">
-              PRIVATE LEGAL ASSISTANCE SESSION
+               LEGAL ASSISTANCE SESSION
             </span>
           </div>
         </div>

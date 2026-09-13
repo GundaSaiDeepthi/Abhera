@@ -1,0 +1,217 @@
+{
+  "submission_id": "SUB-2026-88E239AF",
+  "incident_summary": "My husband and in-laws beat me and harass me for dowry every day at home. They have threatened to throw me out of the house if my parents do not pay 5 lakh rupees.",
+  "identified_incident_type": {
+    "labels": [
+      "Domestic Violence",
+      "Dowry Harassment"
+    ],
+    "message": null
+  },
+  "extracted_information": {
+    "PERP_REL": [
+      "husband and in-laws"
+    ],
+    "LOCATION": [
+      "at home"
+    ],
+    "TIME_FREQ": [
+      "every day"
+    ],
+    "PLATFORM": [],
+    "EVIDENCE": [
+      "threatened to throw me out"
+    ],
+    "LAW_SEC": []
+  },
+  "user_provided_details": [
+    {
+      "question_id": "Q_SAFETY_01",
+      "question": "Are you currently in immediate physical danger?",
+      "answer": "No, I am at a neighbor's house right now."
+    },
+    {
+      "question_id": "Q_CHILDREN_01",
+      "question": "Are there any children residing with you who are affected?",
+      "answer": "Yes, my 4-year-old daughter."
+    },
+    {
+      "question_id": "Q_MEDICAL_01",
+      "question": "Do you require medical assistance for any injuries?",
+      "answer": "Yes, I have bruises on my arms and back."
+    }
+  ],
+  "relevant_legal_information": [
+    {
+      "act": "BNS",
+      "section": "85",
+      "description": "Whoever, being the husband or relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment for a term which may extend to three years and shall also be liable to fine.",
+      "applicable_label": "DV",
+      "source": "database"
+    },
+    {
+      "act": "IPC",
+      "section": "498A",
+      "description": "Whoever, being the husband or the relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment for a term which may extend to three years and shall also be liable to fine.",
+      "applicable_label": "DV",
+      "source": "database"
+    },
+    {
+      "act": "BNS",
+      "section": "86",
+      "description": "For the purposes of section 85, cruelty means any wilful conduct likely to drive a woman to suicide or grave injury, or harassment with a view to coercing her or any related person to meet an unlawful demand for property or valuable security.",
+      "applicable_label": "DV",
+      "source": "database"
+    },
+    {
+      "act": "DV_ACT",
+      "section": "3",
+      "description": "Any act, omission, commission or conduct that harms or injures the health, safety, life, limb or well-being of the aggrieved person, whether mental or physical, constitutes domestic violence under this Act.",
+      "applicable_label": "DV",
+      "source": "database"
+    },
+    {
+      "act": "DV_ACT",
+      "section": "12",
+      "description": "An aggrieved person may present an application to the Magistrate seeking one or more reliefs under this Act, including protection orders, residence orders, and monetary relief.",
+      "applicable_label": "DV",
+      "source": "database"
+    },
+    {
+      "act": "DV_ACT",
+      "section": "18",
+      "description": "The Magistrate may pass a protection order prohibiting the respondent from committing any act of domestic violence, or aiding/abetting the commission of acts of domestic violence.",
+      "applicable_label": "DV",
+      "source": "database"
+    },
+    {
+      "act": "DV_ACT",
+      "section": "19",
+      "description": "The Magistrate may pass a residence order restraining the respondent from dispossessing the aggrieved person from the shared household.",
+      "applicable_label": "DV",
+      "source": "database"
+    },
+    {
+      "act": "DV_ACT",
+      "section": "20",
+      "description": "The Magistrate may direct the respondent to pay monetary relief to meet expenses incurred and losses suffered by the aggrieved person as a result of domestic violence.",
+      "applicable_label": "DV",
+      "source": "database"
+    },
+    {
+      "act": "DOWRY_ACT",
+      "section": "3",
+      "description": "If any person gives or takes or abets the giving or taking of dowry, he shall be punishable with imprisonment for a term which shall not be less than five years, and with fine which shall not be less than fifteen thousand rupees.",
+      "applicable_label": "DOWRY",
+      "source": "database"
+    },
+    {
+      "act": "DOWRY_ACT",
+      "section": "4",
+      "description": "If any person demands, directly or indirectly, from the parents or other relatives of a bride any dowry, he shall be punishable with imprisonment for a term which may extend to two years and with fine.",
+      "applicable_label": "DOWRY",
+      "source": "database"
+    }
+  ],
+  "suggested_next_steps": [
+    "Preserve all relevant evidence, messages, call logs, screenshots, and documents.",
+    "Keep copies of any formal communications or written notices.",
+    "Consider contacting an appropriate support service or helpline from the verified database.",
+    "If you are in immediate physical danger, seek emergency assistance through local police (112) or emergency services."
+  ],
+  "available_support_services": [
+    {
+      "service_name": "Shakti Shalini (NGO Shelter & Helpline)",
+      "service_type": "Shelter",
+      "contact_number": "10920 / 011-24373737",
+      "state": "Delhi",
+      "district": "New Delhi",
+      "applicable_label": "Domestic Violence, Shelter, Counselling, Survivor Support",
+      "source": "database"
+    },
+    {
+      "service_name": "Delhi Commission for Women (DCW) Helpline",
+      "service_type": "OSC",
+      "contact_number": "011-23379181",
+      "state": "Delhi",
+      "district": "New Delhi",
+      "applicable_label": "Domestic Violence, Rape, Sexual Assault, POCSO, Cybercrime",
+      "source": "database"
+    },
+    {
+      "service_name": "National Commission for Women (NCW) 24x7 Helpline",
+      "service_type": "Helpline",
+      "contact_number": "14490",
+      "state": "National",
+      "district": "All India",
+      "applicable_label": "DV, SH, OV",
+      "source": "database"
+    },
+    {
+      "service_name": "Women Helpline (Sambal - Mission Shakti)",
+      "service_type": "Helpline",
+      "contact_number": "181",
+      "state": "National",
+      "district": "All India",
+      "applicable_label": "DV, OV",
+      "source": "database"
+    },
+    {
+      "service_name": "Emergency Response Support System (ERSS)",
+      "service_type": "Helpline",
+      "contact_number": "112",
+      "state": "National",
+      "district": "All India",
+      "applicable_label": "All Emergencies (Police/Fire/Medical/Women Safety)",
+      "source": "database"
+    },
+    {
+      "service_name": "Mission Shakti Portal",
+      "service_type": "Portal",
+      "contact_number": "https://missionshakti.wcd.gov.in",
+      "state": "National",
+      "district": "All India",
+      "applicable_label": "Scheme Information, OSC Locator, Shelter Referral, Domestic Violence",
+      "source": "database"
+    }
+  ],
+  "evidence_information_notes": [
+    "Extracted evidence mention: threatened to throw me out"
+  ],
+  "model_prediction_information": {
+    "bert_classifier": {
+      "model_name": "bert-base-uncased",
+      "task": "Multi-Label Incident Classification",
+      "predicted_labels": [
+        "Domestic Violence",
+        "Dowry Harassment"
+      ]
+    },
+    "ner_extractor": {
+      "model_name": "bert-base-uncased-ner",
+      "task": "Token Classification Entity Extraction",
+      "extracted_entity_types": [
+        "PERP_REL",
+        "LOCATION",
+        "TIME_FREQ",
+        "EVIDENCE"
+      ]
+    },
+    "data_provenance": "Legal provisions and support services are retrieved directly from verified PostgreSQL database records, NOT generated by AI models."
+  },
+  "disclaimer": "This system provides informational assistance based on the available dataset, trained models, and verified database records. It does not replace professional legal advice, emergency services, law enforcement, or other qualified support.",
+  "audit": {
+    "legal": {
+      "received": 10,
+      "accepted": 10,
+      "rejected": 0,
+      "rejection_reasons": []
+    },
+    "support": {
+      "received": 6,
+      "accepted": 6,
+      "rejected": 0,
+      "rejection_reasons": []
+    }
+  }
+}
