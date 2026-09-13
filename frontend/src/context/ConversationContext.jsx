@@ -54,7 +54,12 @@ export const ConversationProvider = ({ children }) => {
   }, []);
 
   const setSubmissionId = useCallback((id) => {
-    setSubmissionIdState(id);
+    setSubmissionIdState((prevId) => {
+      if (prevId !== id) {
+        setReport(null);
+      }
+      return id;
+    });
     try {
       if (id) sessionStorage.setItem('abhera_submission_id', id);
       else sessionStorage.removeItem('abhera_submission_id');

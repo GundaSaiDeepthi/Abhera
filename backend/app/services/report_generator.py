@@ -101,6 +101,8 @@ class ReportGeneratorService:
                         bert_results = sess_rec.predicted_labels
                     if not ner_entities and sess_rec.entities:
                         ner_entities = sess_rec.entities
+                    if user_answers is None and sess_rec.answers:
+                        user_answers = sess_rec.answers
 
             # ------------------------------------------------------------------
             # SECTION 1 — INCIDENT SUMMARY
