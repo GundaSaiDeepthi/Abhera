@@ -195,18 +195,50 @@ class ReportGeneratorService:
                 if isinstance(user_answers, list):
                     for item in user_answers:
                         if isinstance(item, dict) and item.get("answer"):
+                            q_id = item.get("question_id", "Q_CUSTOM")
+                            q_text = item.get("question") or item.get("question_text")
+                            if (not q_text or q_text == "Question" or str(q_text).startswith("Question ")) and db and q_id and q_id != "Q_CUSTOM":
+                                q_rec = db.query(Question).filter(Question.question_id == str(q_id)).first()
+                                if q_rec and q_rec.question_text:
+                                    q_text = q_rec.question_text
+                            if not q_text:
+                                q_text = f"Question {q_id}"
                             formatted_user_details.append({
-                                "question_id": item.get("question_id", "Q_CUSTOM"),
-                                "question": item.get("question", "Question"),
+                                "question_id": str(q_id),
+                                "question": str(q_text).strip(),
                                 "answer": str(item.get("answer")).strip(),
                             })
                 elif isinstance(user_answers, dict):
                     for q_id, ans in user_answers.items():
                         if ans and str(ans).strip():
+                            q_text = None
+                            if db and q_id:
+                                q_rec = db.query(Question).filter(Question.question_id == str(q_id)).first()
+                                if q_rec and q_rec.question_text:
+                                    q_text = q_rec.question_text
+                            if not q_text:
+                                q_text = f"Question {q_id}"
                             formatted_user_details.append({
                                 "question_id": str(q_id),
-                                "question": f"Question {q_id}",
+                                "question": str(q_text).strip(),
                                 "answer": str(ans).strip(),
+                            })
+
+            if not formatted_user_details and submission_id and db is not None:
+                sqa_recs = (
+                    db.query(SubmissionQuestionAnswer)
+                    .filter(SubmissionQuestionAnswer.submission_id == submission_id)
+                    .order_by(SubmissionQuestionAnswer.id.asc())
+                    .all()
+                )
+                if sqa_recs:
+                    for sqa in sqa_recs:
+                        if sqa.answer and str(sqa.answer).strip():
+                            q_text = sqa.question.question_text if (sqa.question and sqa.question.question_text) else f"Question {sqa.question_id}"
+                            formatted_user_details.append({
+                                "question_id": str(sqa.question_id),
+                                "question": str(q_text).strip(),
+                                "answer": str(sqa.answer).strip(),
                             })
 
             # ------------------------------------------------------------------
