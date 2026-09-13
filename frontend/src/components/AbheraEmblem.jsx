@@ -56,7 +56,7 @@ const AbheraEmblem = ({ size = 28, className = '' }) => (
       y1="19"
       x2="37"
       y2="19"
-      stroke="var(--antique-gold, #B08D57)"
+      stroke="var(--antique-gold, #B3955A)"
       strokeWidth="2.4"
       strokeLinecap="round"
     />
@@ -64,7 +64,7 @@ const AbheraEmblem = ({ size = 28, className = '' }) => (
     {/* 5. Center Fulcrum Diamond Pivot (Antique Gold) */}
     <polygon
       points="24,15.5 26.5,19 24,22.5 21.5,19"
-      fill="var(--antique-gold, #B08D57)"
+      fill="var(--antique-gold, #B3955A)"
     />
 
     {/* 6. Left Scale Pan & Suspension Cords */}
@@ -94,13 +94,13 @@ const AbheraEmblem = ({ size = 28, className = '' }) => (
     {/* 8. Apex Statutory Diamond Seal (Antique Gold Accent) */}
     <polygon
       points="24,5 26,8 24,11 22,8"
-      fill="var(--antique-gold, #B08D57)"
+      fill="var(--antique-gold, #B3955A)"
     />
 
     {/* 9. Open Statutory Book / Pedestal Base */}
     <path
       d="M15 39.5L24 36L33 39.5V42L24 38.5L15 42V39.5Z"
-      fill="var(--antique-gold, #B08D57)"
+      fill="var(--antique-gold, #B3955A)"
       fillOpacity="0.9"
     />
   </svg>
