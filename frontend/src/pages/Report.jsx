@@ -270,15 +270,15 @@ const Report = () => {
 
       if (isFirstPage) {
         // Primary Burgundy Banner (34mm height)
-        pdf.setFillColor(122, 38, 58); // Burgundy #7A263A
+        pdf.setFillColor(123, 38, 57); // Burgundy #7B2639
         pdf.rect(0, 0, pWidth, 34, 'F');
 
         // Antique Gold Accent Line
-        pdf.setFillColor(176, 141, 87); // Antique Gold #B08D57
+        pdf.setFillColor(179, 149, 90); // Antique Gold #B3955A
         pdf.rect(0, 33.2, pWidth, 0.8, 'F');
 
         // 1. ABHERA
-        pdf.setTextColor(255, 255, 255);
+        pdf.setTextColor(255, 253, 248);
         pdf.setFont('times', 'bold');
         pdf.setFontSize(18);
         pdf.text('ABHERA', centerX, 10, { align: 'center' });
@@ -286,36 +286,36 @@ const Report = () => {
         // 2. TAGLINE
         pdf.setFont('helvetica', 'normal');
         pdf.setFontSize(7.5);
-        pdf.setTextColor(247, 244, 238); // Legal Ivory #F7F4EE
+        pdf.setTextColor(245, 241, 232); // Warm Ivory #F5F1E8
         pdf.text('Your Story. Understood. Your Rights. Empowered.', centerX, 15.5, { align: 'center' });
 
         // 3. INCIDENT ASSISTANCE REPORT
         pdf.setFont('times', 'bold');
         pdf.setFontSize(11);
-        pdf.setTextColor(255, 255, 255);
+        pdf.setTextColor(255, 253, 248);
         pdf.text('INCIDENT ASSISTANCE REPORT', centerX, 23.5, { align: 'center' });
 
         // 4. CONFIDENTIAL ASSISTANCE DOCUMENT
         pdf.setFont('helvetica', 'bold');
         pdf.setFontSize(6.5);
-        pdf.setTextColor(208, 183, 122); // Gold Light #D0B77A
+        pdf.setTextColor(215, 193, 139); // Soft Gold #D7C18B
         pdf.text('CONFIDENTIAL ASSISTANCE DOCUMENT', centerX, 28.5, { align: 'center' });
       } else {
         // Running Top Header for Pages 2+ (12mm height)
-        pdf.setFillColor(122, 38, 58); // Burgundy #7A263A
+        pdf.setFillColor(123, 38, 57); // Burgundy #7B2639
         pdf.rect(0, 0, pWidth, 12, 'F');
 
-        pdf.setFillColor(176, 141, 87); // Antique Gold #B08D57
+        pdf.setFillColor(179, 149, 90); // Antique Gold #B3955A
         pdf.rect(0, 11.4, pWidth, 0.6, 'F');
 
-        pdf.setTextColor(255, 255, 255);
+        pdf.setTextColor(255, 253, 248);
         pdf.setFont('times', 'bold');
         pdf.setFontSize(10);
         pdf.text('ABHERA', margin, 8);
 
         pdf.setFont('helvetica', 'bold');
         pdf.setFontSize(8);
-        pdf.setTextColor(247, 244, 238);
+        pdf.setTextColor(245, 241, 232);
         pdf.text('INCIDENT ASSISTANCE REPORT', centerX, 8, { align: 'center' });
 
         pdf.setFont('helvetica', 'normal');
@@ -336,8 +336,8 @@ const Report = () => {
     y = 41;
 
     // Cover Metadata Block (Clean 3-column card)
-    doc.setFillColor(244, 241, 234); // Legal Ivory background #F4F1EA
-    doc.setDrawColor(216, 210, 199); // Warm Stone border #D8D2C7
+    doc.setFillColor(245, 241, 232); // Warm Ivory background #F5F1E8
+    doc.setDrawColor(221, 214, 201); // Warm Border #DDD6C9
     doc.roundedRect(margin, y, contentWidth, 18, 2, 2, 'FD');
 
     const colW = contentWidth / 3;
@@ -345,42 +345,42 @@ const Report = () => {
     // Column 1: CASE NO.
     doc.setFontSize(7.5);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(130, 145, 163); // Slate Gray #8291A3
+    doc.setTextColor(102, 115, 132); // Slate #667384
     doc.text('CASE NO.', margin + 6, y + 6);
     doc.setFontSize(9.5);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(32, 42, 53); // Charcoal #202A35
+    doc.setTextColor(32, 40, 51); // Charcoal #202833
     doc.text(safeStr(report.submission_id, 'N/A'), margin + 6, y + 12);
 
     // Column 2: DATE & TIME
     doc.setFontSize(7.5);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(130, 145, 163);
+    doc.setTextColor(102, 115, 132);
     doc.text('DATE & TIME', margin + colW + 6, y + 6);
     doc.setFontSize(9);
     doc.setFont('helvetica', 'normal');
-    doc.setTextColor(32, 42, 53);
+    doc.setTextColor(32, 40, 51);
     doc.text(new Date().toLocaleString(), margin + colW + 6, y + 12);
 
     // Column 3: VERIFICATION
     doc.setFontSize(7.5);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(130, 145, 163);
+    doc.setTextColor(102, 115, 132);
     doc.text('VERIFICATION', margin + colW * 2 + 6, y + 6);
     doc.setFontSize(9);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(63, 107, 89); // Verified Green #3F6B59
+    doc.setTextColor(53, 104, 89); // Verified Green #356859
     doc.text('PostgreSQL Database Proven', margin + colW * 2 + 6, y + 12);
 
     y += 24;
 
     // TOP SUMMARY CARD: YOUR SITUATION AT A GLANCE (PDF)
     checkAddPage(32);
-    doc.setFillColor(255, 255, 255); // Paper White #FFFFFF
-    doc.setDrawColor(216, 210, 199);
+    doc.setFillColor(255, 253, 248); // Paper White #FFFDF8
+    doc.setDrawColor(221, 214, 201);
     doc.roundedRect(margin, y, contentWidth, 28, 2, 2, 'FD');
 
-    doc.setTextColor(8, 21, 37); // Midnight Navy #081525
+    doc.setTextColor(10, 18, 32); // Midnight Navy #0A1220
     doc.setFont('times', 'bold');
     doc.setFontSize(10);
     doc.text('YOUR SITUATION AT A GLANCE', margin + 6, y + 6.5);
@@ -399,36 +399,36 @@ const Report = () => {
 
     // Grid Column 1 (Left Column)
     doc.setFontSize(7.5);
-    doc.setTextColor(130, 145, 163);
+    doc.setTextColor(102, 115, 132);
     doc.setFont('helvetica', 'bold');
     doc.text('IDENTIFIED CONCERN', margin + 6, y + 13);
     doc.setFontSize(9);
-    doc.setTextColor(63, 107, 89); // Verified Green #3F6B59
+    doc.setTextColor(53, 104, 89); // Verified Green #356859
     doc.text(conc, margin + 6, y + 18);
 
     doc.setFontSize(7.5);
-    doc.setTextColor(130, 145, 163);
+    doc.setTextColor(102, 115, 132);
     doc.setFont('helvetica', 'bold');
     doc.text('PERSON INVOLVED', margin + 6, y + 23);
     doc.setFontSize(9);
-    doc.setTextColor(32, 42, 53);
+    doc.setTextColor(32, 40, 51);
     doc.text(perp, margin + 40, y + 23);
 
     // Grid Column 2 (Right Column)
     doc.setFontSize(7.5);
-    doc.setTextColor(130, 145, 163);
+    doc.setTextColor(102, 115, 132);
     doc.setFont('helvetica', 'bold');
     doc.text('LOCATION / PLATFORM', margin + 6 + halfW, y + 13);
     doc.setFontSize(9);
-    doc.setTextColor(32, 42, 53);
+    doc.setTextColor(32, 40, 51);
     doc.text(loc, margin + 6 + halfW, y + 18);
 
     doc.setFontSize(7.5);
-    doc.setTextColor(130, 145, 163);
+    doc.setTextColor(102, 115, 132);
     doc.setFont('helvetica', 'bold');
     doc.text('SAFETY RESPONSE', margin + 6 + halfW, y + 23);
     doc.setFontSize(9);
-    doc.setTextColor(32, 42, 53);
+    doc.setTextColor(32, 40, 51);
     doc.text(safeAns, margin + 6 + halfW + 35, y + 23);
 
     y += 34;
@@ -437,15 +437,15 @@ const Report = () => {
       checkAddPage(22);
       
       // Number Badge in Midnight Navy
-      doc.setFillColor(8, 21, 37); // Midnight Navy #081525
+      doc.setFillColor(10, 18, 32); // Midnight Navy #0A1220
       doc.roundedRect(margin, y, 9, 7.5, 1, 1, 'F');
-      doc.setTextColor(255, 255, 255);
+      doc.setTextColor(255, 253, 248);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8);
       doc.text(numStr, margin + 2, y + 5.2);
 
       // Section Title in Midnight Navy
-      doc.setTextColor(8, 21, 37);
+      doc.setTextColor(10, 18, 32);
       doc.setFont('times', 'bold');
       doc.setFontSize(11);
       doc.text(titleStr.toUpperCase(), margin + 12, y + 5.2);
@@ -454,13 +454,13 @@ const Report = () => {
       if (noteStr) {
         doc.setFont('helvetica', 'italic');
         doc.setFontSize(8);
-        doc.setTextColor(130, 145, 163);
+        doc.setTextColor(102, 115, 132);
         doc.text(noteStr, margin, y);
         y += 5;
       }
 
       // Section separator line
-      doc.setDrawColor(216, 210, 199);
+      doc.setDrawColor(221, 214, 201);
       doc.line(margin, y, margin + contentWidth, y);
       y += 6;
     };
@@ -474,20 +474,20 @@ const Report = () => {
     const quoteBoxH = Math.max(16, summaryLines.length * 4.5 + 8);
     checkAddPage(quoteBoxH + 4);
 
-    doc.setFillColor(244, 241, 234); // Legal Ivory #F4F1EA
-    doc.setDrawColor(216, 210, 199);
+    doc.setFillColor(245, 241, 232); // Warm Ivory #F5F1E8
+    doc.setDrawColor(221, 214, 201);
     doc.roundedRect(margin, y, contentWidth, quoteBoxH, 2, 2, 'FD');
-    doc.setFillColor(182, 154, 97); // Antique Gold accent #B69A61
+    doc.setFillColor(179, 149, 90); // Antique Gold accent #B3955A
     doc.rect(margin, y, 2.5, quoteBoxH, 'F');
 
     doc.setFontSize(7.5);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(118, 42, 61); // Burgundy #762A3D
+    doc.setTextColor(123, 38, 57); // Burgundy #7B2639
     doc.text('YOUR ORIGINAL DESCRIPTION', margin + 6, y + 6);
 
     doc.setFontSize(9);
     doc.setFont('helvetica', 'italic');
-    doc.setTextColor(32, 42, 53);
+    doc.setTextColor(32, 40, 51);
     doc.text(summaryLines, margin + 6, y + 11);
     y += quoteBoxH + 6;
 
@@ -496,7 +496,7 @@ const Report = () => {
       checkAddPage(12);
       doc.setFontSize(7.5);
       doc.setFont('helvetica', 'bold');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text('FOLLOW-UP RESPONSES', margin, y);
       y += 5;
 
@@ -506,18 +506,18 @@ const Report = () => {
         const cardH = (qLines.length + aLines.length) * 4.5 + 6;
         checkAddPage(cardH + 4);
 
-        doc.setFillColor(255, 255, 255);
-        doc.setDrawColor(216, 210, 199);
+        doc.setFillColor(255, 253, 248);
+        doc.setDrawColor(221, 214, 201);
         doc.roundedRect(margin, y, contentWidth, cardH, 1.5, 1.5, 'FD');
 
         doc.setFontSize(8.5);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(qLines, margin + 4, y + 5);
         const qH = qLines.length * 4.5;
 
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(aLines, margin + 4, y + 5 + qH);
         y += cardH + 4;
       });
@@ -529,30 +529,30 @@ const Report = () => {
     const labels = norm.incidentLabels;
     if (labels.length > 0) {
       checkAddPage(20);
-      doc.setFillColor(244, 241, 234);
-      doc.setDrawColor(216, 210, 199);
+      doc.setFillColor(245, 241, 232);
+      doc.setDrawColor(221, 214, 201);
       doc.roundedRect(margin, y, contentWidth, 22, 2, 2, 'FD');
 
       doc.setFontSize(7.5);
       doc.setFont('helvetica', 'bold');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text('IDENTIFIED CATEGORIES', margin + 6, y + 6);
 
       doc.setFontSize(10);
       doc.setFont('helvetica', 'bold');
-      doc.setTextColor(8, 21, 37); // Midnight Navy #081525
+      doc.setTextColor(10, 18, 32); // Midnight Navy #0A1220
       doc.text(labels.join('   |   ').toUpperCase(), margin + 6, y + 12);
 
       doc.setFontSize(7.5);
       doc.setFont('helvetica', 'italic');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text('Note: Model classification used for querying verified statutory database records; not a formal legal determination.', margin + 6, y + 17);
       y += 26;
     } else {
       checkAddPage(10);
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'italic');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text(norm.incidentMsg || 'Incident type could not be determined from the available model output.', margin, y);
       y += 10;
     }
@@ -566,18 +566,18 @@ const Report = () => {
         hasEntities = true;
         checkAddPage(12);
         const friendlyLabel = formatEntityLabel(lbl).toUpperCase();
-        doc.setFillColor(244, 241, 234);
-        doc.setDrawColor(216, 210, 199);
+        doc.setFillColor(245, 241, 232);
+        doc.setDrawColor(221, 214, 201);
         doc.roundedRect(margin, y, contentWidth, 11, 1.5, 1.5, 'FD');
 
         doc.setFontSize(7.5);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(130, 145, 163);
+        doc.setTextColor(102, 115, 132);
         doc.text(`${friendlyLabel}:`, margin + 4, y + 7);
 
         doc.setFontSize(9);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(vals.join(', '), margin + 65, y + 7);
         y += 14;
       }
@@ -586,7 +586,7 @@ const Report = () => {
       checkAddPage(10);
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text('No entities extracted from user narrative.', margin, y);
       y += 10;
     }
@@ -601,29 +601,29 @@ const Report = () => {
         const cardH = (qLines.length + aLines.length) * 4.5 + 6;
         checkAddPage(cardH + 4);
 
-        doc.setFillColor(244, 241, 234);
-        doc.setDrawColor(216, 210, 199);
+        doc.setFillColor(245, 241, 232);
+        doc.setDrawColor(221, 214, 201);
         doc.roundedRect(margin, y, contentWidth, cardH, 1.5, 1.5, 'FD');
 
         doc.setFontSize(8.5);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(qLines, margin + 4, y + 5);
         const qH = qLines.length * 4.5;
 
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(aLines, margin + 4, y + 5 + qH);
         y += cardH + 4;
       });
     } else {
       checkAddPage(12);
-      doc.setFillColor(244, 241, 234);
-      doc.setDrawColor(216, 210, 199);
+      doc.setFillColor(245, 241, 232);
+      doc.setDrawColor(221, 214, 201);
       doc.roundedRect(margin, y, contentWidth, 12, 1.5, 1.5, 'FD');
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text('NO ADDITIONAL RESPONSES RECORDED — No additional user question responses were recorded.', margin + 4, y + 7.5);
       y += 16;
     }
@@ -643,31 +643,31 @@ const Report = () => {
 
         checkAddPage(Math.min(cardH + 4, 40));
 
-        doc.setFillColor(255, 255, 255); // Paper White #FFFFFF
-        doc.setDrawColor(216, 210, 199); // Warm Stone border #D8D2C7
+        doc.setFillColor(255, 253, 248); // Paper White #FFFDF8
+        doc.setDrawColor(221, 214, 201); // Warm Border #DDD6C9
         doc.roundedRect(margin, y, contentWidth, cardH, 2, 2, 'FD');
-        doc.setFillColor(182, 154, 97); // Antique Gold #B69A61 accent left bar
+        doc.setFillColor(179, 149, 90); // Antique Gold #B3955A accent left bar
         doc.rect(margin, y, 2.5, cardH, 'F');
 
         doc.setFontSize(8);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(`ACT: ${actName.toUpperCase()}   |   SECTION: Section ${secNum}`, margin + 6, y + 6);
 
         doc.setFontSize(9.5);
         doc.setFont('times', 'bold');
-        doc.setTextColor(8, 21, 37); // Midnight Navy #081525
+        doc.setTextColor(10, 18, 32); // Midnight Navy #0A1220
         doc.text(title, margin + 6, y + 11.5);
 
         doc.setFontSize(8.5);
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(descLines, margin + 6, y + 17);
 
         const footerY = y + cardH - 5;
         doc.setFontSize(7.5);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(63, 107, 89); // Verified Green #3F6B59
+        doc.setTextColor(53, 104, 89); // Verified Green #356859
         doc.text('✓ PostgreSQL Verified Database Record', margin + 6, footerY);
 
         y += cardH + 6;
@@ -676,7 +676,7 @@ const Report = () => {
       checkAddPage(10);
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text(norm.legalMsg || 'Information not available in the provided knowledge base.', margin, y);
       y += 10;
     }
@@ -690,20 +690,20 @@ const Report = () => {
         const cardH = stepLines.length * 4.5 + 6;
         checkAddPage(cardH + 4);
 
-        doc.setFillColor(255, 255, 255);
-        doc.setDrawColor(216, 210, 199);
+        doc.setFillColor(255, 253, 248);
+        doc.setDrawColor(221, 214, 201);
         doc.roundedRect(margin, y, contentWidth, cardH, 1.5, 1.5, 'FD');
 
-        doc.setFillColor(8, 21, 37);
+        doc.setFillColor(10, 18, 32);
         doc.roundedRect(margin + 3, y + 3, 7, 6, 1, 1, 'F');
         doc.setFontSize(7.5);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(255, 255, 255);
+        doc.setTextColor(255, 253, 248);
         doc.text(String(idx + 1).padStart(2, '0'), margin + 4.2, y + 7);
 
         doc.setFontSize(8.5);
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(stepLines, margin + 13, y + 7);
 
         y += cardH + 4;
@@ -712,7 +712,7 @@ const Report = () => {
       checkAddPage(10);
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text('No suggested next steps available.', margin, y);
       y += 10;
     }
@@ -730,28 +730,28 @@ const Report = () => {
         const locStr = dist ? `${dist}, ${st}` : st;
 
         checkAddPage(22);
-        doc.setFillColor(255, 255, 255);
-        doc.setDrawColor(216, 210, 199);
+        doc.setFillColor(255, 253, 248);
+        doc.setDrawColor(221, 214, 201);
         doc.roundedRect(margin, y, contentWidth, 20, 2, 2, 'FD');
 
         doc.setFontSize(7.5);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(130, 145, 163);
+        doc.setTextColor(102, 115, 132);
         doc.text(`TYPE: ${srvType.toUpperCase()}   |   LOCATION: ${locStr}`, margin + 6, y + 6);
 
         doc.setFontSize(10);
         doc.setFont('times', 'bold');
-        doc.setTextColor(8, 21, 37);
+        doc.setTextColor(10, 18, 32);
         doc.text(name, margin + 6, y + 11.5);
 
         doc.setFontSize(9);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(63, 107, 89);
+        doc.setTextColor(53, 104, 89);
         doc.text(`HELPLINE: ${contact}`, margin + 120, y + 11.5);
 
         doc.setFontSize(7.5);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(63, 107, 89);
+        doc.setTextColor(53, 104, 89);
         doc.text('✓ PostgreSQL Verified Support Database', margin + 6, y + 16.5);
 
         y += 24;
@@ -760,7 +760,7 @@ const Report = () => {
       checkAddPage(10);
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text(norm.supportMsg || 'No matching support service was found in the available support-services database.', margin, y);
       y += 10;
     }
@@ -774,18 +774,18 @@ const Report = () => {
         checkAddPage(noteLines.length * 4.5 + 4);
         doc.setFontSize(8.5);
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(32, 42, 53);
+        doc.setTextColor(32, 40, 51);
         doc.text(noteLines, margin + 4, y);
         y += noteLines.length * 4.5 + 2;
       });
     } else {
       checkAddPage(12);
-      doc.setFillColor(244, 241, 234);
-      doc.setDrawColor(216, 210, 199);
+      doc.setFillColor(245, 241, 232);
+      doc.setDrawColor(221, 214, 201);
       doc.roundedRect(margin, y, contentWidth, 12, 1.5, 1.5, 'FD');
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(130, 145, 163);
+      doc.setTextColor(102, 115, 132);
       doc.text('NO ADDITIONAL EVIDENCE NOTES — No additional evidence notes were attached to this report.', margin + 4, y + 7.5);
       y += 16;
     }
@@ -795,8 +795,8 @@ const Report = () => {
     drawSectionHeader('09', 'Model Prediction Information', 'Technical model provenance and inference parameters.');
     const modelInfo = report.model_prediction_information;
     checkAddPage(22);
-    doc.setFillColor(255, 255, 255);
-    doc.setDrawColor(216, 210, 199);
+    doc.setFillColor(255, 253, 248);
+    doc.setDrawColor(221, 214, 201);
     doc.roundedRect(margin, y, contentWidth, 20, 2, 2, 'FD');
 
     const bertTask = safeStr(modelInfo?.bert_classifier?.task, 'Multi-Label Incident Classification');
@@ -806,14 +806,14 @@ const Report = () => {
 
     doc.setFontSize(8);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(32, 42, 53);
+    doc.setTextColor(32, 40, 51);
     doc.text(`BERT CLASSIFIER: ${bertTask} (${bertArch})`, margin + 6, y + 6);
 
     doc.text(`NER EXTRACTOR: ${nerTask} (${nerArch})`, margin + 6, y + 11.5);
 
     doc.setFontSize(7.5);
     doc.setFont('helvetica', 'italic');
-    doc.setTextColor(130, 145, 163);
+    doc.setTextColor(102, 115, 132);
     doc.text(`DATA PROVENANCE: ${safeStr(modelInfo?.data_provenance, 'Strict Anti-Hallucination Verified Database Records')}`, margin + 6, y + 16.5);
     y += 26;
 
@@ -827,13 +827,13 @@ const Report = () => {
     const discH = discLines.length * 4.5 + 8;
     checkAddPage(discH + 4);
 
-    doc.setFillColor(255, 255, 255);
-    doc.setDrawColor(216, 210, 199);
+    doc.setFillColor(255, 253, 248);
+    doc.setDrawColor(221, 214, 201);
     doc.roundedRect(margin, y, contentWidth, discH, 2, 2, 'FD');
 
     doc.setFontSize(8);
     doc.setFont('helvetica', 'normal');
-    doc.setTextColor(130, 145, 163);
+    doc.setTextColor(102, 115, 132);
     doc.text(discLines, margin + 5, y + 6);
 
     // Footer for all pages
@@ -842,8 +842,8 @@ const Report = () => {
       doc.setPage(i);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(7.5);
-      doc.setTextColor(130, 145, 163);
-      doc.setDrawColor(216, 210, 199);
+      doc.setTextColor(102, 115, 132);
+      doc.setDrawColor(221, 214, 201);
       doc.line(margin, pageHeight - 12, pageWidth - margin, pageHeight - 12);
       doc.text(`ABHERA Incident Analysis Report  |  Case ID: ${safeStr(report.submission_id, 'N/A')}`, margin, pageHeight - 7);
       doc.text(`Page ${i} of ${totalPages}`, pageWidth - margin, pageHeight - 7, { align: 'right' });
