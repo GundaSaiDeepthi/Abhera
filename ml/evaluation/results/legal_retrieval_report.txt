@@ -1,0 +1,42 @@
+================================================================================
+LEGAL RETRIEVAL EVALUATION REPORT
+================================================================================
+1. EVALUATION METADATA:
+   - Project Root: D:\Abhera(Mini)
+   - Legal Knowledge Base: D:\Abhera(Mini)\data\laws.csv (33 law records)
+   - Evaluation Split: D:\Abhera(Mini)\ml\preprocessing\test_data.csv (164 held-out incident queries)
+   - Evaluated Queries: 164
+   - Retrieval Methodology: Category-Based Relational Database Query (Rule-Based Relational Filter)
+
+2. RETRIEVAL ARCHITECTURE DEFINITION:
+   - Method: Predicted BERT Incident Labels -> SQL Filter on data/laws.csv
+   - Ranking Criterion: Primary sorting by canonical law ID in laws.csv
+   - Fallback Strategy: Exact "Information not available" message if no categories match
+
+3. END-TO-END SYSTEM RETRIEVAL PERFORMANCE (BERT + Legal Mapping):
+   - Mean Reciprocal Rank (MRR) : 0.9163
+   ----------------------------------------------------------------------
+   Metric         | Top-1   | Top-3   | Top-5   | Top-10
+   ----------------------------------------------------------------------
+   Hit Rate@K     | 0.9085  | 0.9085  | 0.9085  | 0.9756
+   Precision@K    | 0.9085  | 0.9065  | 0.9049  | 0.9089
+   Recall@K       | 0.1587  | 0.4741  | 0.6940  | 0.9232
+
+4. ORACLE CATEGORY RETRIEVAL PERFORMANCE (Ground-Truth Labels -> Legal Mapping):
+   - Mean Reciprocal Rank (MRR) : 1.0000
+   ----------------------------------------------------------------------
+   Metric         | Top-1   | Top-3   | Top-5   | Top-10
+   ----------------------------------------------------------------------
+   Hit Rate@K     | 1.0000  | 1.0000  | 1.0000  | 1.0000
+   Precision@K    | 1.0000  | 1.0000  | 1.0000  | 1.0000
+   Recall@K       | 0.2266  | 0.5578  | 0.7875  | 0.9873
+
+5. ERROR & LIMITATION ANALYSIS:
+   - System relies on BERT multi-label classification accuracy to route to legal provisions.
+   - For multi-provision categories (e.g. SH has 8 laws), simple category filtering returns all matching laws without dense relevance ranking within the category.
+   - Dense semantic vector search (e.g. BM25 or embedding similarity) could be used in future research to rank provisions within the matched category.
+
+6. ARTIFACT LOCATION MAP:
+   - JSON Results: D:\Abhera(Mini)\ml\evaluation\results\legal_retrieval_metrics.json
+   - Text Report: D:\Abhera(Mini)\ml\evaluation\results\legal_retrieval_report.txt
+================================================================================

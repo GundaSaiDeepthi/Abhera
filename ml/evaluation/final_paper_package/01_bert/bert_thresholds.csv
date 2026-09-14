@@ -1,0 +1,7 @@
+label,threshold,derived_from
+DV,0.65,val_data.csv (162 samples)
+SH,0.6,val_data.csv (162 samples)
+ST,0.64,val_data.csv (162 samples)
+CA,0.72,val_data.csv (162 samples)
+WH,0.54,val_data.csv (162 samples)
+OV,0.78,val_data.csv (162 samples)

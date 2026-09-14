@@ -217,6 +217,41 @@ class TestReportGenerator(unittest.TestCase):
         for key in required_keys:
             self.assertIn(key, report)
 
+    # 21. Questionnaire location fallback works when NER entities are empty
+    def test_21_location_fallback_from_questionnaire(self):
+        user_answers = [
+            {
+                "question_id": "Q_WH_LOCATION_01",
+                "question": "Did this occur at your workplace, during work-related events, or through work communication channels?",
+                "answer": "workplace",
+            }
+        ]
+        report = self.service.generate_report(
+            ner_entities=[],
+            user_answers=user_answers,
+            db_session=self.db,
+        )
+        self.assertIn("Workplace", report["extracted_information"]["LOCATION"])
+
+    # 22. NER location takes precedence over questionnaire fallback
+    def test_22_ner_location_takes_precedence(self):
+        ner_entities = [{"entity_group": "LOCATION", "word": "Office Building"}]
+        user_answers = [
+            {
+                "question_id": "Q_WH_LOCATION_01",
+                "question": "Did this occur at your workplace, during work-related events, or through work communication channels?",
+                "answer": "workplace",
+            }
+        ]
+        report = self.service.generate_report(
+            ner_entities=ner_entities,
+            user_answers=user_answers,
+            db_session=self.db,
+        )
+        self.assertIn("Office Building", report["extracted_information"]["LOCATION"])
+        self.assertNotIn("Workplace", report["extracted_information"]["LOCATION"])
+
+
 
 if __name__ == "__main__":
     unittest.main()

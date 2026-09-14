@@ -1,0 +1,327 @@
+evaluation_split,evaluation_row_id,evaluation_label_set,best_train_row_id,best_train_label_set,cosine_similarity,evaluation_text_hash,best_train_text_hash,evaluation_text_preview,best_train_text_preview
+validation,WSL_0580,SH|WH,WSL_0196,SH|WH,0.7958,d6824359615a,1b6216ca14f9,my team lead touched me without consent and excludes me from,my supervisor touched me without consent and excludes me fro
+validation,WSL_0161,ST,WSL_0410,ST,0.8239,9e9bd6ce8282,a4b718f33f4e,a classmate keeps messaging me obsessively despite being blo,my neighbor keeps messaging me obsessively despite being blo
+validation,WSL_0681,OV,WSL_0482,OV,0.7963,29460f155ebf,c4cfa3b92b81,my family vandalized my shop and left a threatening note.,my in-laws vandalized my shop and left a threatening note.
+validation,WSL_1025,SH,WSL_0181,SH,0.1643,f8d4df02da5d,9dbc679f9e09,i still can't fully process what happened — a family friend ,my neighbor forced himself on me despite me saying no clearl
+validation,WSL_0163,SH,WSL_0500,SH,0.7007,462fd511b619,b26b03bd189f,a man in the metro catcalled and followed me for several blo,a delivery man catcalled and followed me for several blocks.
+validation,WSL_0706,OV,WSL_0972,OV,0.8399,cc6b33a2d029,3bd65d665431,a local group are trying to evict me illegally with intimida,my family are trying to evict me illegally with intimidation
+validation,WSL_0812,DV,WSL_0815,DV,0.6233,e9effd7eeeb5,811ba5674c06,my in-laws threatened to kill me if i told my parents. this ,my stepfather threatened to kill me if i told my parents.
+validation,WSL_0153,OV,WSL_0248,OV,0.7061,6ef0c41438ea,b2f15acebe63,my landlord's men are threatening me over a property dispute,my family are threatening me over a property dispute.
+validation,WSL_0789,ST,WSL_0758,ST,0.6358,8be944a0828e,53cd22217329,a man i matched with on a dating app keeps calling me from d,a classmate keeps calling me from different numbers.
+validation,WSL_0809,CA,WSL_0179,CA,0.7685,de4f520e25d7,ae204b24f401,my former colleague created a fake profile using my photos t,a stranger online created a fake profile using my photos to 
+validation,WSL_0874,DV,WSL_0376,DV,0.8594,23077117033e,051778911f88,my stepfather threatens to throw me out of the house. it has,my mother-in-law threatens to throw me out of the house. it 
+validation,WSL_0112,DV,WSL_0257,DV,0.6247,84737f17d209,778c3dee09a8,my stepfather keeps a knife in the house and threatens me wi,my brother-in-law keeps a knife in the house and threatens m
+validation,WSL_0227,DV,WSL_0848,DV,0.8759,0214868a0b2e,9e5474d63fcc,my husband threatens to throw me out of the house. this has ,my in-laws threatens to throw me out of the house. this has 
+validation,WSL_0920,SH,WSL_0138,SH,0.6861,f65321581892,f09d24791311,a man on the bus made suggestive comments while collecting m,my landlord made suggestive comments while collecting money.
+validation,WSL_0104,OV,WSL_0799,OV,0.8004,4f2e45cd8ff8,60324652539f,a local group are threatening to harm me over a land dispute,my family are threatening to harm me over a land dispute.
+validation,WSL_0422,WH,WSL_0016,WH,0.8828,a9bd438c9cae,9477ce6e1817,my supervisor keeps making comments implying i should be fri,my internship supervisor keeps making comments implying i sh
+validation,WSL_0420,ST,WSL_0962,ST,0.7552,8b01fdf64d6d,2fecd4f5717d,a man i matched with on a dating app appears at my gym at th,a classmate appears at my gym at the exact same time every d
+validation,WSL_0868,SH,WSL_0192,SH,0.6602,0ee68f781d04,aacb65911e11,a man at the gym made inappropriate comments during a privat,a stranger at the market made inappropriate comments during 
+validation,WSL_0587,DV,WSL_0884,DV,0.5867,9f01293b8541,e8807314c23c,my husband and his mother slaps me in front of the children.,my husband and his mother humiliates me in front of guests e
+validation,WSL_0902,SH|CA,WSL_0579,SH|CA,0.7722,a425a76715b5,94fc86d23056,someone from my past sent me obscene images repeatedly despi,an anonymous account sent me obscene images repeatedly despi
+validation,WSL_0673,SH,WSL_0003,SH,0.6996,441a98212d17,eeb25fa30fcc,my tuition teacher made sexual comments about me in front of,my landlord made sexual comments about me in front of others
+validation,WSL_0120,DV,WSL_0430,DV,0.829,0a8d6e3500b6,00ea83873d01,my mother-in-law restricts me from speaking to my friends. t,my stepfather restricts me from speaking to my friends. this
+validation,WSL_0054,CA,WSL_0635,CA,0.7768,b02229f56b9c,a40edce7b94e,someone from college is sending death threats through anonym,a man i rejected is sending death threats through anonymous 
+validation,WSL_0152,WH,WSL_0607,WH,0.7815,53b061dc819e,ce02053fe2f6,a senior executive shared inappropriate content about me in ,a client shared inappropriate content about me in the team g
+validation,WSL_0404,DV|CA,WSL_0327,DV|CA,0.8781,e22a8ba22583,4afa703a228d,my partner controls my finances and beats me and leaked inti,my husband controls my finances and beats me and leaked inti
+validation,WSL_1079,ST|CA,WSL_1038,ST,0.2041,402972af9d47,4582c9396575,"ever since i rejected him, this man has been showing up wher","ever since i turned down his proposal, this man has been par"
+validation,WSL_0208,SH,WSL_0480,SH,0.7437,3a0b5ac4a8ea,b9b7e2973c00,my driving instructor tried to corner me and touch me agains,my landlord tried to corner me and touch me against my will.
+validation,WSL_0659,DV,WSL_0993,DV,0.8404,30e47c1323a5,3e5d4d1cd5ee,my husband and his mother locked me inside the house for day,my husband locked me inside the house for days. it happens a
+validation,WSL_0975,SH,WSL_0223,SH,0.7108,a5dd28414926,73423997ec11,a stranger at the market touched me inappropriately and acte,my neighbor touched me inappropriately and acted like nothin
+validation,WSL_0882,OV,WSL_0602,OV,0.8607,e207ce7805c4,2958e56ebc03,my relatives are threatening honor-based violence over my ma,my family are threatening honor-based violence over my marri
+validation,WSL_0009,OV,WSL_0248,OV,0.7472,f065c6a1b501,b2f15acebe63,my community are threatening me over a property dispute.,my family are threatening me over a property dispute.
+validation,WSL_0931,CA,WSL_0246,CA,0.8649,f20851fc51d6,9145fd1ca175,a man i rejected is threatening to leak my chats unless i pa,someone is threatening to leak my chats unless i pay money.
+validation,WSL_0037,CA,WSL_0866,CA,0.8146,9f931d17b42d,c6465880a75a,a stranger online is threatening to post my private photos o,someone is threatening to post my private photos online.
+validation,WSL_0453,WH,WSL_0518,WH,0.8969,3b7c0c658c69,449603bb256d,my internship supervisor insists on private one-on-one meeti,my supervisor insists on private one-on-one meetings.
+validation,WSL_0652,OV,WSL_0228,OV,0.7578,9117b0dad0ef,7275583ff7d3,my landlord's men sent moneylenders to threaten me for repay,my family sent moneylenders to threaten me for repayment.
+validation,WSL_0254,SH|CA,WSL_0778,SH|CA,0.8004,0c0fd00e1cac,bebf00f2e207,a stranger online made lewd comments about me publicly onlin,someone from my past made lewd comments about me publicly on
+validation,WSL_0304,WH,WSL_0716,WH,0.9097,2d4acb8a8e80,c7bd0ab59b24,my internship supervisor threatened a bad review if i didn't,my supervisor threatened a bad review if i didn't meet him o
+validation,WSL_0947,ST,WSL_0274,ST,0.6846,c3006204c4c9,0b9351042347,someone i rejected online keeps contacting my family members,a classmate keeps contacting my family members.
+validation,WSL_0572,DV|CA,WSL_0782,DV|CA,0.8413,0d022e3e6368,6fba55903cc9,my husband hits me regularly and leaked intimate photos to m,my partner hits me regularly and leaked intimate photos to m
+validation,WSL_0624,CA,WSL_0911,CA,0.7475,79b0e6f7fef6,f0f3695f5025,someone hacked my social media account.,a stranger online hacked my social media account.
+validation,WSL_0820,DV,WSL_0175,DV,0.5434,26f1ed1afb4d,3a63f4b8d335,my husband broke my arm last year during a fight. i am scare,my husband pushed me down the stairs during a fight. i am sc
+validation,WSL_1058,CA,WSL_0911,CA,0.2617,ede65de1133c,f0f3695f5025,a stranger online has figured out my daily schedule from my ,a stranger online hacked my social media account.
+validation,WSL_0822,DV,WSL_0282,DV,0.9133,d697cb0e2936,4e3a6a14ce98,my father-in-law broke my arm last year during a fight. this,my brother-in-law broke my arm last year during a fight. thi
+validation,WSL_0263,ST,WSL_0193,ST,0.7403,7a70fd71f928,296326c9d2cc,someone i rejected online watches my house through his windo,my neighbor watches my house through his window constantly.
+validation,WSL_0611,DV,WSL_0873,DV,0.4532,c871cb0382e6,d6a9270d8abf,my husband starves me for days as punishment. this started r,my husband's family starves me for days as punishment. it ha
+validation,WSL_0298,CA,WSL_0351,CA,0.7508,6710fdcf4455,19e2689c106e,a man i rejected keeps sending me abusive explicit messages.,a stranger online keeps sending me abusive explicit messages
+validation,WSL_0415,OV,WSL_0256,OV,0.817,059174793156,c0354802e824,my community are pressuring me into a marriage i don't want.,my family are pressuring me into a marriage i don't want.
+validation,WSL_0151,DV,WSL_0753,DV,0.6036,046b99aa8ab5,602370503914,my in-laws throws things at me during arguments. it happens ,my husband throws things at me during arguments.
+validation,WSL_0910,DV,WSL_0056,DV,0.7272,506e474588f8,c781e23e42fa,my husband and his mother hits me whenever he comes home dru,my mother-in-law hits me whenever he comes home drunk.
+validation,WSL_0779,CA,WSL_0829,CA,0.7774,f5b40a5c72d1,ef4123b6351a,my former colleague hacked my email to message my contacts i,someone hacked my email to message my contacts inappropriate
+validation,WSL_0641,WH,WSL_0903,WH,0.8937,3306a2079477,f5e37f47090b,my internship supervisor shared inappropriate content about ,my supervisor shared inappropriate content about me in the t
+validation,WSL_1023,SH,WSL_1006,DV,0.1089,addfbf14775f,435c55c016f7,this has happened more than once now — my building's securit,"yesterday my husband threw a chair at me during an argument,"
+validation,WSL_0551,WH,WSL_0532,WH,0.8276,9e2192f91aa8,2691bf3cf491,my boss threatened a bad review if i didn't meet him outside,a coworker threatened a bad review if i didn't meet him outs
+validation,WSL_0913,ST,WSL_0045,ST,0.7893,4b90ef68a47a,0f3576cd6896,a man i don't know left notes on my car every day for two we,a classmate left notes on my car every day for two weeks.
+validation,WSL_0489,DV,WSL_0396,DV,0.6175,6bc8e8e50936,6a551c82a580,my in-laws hits me whenever he comes home drunk. this starte,my stepfather hits me whenever he comes home drunk.
+validation,WSL_0711,OV,WSL_0308,OV,0.7115,0817fda6a593,dcb8e3d2e7a7,my landlord's men forced me into an early marriage.,my family forced me into an early marriage.
+validation,WSL_0148,WH,WSL_0781,WH,0.7983,0fe45809bdac,c7eda12d50d8,a client excludes me from meetings since i rejected his adva,a coworker excludes me from meetings since i rejected his ad
+validation,WSL_0147,SH,WSL_0480,SH,0.8005,b3a5601edf66,b9b7e2973c00,my neighbor tried to corner me and touch me against my will.,my landlord tried to corner me and touch me against my will.
+validation,WSL_0834,CA,WSL_0999,CA,0.8256,6620eed287f2,d4f077cf8bf8,someone keeps sending me threatening messages after i stoppe,a man i rejected keeps sending me threatening messages after
+validation,WSL_0346,DV,WSL_0589,DV,0.7073,f9fbe98285e0,153b51fbf315,my father-in-law controls all my money and won't let me work,my brother-in-law controls all my money and won't let me wor
+validation,WSL_0856,SH,WSL_0645,SH,0.6426,fd4ea89a21b9,397fbb4a3e01,my driving instructor touched my hand inappropriately during,my neighbor touched my hand inappropriately during a session
+validation,WSL_1027,SH,WSL_0266,SH,0.2021,138acab44f56,6a91c78792d5,i was at a religious gathering when an elderly man touched m,a delivery man touched me inappropriately and acted like not
+validation,WSL_0660,ST,WSL_0619,ST,0.6983,e58c9ff5dee8,5d604d314715,a man i don't know tracks my location through mutual friends,a classmate tracks my location through mutual friends.
+validation,WSL_0771,SH,WSL_0400,SH,0.7422,e9dd16daa1d9,183de3baa783,a man on the bus kept staring and making explicit comments.,a man on the street kept staring and making explicit comment
+validation,WSL_0349,DV,WSL_0457,DV,0.6222,ce7a626198e0,e86dfa76a663,my stepfather broke my arm last year during a fight.,my in-laws broke my arm last year during a fight. this start
+validation,WSL_0464,OV,WSL_0972,OV,0.8217,44c093aef4bc,3bd65d665431,my landlord's men are trying to evict me illegally with inti,my family are trying to evict me illegally with intimidation
+validation,WSL_0326,ST,WSL_0085,ST,0.7879,f961e234f1d1,35081f75e297,my ex-boyfriend has been parking outside my workplace every ,a classmate has been parking outside my workplace every even
+validation,WSL_0187,SH,WSL_0003,SH,0.7477,a4a913e2d020,eeb25fa30fcc,a delivery man made sexual comments about me in front of oth,my landlord made sexual comments about me in front of others
+validation,WSL_0124,OV,WSL_0228,OV,0.7982,06795cd176e1,7275583ff7d3,my relatives sent moneylenders to threaten me for repayment.,my family sent moneylenders to threaten me for repayment.
+validation,WSL_0986,SH,WSL_0912,SH,0.7566,6c6bc94891e8,fb01998011e8,a man on the street tried to start inappropriate conversatio,a man on the bus tried to start inappropriate conversations 
+validation,WSL_0609,SH,WSL_0669,SH,0.7127,88a1bae832a1,90d7a102fe75,my neighbor made lewd comments about my body.,my landlord made lewd comments about my body.
+validation,WSL_0144,CA,WSL_0846,CA,0.7916,8c41f5a1be11,29b112045216,my ex-partner is threatening to leak our private videos.,my ex-boyfriend is threatening to leak our private videos.
+validation,WSL_0752,DV,WSL_0862,DV,0.6176,40a84a022b08,f7fc9c87813d,my husband's family pushed me down the stairs during a fight,my in-laws pushed me down the stairs during a fight.
+validation,WSL_1066,WH,WSL_0319,WH,0.1204,1a19e4325b5d,2a6220525cfc,my internship coordinator has been sending increasingly pers,my internship supervisor sends me inappropriate messages on 
+validation,WSL_0198,WH,WSL_0797,WH,0.7624,3fef082cf8cb,b77d7a358d72,a vendor at work insists on private one-on-one meetings.,a client insists on private one-on-one meetings.
+validation,WSL_0610,SH,WSL_0645,SH,0.6372,5e87169d101a,397fbb4a3e01,a man in the metro touched my hand inappropriately during a ,my neighbor touched my hand inappropriately during a session
+validation,WSL_0837,DV,WSL_0985,DV,0.6087,01678f2c9a62,ec4c74cf6043,my in-laws keeps demanding more dowry from my parents.,my stepfather keeps demanding more dowry from my parents. th
+validation,WSL_0280,DV,WSL_0993,DV,0.8316,c80b0aebd418,3e5d4d1cd5ee,my mother-in-law locked me inside the house for days. it hap,my husband locked me inside the house for days. it happens a
+validation,WSL_0294,SH,WSL_0181,SH,0.731,c92d6bf34bf4,9dbc679f9e09,a guest at a party forced himself on me despite me saying no,my neighbor forced himself on me despite me saying no clearl
+validation,WSL_0960,WH,WSL_0683,WH,0.866,f58ae2df8e9b,c9e0855a3c23,a coworker keeps asking me to stay back late alone with him.,a client keeps asking me to stay back late alone with him.
+validation,WSL_0401,ST,WSL_0653,ST,0.8032,28de4c0d2ab4,a43fb319463d,a man from my building keeps following me from college to my,a classmate keeps following me from college to my bus stop e
+validation,WSL_0123,WH,WSL_0607,WH,0.7951,875a94863e16,ce02053fe2f6,my boss shared inappropriate content about me in the team gr,a client shared inappropriate content about me in the team g
+validation,WSL_0184,DV,WSL_0713,DV,0.7984,7ce5c2fa8d1c,7d39f6bb213b,my mother-in-law burnt my hand during an argument. it happen,my husband's family burnt my hand during an argument. it hap
+validation,WSL_0203,DV,WSL_0815,DV,0.7511,12a26dde2091,811ba5674c06,my mother-in-law threatened to kill me if i told my parents.,my stepfather threatened to kill me if i told my parents.
+validation,WSL_0439,DV|CA,WSL_0119,DV|CA,0.8376,80f0be626b95,39b8537f9d3b,my partner physically abuses me and leaked intimate photos t,my husband physically abuses me and leaked intimate photos t
+validation,WSL_0836,SH,WSL_0480,SH,0.7348,c43d99dcd0bd,b9b7e2973c00,a guest at a party tried to corner me and touch me against m,my landlord tried to corner me and touch me against my will.
+validation,WSL_0247,SH,WSL_0645,SH,0.6916,cc9498506eb8,397fbb4a3e01,a delivery man touched my hand inappropriately during a sess,my neighbor touched my hand inappropriately during a session
+validation,WSL_0416,DV,WSL_0325,DV,0.8797,36e62ba9de07,f4238e886004,my husband's family grabbed me by the hair and hit my head a,my mother-in-law grabbed me by the hair and hit my head agai
+validation,WSL_1046,ST,WSL_1038,ST,0.1089,9fe4047596b1,4582c9396575,i feel like i'm being watched constantly — this man has memo,"ever since i turned down his proposal, this man has been par"
+validation,WSL_0885,CA,WSL_0774,CA,0.7418,8a8039e5c500,6c2163547350,my ex-partner recorded me without consent and threatened to ,a man i rejected recorded me without consent and threatened 
+validation,WSL_1034,SH,WSL_0008,SH,0.2093,c2ffa297b43f,6352d8273e4c,an older relative has started making comments about my body ,a relative at a family function made lewd comments about my 
+validation,WSL_0889,CA,WSL_0829,CA,0.8131,bcd6ac5223da,ef4123b6351a,someone from college hacked my email to message my contacts ,someone hacked my email to message my contacts inappropriate
+validation,WSL_1021,SH,WSL_0765,SH,0.1921,c4186f6cbc0a,2e25e7cfda2b,it happened on my way home from work — a man on a motorcycle,a man on the bus made lewd comments about my body.
+validation,WSL_0130,SH,WSL_0645,SH,0.6509,3681331a605d,397fbb4a3e01,a senior at college touched my hand inappropriately during a,my neighbor touched my hand inappropriately during a session
+validation,WSL_0638,SH,WSL_0271,SH,0.7303,1412a14fc2a3,baae21391ac4,a rickshaw driver tried to touch me before i managed to get ,a senior at college tried to touch me before i managed to ge
+validation,WSL_0403,SH|CA,WSL_0471,SH|CA,0.7835,88f3d5afc080,283deab3c696,someone from my past sends me sexually explicit messages des,a stranger online sends me sexually explicit messages despit
+validation,WSL_0906,OV,WSL_0799,OV,0.7794,a7a5757b4815,60324652539f,my landlord's men are threatening to harm me over a land dis,my family are threatening to harm me over a land dispute.
+validation,WSL_0951,CA,WSL_0351,CA,0.7931,e5ce50c23e2b,19e2689c106e,a man i matched with online keeps sending me abusive explici,a stranger online keeps sending me abusive explicit messages
+validation,WSL_0736,SH|CA,WSL_0178,SH|CA,0.8407,68d413557972,ff6d6c472052,a stranger online sent me obscene images repeatedly and also,an anonymous account sent me obscene images repeatedly and a
+validation,WSL_0855,SH,WSL_0670,SH,0.6757,cae274a7b87e,8df7ad89d434,my tuition teacher groped me and disappeared into the crowd.,my neighbor groped me and disappeared into the crowd.
+validation,WSL_1037,ST,WSL_0059,ST,0.2473,52dc549c64b1,a8faead40a1f,a man from my gym has started showing up at my workplace too,a man from my building has been showing up at every place i 
+validation,WSL_0220,OV,WSL_0838,OV,0.7227,70b796a96dcb,871498f46e08,my in-laws ostracized my family after i filed a complaint.,a local group ostracized my family after i filed a complaint
+validation,WSL_0642,ST,WSL_0585,ST,0.6379,7a4e7a6250a3,5f02d31d602a,a man i matched with on a dating app has started waiting out,a former colleague has started waiting outside my apartment 
+validation,WSL_0002,ST|CA,WSL_0584,ST|CA,0.8585,8e42b6e67669,729a8908037f,my ex waits outside my house daily and also created a fake p,a man i rejected waits outside my house daily and also creat
+validation,WSL_0870,DV|CA,WSL_0751,DV|CA,0.8614,571033e3b619,a28a537ebf29,my partner physically abuses me and is blackmailing me with ,my husband physically abuses me and is blackmailing me with 
+validation,WSL_0929,SH,WSL_0833,SH,0.7352,38df67f50815,5b32f35b65ba,a delivery man pressed himself against me deliberately in a ,my neighbor pressed himself against me deliberately in a cro
+validation,WSL_0081,ST,WSL_0494,ST,0.6318,8ecf48291937,099c999524cf,a man i don't know waits outside my house every morning.,my neighbor waits outside my house every morning.
+validation,WSL_0625,WH,WSL_0166,WH,0.8288,c92f50c8abb4,8bfcdd983e85,a coworker makes sexual jokes directed at me in front of the,a client makes sexual jokes directed at me in front of the t
+validation,WSL_0968,ST|CA,WSL_0852,ST|CA,0.8461,2d6e51b48b09,d9e7262825a7,a stranger online tracks my location constantly and also cre,a man i rejected tracks my location constantly and also crea
+validation,WSL_0880,OV,WSL_0476,OV,0.8271,d46714ac75bc,a239b615ce64,my relatives are threatening my life over an inheritance dis,my family are threatening my life over an inheritance disput
+validation,WSL_0387,DV,WSL_0158,DV,0.8497,f7814421f645,7ed7c41168a3,my husband and his mother threatens to throw me out of the h,my husband's family threatens to throw me out of the house. 
+validation,WSL_1075,OV,WSL_1071,OV,0.1415,80af26a1568a,090c48cd0aa3,i've received anonymous threats after speaking publicly abou,"since i began a relationship my family disapproves of, i've "
+validation,WSL_0807,ST,WSL_0085,ST,0.6853,44f93f49ed46,35081f75e297,a man i matched with on a dating app has been parking outsid,a classmate has been parking outside my workplace every even
+validation,WSL_0510,SH,WSL_0833,SH,0.6965,b1e6c620a1ac,5b32f35b65ba,a man in the metro pressed himself against me deliberately i,my neighbor pressed himself against me deliberately in a cro
+validation,WSL_0268,WH,WSL_0159,WH,0.7483,e1479e48c2d7,727194600e8a,a senior executive keeps commenting on my appearance during ,a client keeps commenting on my appearance during meetings.
+validation,WSL_0944,DV|OV,WSL_0543,DV|OV,0.8649,fae375347901,906894f203be,my husband's family physically abuse me regularly and are th,my in-laws physically abuse me regularly and are threatening
+validation,WSL_0442,CA,WSL_0671,CA,0.8423,59a9d0422024,4bf733d879ca,a stranger online hacked my email to message my contacts ina,a man i matched with online hacked my email to message my co
+validation,WSL_0497,DV,WSL_0376,DV,0.9216,ea6ea50cd97a,051778911f88,my brother-in-law threatens to throw me out of the house. it,my mother-in-law threatens to throw me out of the house. it 
+validation,WSL_0830,WH,WSL_0744,WH,0.8272,fb5ab64c7c31,a32ba9733112,a coworker keeps making comments implying i should be friend,a client keeps making comments implying i should be friendli
+validation,WSL_0113,DV,WSL_0562,DV,0.8122,afd3c104b5ea,dd028aca57cc,my in-laws threatens to take away my children if i complain.,my husband threatens to take away my children if i complain.
+validation,WSL_0692,DV|CA,WSL_0751,DV|CA,0.681,a54b509e9896,a28a537ebf29,my husband hits me regularly and is blackmailing me with our,my husband physically abuses me and is blackmailing me with 
+validation,WSL_0233,OV,WSL_0741,OV,0.7722,f99f34ec750d,175592852740,my landlord's men tried to forcibly take me away from a publ,my relatives tried to forcibly take me away from a public pl
+validation,WSL_1002,DV,WSL_0376,DV,0.3152,74fe34f3734b,051778911f88,"for the past few months, my mother-in-law has been starving ",my mother-in-law threatens to throw me out of the house. it 
+validation,WSL_0608,CA,WSL_0998,CA,0.8313,423b141a2ae8,25e53c61cdd4,a man i rejected morphed my photos and circulated them in a ,someone morphed my photos and circulated them in a group cha
+validation,WSL_0672,DV,WSL_0583,DV,0.7149,ff8c9bbaabd1,56b931002abc,my father-in-law threatens to take away my children if i com,my mother-in-law threatens to take away my children if i com
+validation,WSL_0374,ST,WSL_0494,ST,0.7147,746d5944acd9,099c999524cf,a classmate waits outside my house every morning.,my neighbor waits outside my house every morning.
+validation,WSL_0827,OV,WSL_0741,OV,0.8244,ef160910a439,175592852740,my family tried to forcibly take me away from a public place,my relatives tried to forcibly take me away from a public pl
+validation,WSL_0664,WH,WSL_0701,WH,0.7523,bb468ef0bcf1,1e92d6c8199d,a client touched my shoulder inappropriately when alone.,my manager touched my shoulder inappropriately when alone.
+validation,WSL_0974,ST,WSL_0758,ST,0.781,8c2862cd0a38,53cd22217329,my neighbor keeps calling me from different numbers.,a classmate keeps calling me from different numbers.
+validation,WSL_0234,WH,WSL_0166,WH,0.7712,8819f36309a2,8bfcdd983e85,a vendor at work makes sexual jokes directed at me in front ,a client makes sexual jokes directed at me in front of the t
+validation,WSL_0819,OV,WSL_0838,OV,0.7286,59cc89016285,871498f46e08,my relatives ostracized my family after i filed a complaint.,a local group ostracized my family after i filed a complaint
+validation,WSL_0907,SH,WSL_0138,SH,0.717,5bb9fb32f114,f09d24791311,a rickshaw driver made suggestive comments while collecting ,my landlord made suggestive comments while collecting money.
+validation,WSL_0677,OV,WSL_0514,OV,0.8129,692d414dc1a2,47b3db5513a5,a local group locked me in a room to stop me meeting someone,my family locked me in a room to stop me meeting someone.
+validation,WSL_0318,SH,WSL_0223,SH,0.7308,071cdf113255,73423997ec11,my tuition teacher touched me inappropriately and acted like,my neighbor touched me inappropriately and acted like nothin
+validation,WSL_0649,ST,WSL_0410,ST,0.7709,45a38056b006,a4b718f33f4e,someone i rejected online keeps messaging me obsessively des,my neighbor keeps messaging me obsessively despite being blo
+validation,WSL_0411,SH,WSL_0191,SH,0.6122,1632f0a9187b,ae031ed04186,a man on the bus exposed himself to me in public.,a delivery man exposed himself to me in public.
+validation,WSL_1028,SH,WSL_0869,SH,0.1147,60a739f7ba9f,e8ccb3028fb1,my cousin's husband has been making me uncomfortable at fami,a relative at a family function kept staring and making expl
+validation,WSL_0710,OV,WSL_0838,OV,0.7207,f1b875a53b8b,871498f46e08,my community ostracized my family after i filed a complaint.,a local group ostracized my family after i filed a complaint
+validation,WSL_0359,CA,WSL_0043,CA,0.7276,3aa7a9fcda6d,e2aad3be32a7,my former colleague is threatening to leak our private video,a stranger online is threatening to leak our private videos.
+validation,WSL_0259,SH,WSL_0670,SH,0.7361,b0ef22dee5d7,8df7ad89d434,my landlord groped me and disappeared into the crowd.,my neighbor groped me and disappeared into the crowd.
+validation,WSL_0745,WH,WSL_0544,WH,0.9072,aaa4655a3767,4c55517d9576,my supervisor keeps asking me to stay back late alone with h,my internship supervisor keeps asking me to stay back late a
+validation,WSL_0628,WH,WSL_0994,WH,0.8456,cd698165eb4b,2e0987792405,a senior executive keeps asking me to stay back late alone w,a senior colleague keeps asking me to stay back late alone w
+validation,WSL_0633,WH,WSL_0701,WH,0.6724,48a0605e52b8,1e92d6c8199d,a vendor at work touched my shoulder inappropriately when al,my manager touched my shoulder inappropriately when alone.
+validation,WSL_0283,CA,WSL_0635,CA,0.7853,fd6d685b7626,a40edce7b94e,my ex-boyfriend is sending death threats through anonymous e,a man i rejected is sending death threats through anonymous 
+validation,WSL_0377,SH,WSL_0341,SH,0.6861,bfd46a73b993,6f22ac6ac835,a man at the gym made suggestive comments while collecting m,a stranger at the market made suggestive comments while coll
+validation,WSL_0385,CA,WSL_0959,CA,0.8422,a3a03c548743,4c0f0c754be7,a man i matched with online is sending me rape threats throu,a stranger online is sending me rape threats through anonymo
+validation,WSL_0225,SH,WSL_0181,SH,0.7088,ea4cebe8c08f,9dbc679f9e09,a relative at a family function forced himself on me despite,my neighbor forced himself on me despite me saying no clearl
+validation,WSL_1063,WH,WSL_0612,WH,0.2399,fffdf3e0d916,5032cb16d785,my manager makes jokes at my expense in front of clients tha,my manager makes sexual jokes directed at me in front of the
+validation,WSL_0938,SH|CA,WSL_0498,SH|CA,0.8351,2359910092a4,197f3e85420e,a stranger online made lewd comments about me publicly onlin,an anonymous account made lewd comments about me publicly on
+validation,WSL_0473,CA,WSL_0351,CA,0.7058,22ab70976092,19e2689c106e,my former colleague keeps sending me abusive explicit messag,a stranger online keeps sending me abusive explicit messages
+validation,WSL_0348,SH,WSL_0145,SH,0.6781,bb76f7321185,c1d7d888b145,my neighbor exposed himself to me in public.,my landlord exposed himself to me in public.
+validation,WSL_0506,SH,WSL_0145,SH,0.5742,f480631eda88,c1d7d888b145,a relative at a family function exposed himself to me in pub,my landlord exposed himself to me in public.
+validation,WSL_0640,DV,WSL_0803,DV,0.675,6c6fb623accf,3808a7320661,my mother-in-law denies me medical treatment even when injur,my brother-in-law denies me medical treatment even when inju
+validation,WSL_1082,SH|CA|WH,WSL_0223,SH,0.13,c2df503b7011,73423997ec11,a coworker touched me inappropriately during a work trip and,my neighbor touched me inappropriately and acted like nothin
+validation,WSL_0798,WH,WSL_0701,WH,0.7589,03407b1de1f7,1e92d6c8199d,a coworker touched my shoulder inappropriately when alone.,my manager touched my shoulder inappropriately when alone.
+validation,WSL_0340,ST|CA,WSL_0384,ST|CA,0.8598,b2a901e2e8d0,50b227887e9d,a stranger online keeps following me everywhere i go and now,a man i rejected keeps following me everywhere i go and now 
+validation,WSL_0556,SH,WSL_0935,SH,0.7338,9b7154127e49,cb13381ba660,my neighbor tried to start inappropriate conversations repea,my landlord tried to start inappropriate conversations repea
+validation,WSL_0620,DV,WSL_0694,DV,0.8832,b87b9f539da3,1ae8496afafd,my husband keeps a knife in the house and threatens me with ,my father-in-law keeps a knife in the house and threatens me
+validation,WSL_0988,WH,WSL_0449,WH,0.8813,9ead50efccec,2c83c941f325,my internship supervisor excludes me from meetings since i r,my supervisor excludes me from meetings since i rejected his
+validation,WSL_0926,SH,WSL_0603,SH,0.6139,51bb37d118a0,5791f91936e5,a guest at a party forcibly kissed me without my consent.,my physiotherapist forcibly kissed me without my consent.
+validation,WSL_0646,SH,WSL_0595,SH,0.7596,5149ce0ef74f,f2b66aae2bb0,a man on the bus groped me and disappeared into the crowd.,a man on the street groped me and disappeared into the crowd
+validation,WSL_0978,ST,WSL_0358,ST,0.7862,f8139a573ed0,da5cb4dbba73,my neighbor follows my car every day on my commute.,a classmate follows my car every day on my commute.
+test,WSL_0557,WH,WSL_0159,WH,0.7446,d604ea05e7ea,727194600e8a,my team lead keeps commenting on my appearance during meetin,a client keeps commenting on my appearance during meetings.
+test,WSL_0682,SH,WSL_0905,SH,0.7244,8bed5f8fddb3,9f7d7c149911,a rickshaw driver catcalled and followed me for several bloc,my neighbor catcalled and followed me for several blocks.
+test,WSL_0578,SH,WSL_0138,SH,0.6757,b477fdc2dd9b,f09d24791311,a man on the street made suggestive comments while collectin,my landlord made suggestive comments while collecting money.
+test,WSL_0796,DV,WSL_0634,DV,0.5777,834e0ea25baf,e90790abf20d,my in-laws does not let me contact my family. this started r,my mother-in-law does not let me contact my family.
+test,WSL_0086,CA,WSL_0351,CA,0.7719,e1708a2d6633,19e2689c106e,someone keeps sending me abusive explicit messages.,a stranger online keeps sending me abusive explicit messages
+test,WSL_0243,CA,WSL_0866,CA,0.7461,9fa74f748629,c6465880a75a,an anonymous account is threatening to post my private photo,someone is threatening to post my private photos online.
+test,WSL_0699,CA,WSL_0185,CA,0.8412,718972eed17d,debbe966a234,a man i matched with online recorded me without consent and ,a stranger online recorded me without consent and threatened
+test,WSL_1007,DV,WSL_0156,ST,0.1167,6959a3bb6f9b,3316513686e2,i am writing this because i don't know who else to turn to —,a man i don't know keeps following me from college to my bus
+test,WSL_0160,WH,WSL_0921,WH,0.7522,9bbb8512bddf,409eea4acf63,my team lead denied me a raise after i rejected his advances,a client denied me a raise after i rejected his advances.
+test,WSL_0525,ST,WSL_0527,ST,0.7388,aba7edc55a0a,b50624c86b4a,a man i rejected on a matrimonial site keeps appearing uninv,a classmate keeps appearing uninvited wherever i mention i'l
+test,WSL_0036,SH,WSL_0905,SH,0.6922,7bf93552c460,9f7d7c149911,a guest at a party catcalled and followed me for several blo,my neighbor catcalled and followed me for several blocks.
+test,WSL_0541,DV,WSL_0883,DV,0.8859,d2f87def420a,d0abba8c033e,my brother-in-law drags me by the hair whenever dinner is la,my father-in-law drags me by the hair whenever dinner is lat
+test,WSL_0171,ST,WSL_0904,ST,0.8074,04aca3375ab0,9c33afe21e89,a classmate found my home address and shows up unannounced.,a former colleague found my home address and shows up unanno
+test,WSL_0655,CA,WSL_0351,CA,0.6827,742e94dccc22,19e2689c106e,an anonymous account keeps sending me abusive explicit messa,a stranger online keeps sending me abusive explicit messages
+test,WSL_1024,SH,WSL_0023,WH,0.1274,bda78f77d157,80f2f683d431,"during my internship, a senior employee kept finding excuses",my internship supervisor touched my shoulder inappropriately
+test,WSL_0990,WH,WSL_0159,WH,0.7775,142ddd306576,727194600e8a,a senior colleague keeps commenting on my appearance during ,a client keeps commenting on my appearance during meetings.
+test,WSL_0979,CA,WSL_0995,CA,0.836,7b1e73d2b784,16a8a16e1392,a stranger online keeps sending me threatening messages afte,a man i matched with online keeps sending me threatening mes
+test,WSL_0485,OV,WSL_0550,OV,0.7562,bff9d112dcdf,1335a3aa38fa,my landlord's men threatened to disown me over my relationsh,my family threatened to disown me over my relationship choic
+test,WSL_0734,DV,WSL_0694,DV,0.8664,736aaf7c7fcd,1ae8496afafd,my husband's family keeps a knife in the house and threatens,my father-in-law keeps a knife in the house and threatens me
+test,WSL_0900,OV,WSL_0550,OV,0.7977,2452e808f716,1335a3aa38fa,my relatives threatened to disown me over my relationship ch,my family threatened to disown me over my relationship choic
+test,WSL_0096,ST,WSL_0358,ST,0.6659,591919f85bfa,da5cb4dbba73,a man i matched with on a dating app follows my car every da,a classmate follows my car every day on my commute.
+test,WSL_0564,CA,WSL_0911,CA,0.6703,bd752782f3f6,f0f3695f5025,someone from college hacked my social media account.,a stranger online hacked my social media account.
+test,WSL_0241,DV|OV,WSL_0089,DV|OV,0.8413,8070ea7dea69,411a8f05befe,my husband's family physically abuse me regularly and are th,my in-laws physically abuse me regularly and are threatening
+test,WSL_0743,WH,WSL_0945,WH,0.9042,1c4aa2f10eaf,36f623dd9a50,my internship supervisor hinted that my promotion depends on,my supervisor hinted that my promotion depends on personal f
+test,WSL_0864,SH|CA,WSL_0579,SH|CA,0.8195,8e6dc0df0aa3,94fc86d23056,a stranger online sent me obscene images repeatedly despite ,an anonymous account sent me obscene images repeatedly despi
+test,WSL_0575,CA,WSL_0179,CA,0.8072,42072b67ffc5,ae204b24f401,a man i rejected created a fake profile using my photos to m,a stranger online created a fake profile using my photos to 
+test,WSL_0691,OV,WSL_0550,OV,0.7763,00a120711382,1335a3aa38fa,a local group threatened to disown me over my relationship c,my family threatened to disown me over my relationship choic
+test,WSL_0461,CA,WSL_0866,CA,0.8073,95df524232ae,c6465880a75a,a man i rejected is threatening to post my private photos on,someone is threatening to post my private photos online.
+test,WSL_0892,DV,WSL_0075,DV,0.8146,5f6b38c3c2e7,44b5d5e04f41,my stepfather forced me to quit my job. this has been going ,my brother-in-law forced me to quit my job. this has been go
+test,WSL_0554,SH,WSL_0645,SH,0.7094,63176a25ca1c,397fbb4a3e01,my landlord touched my hand inappropriately during a session,my neighbor touched my hand inappropriately during a session
+test,WSL_0858,DV,WSL_0534,DV,0.8691,d499ca5a8386,41eeb99d34be,my husband's family threatens to take away my children if i ,my stepfather threatens to take away my children if i compla
+test,WSL_1011,DV,WSL_0394,DV,0.1741,1e957eb93da1,be552d068b33,i have bruises on my arms from where my husband grabbed me d,my husband grabbed me by the hair and hit my head against th
+test,WSL_0207,WH,WSL_0118,WH,0.7847,4b44b0f7a3a2,cf869509fbb2,my manager sends me inappropriate messages on our work chat.,a client sends me inappropriate messages on our work chat.
+test,WSL_0393,ST,WSL_0494,ST,0.6571,7b550edb5206,099c999524cf,someone i rejected online waits outside my house every morni,my neighbor waits outside my house every morning.
+test,WSL_0795,SH|CA,WSL_0778,SH|CA,0.7677,11ce90136b08,bebf00f2e207,an anonymous account made lewd comments about me publicly on,someone from my past made lewd comments about me publicly on
+test,WSL_0871,SH,WSL_0223,SH,0.7214,7f71ec4d2cb9,73423997ec11,a guest at a party touched me inappropriately and acted like,my neighbor touched me inappropriately and acted like nothin
+test,WSL_0398,SH,WSL_0271,SH,0.7581,3a2e23ce4c71,baae21391ac4,my landlord tried to touch me before i managed to get away.,a senior at college tried to touch me before i managed to ge
+test,WSL_0767,OV,WSL_0514,OV,0.8346,ff481d1576cf,47b3db5513a5,my in-laws locked me in a room to stop me meeting someone.,my family locked me in a room to stop me meeting someone.
+test,WSL_0980,SH,WSL_0670,SH,0.6757,36ced6895111,8df7ad89d434,my driving instructor groped me and disappeared into the cro,my neighbor groped me and disappeared into the crowd.
+test,WSL_0218,SH,WSL_0695,SH,0.6437,f3bd2354ceca,3bdcd0e8d6de,a man in the metro made lewd comments about my body.,a delivery man made lewd comments about my body.
+test,WSL_0005,ST,WSL_0045,ST,0.8001,3306f388e36f,0f3576cd6896,someone i rejected online left notes on my car every day for,a classmate left notes on my car every day for two weeks.
+test,WSL_0769,SH|CA,WSL_0441,SH|CA,0.8279,79b3daff2f0b,c21ad3a98e25,a stranger online sends me sexually explicit messages and al,an anonymous account sends me sexually explicit messages and
+test,WSL_0643,SH,WSL_0480,SH,0.7666,1e670e05c8b5,b9b7e2973c00,a rickshaw driver tried to corner me and touch me against my,my landlord tried to corner me and touch me against my will.
+test,WSL_0462,CA,WSL_0774,CA,0.7476,5d438de42261,6c2163547350,my ex-boyfriend recorded me without consent and threatened t,a man i rejected recorded me without consent and threatened 
+test,WSL_0943,CA,WSL_0829,CA,0.7834,841082c8d39e,ef4123b6351a,my ex-partner hacked my email to message my contacts inappro,someone hacked my email to message my contacts inappropriate
+test,WSL_0613,SH,WSL_0621,SH,0.7382,92de54bdd1f6,5436083f4d1c,a man in the metro forced himself on me despite me saying no,a delivery man forced himself on me despite me saying no cle
+test,WSL_0739,DV,WSL_0634,DV,0.5588,c4a1dad4abdf,e90790abf20d,my husband's family does not let me contact my family. i am ,my mother-in-law does not let me contact my family.
+test,WSL_0961,DV,WSL_0507,DV,0.8356,cc4549492b49,c6c02e022b15,my in-laws denies me medical treatment even when injured. i ,my husband and his mother denies me medical treatment even w
+test,WSL_0547,DV,WSL_0061,DV,0.92,c39e99d2de4b,54dce5b6a894,my husband drags me by the hair whenever dinner is late. it ,my husband's family drags me by the hair whenever dinner is 
+test,WSL_0726,ST,WSL_0619,ST,0.7591,756368bc634f,5d604d314715,my neighbor tracks my location through mutual friends.,a classmate tracks my location through mutual friends.
+test,WSL_1080,SH|CA,WSL_0817,CA,0.2004,5750fa6d7abf,fe1c0f1e14f2,an anonymous account has been sending me explicit messages f,an anonymous account keeps sending me threatening messages a
+test,WSL_0684,ST|CA,WSL_0155,ST|CA,0.8683,78c4f41eb4a9,46137526b6bf,my ex keeps following me everywhere i go and also created a ,a man i rejected keeps following me everywhere i go and also
+test,WSL_0099,DV,WSL_0894,DV,0.6104,2e791fc6e328,d73a8ed3c411,my husband and his mother beats me over small household matt,my husband beats me over small household matters.
+test,WSL_0805,SH,WSL_0145,SH,0.6652,b885b1c7a2ef,c1d7d888b145,my physiotherapist exposed himself to me in public.,my landlord exposed himself to me in public.
+test,WSL_0728,DV,WSL_0539,DV,0.7111,5fdc1ff04fed,87f19acd6dce,my husband humiliates me in front of guests every time they ,my husband's family humiliates me in front of guests every t
+test,WSL_0574,ST,WSL_0758,ST,0.7389,d88d92ea9787,53cd22217329,someone i rejected online keeps calling me from different nu,a classmate keeps calling me from different numbers.
+test,WSL_0407,DV,WSL_0729,DV,0.8126,56881f820285,812b4dd5b099,my stepfather starves me for days as punishment. i am scared,my husband and his mother starves me for days as punishment.
+test,WSL_0503,WH,WSL_0845,WH,0.7228,aef87a0be5a9,9fbc496c704a,my internship supervisor made inappropriate physical contact,a client made inappropriate physical contact during training
+test,WSL_0048,CA,WSL_0437,CA,0.8492,bdff24a708e8,197093220af0,someone is sending me rape threats through anonymous account,a man i rejected is sending me rape threats through anonymou
+test,WSL_0033,ST,WSL_0746,ST,0.7974,d1fa862540ff,2586b83de19d,a former colleague sits outside my house in his car watching,a classmate sits outside my house in his car watching me.
+test,WSL_0930,SH,WSL_0271,SH,0.7586,9c1c6b690431,baae21391ac4,my neighbor tried to touch me before i managed to get away.,a senior at college tried to touch me before i managed to ge
+test,WSL_0780,SH|WH,WSL_0142,SH|WH,0.8446,20f5d9f7f0c0,3a36f5a4d4e1,a senior colleague makes inappropriate comments about my app,my manager makes inappropriate comments about my appearance 
+test,WSL_0840,CA,WSL_0179,CA,0.853,ef7b24e9350d,ae204b24f401,a man i matched with online created a fake profile using my ,a stranger online created a fake profile using my photos to 
+test,WSL_0201,DV,WSL_0345,DV,0.9169,355de2f5574a,5f8f6aeba57b,my mother-in-law keeps demanding more dowry from my parents.,my brother-in-law keeps demanding more dowry from my parents
+test,WSL_0135,DV,WSL_0061,DV,0.8826,fe9cf0fbcbb9,54dce5b6a894,my stepfather drags me by the hair whenever dinner is late. ,my husband's family drags me by the hair whenever dinner is 
+test,WSL_0028,SH,WSL_0138,SH,0.7355,12e68784be0d,f09d24791311,a delivery man made suggestive comments while collecting mon,my landlord made suggestive comments while collecting money.
+test,WSL_1013,DV,WSL_1004,DV,0.1667,07b8fbe43506,7dd30a30b5bf,"after my husband lost his job, he started drinking heavily a","ever since i lost my job, my husband has become more control"
+test,WSL_0231,SH,WSL_0480,SH,0.7517,e9aaa4c88a00,b9b7e2973c00,a senior at college tried to corner me and touch me against ,my landlord tried to corner me and touch me against my will.
+test,WSL_0490,DV,WSL_0993,DV,0.6717,60231ed6b8b3,3e5d4d1cd5ee,my husband's family locked me inside the house for days.,my husband locked me inside the house for days. it happens a
+test,WSL_0773,CA,WSL_0774,CA,0.7303,e7c1a7176d91,6c2163547350,an anonymous account recorded me without consent and threate,a man i rejected recorded me without consent and threatened 
+test,WSL_0379,SH,WSL_0603,SH,0.6882,4fa01f2cd1fc,5791f91936e5,my neighbor forcibly kissed me without my consent.,my physiotherapist forcibly kissed me without my consent.
+test,WSL_0289,SH,WSL_0935,SH,0.6667,df03151166d8,cb13381ba660,my tuition teacher tried to start inappropriate conversation,my landlord tried to start inappropriate conversations repea
+test,WSL_0419,DV,WSL_0111,DV,0.5602,85dac6d73a56,903f44cafc85,my husband and his mother forced me to quit my job. this sta,my husband forced me to quit my job.
+test,WSL_0675,DV,WSL_0583,DV,0.684,fc20b0e64f88,56b931002abc,my brother-in-law threatens to take away my children if i co,my mother-in-law threatens to take away my children if i com
+test,WSL_0392,SH,WSL_0825,SH,0.6981,382390d2498b,3792e57a5e34,a man at the gym made sexual comments about me in front of o,a stranger at the market made sexual comments about me in fr
+test,WSL_0593,CA,WSL_0911,CA,0.7155,8f8b9c1edcb2,f0f3695f5025,a man i rejected hacked my social media account.,a stranger online hacked my social media account.
+test,WSL_0499,DV,WSL_0639,DV,0.5692,6f401df64be0,3665f83a34d9,my husband's family forced me to sign over my property docum,my in-laws forced me to sign over my property documents. it 
+test,WSL_0139,SH,WSL_0128,SH,0.6178,23e4ac7ceb4f,8ad6e73193a6,a stranger at the market exposed himself to me in public.,a man at the gym exposed himself to me in public.
+test,WSL_0063,ST,WSL_0274,ST,0.575,dcabc874f0d9,0b9351042347,a man i matched with on a dating app keeps contacting my fam,a classmate keeps contacting my family members.
+test,WSL_0472,OV,WSL_0476,OV,0.7834,db41fcaee2c1,a239b615ce64,my landlord's men are threatening my life over an inheritanc,my family are threatening my life over an inheritance disput
+test,WSL_0648,SH|CA,WSL_0471,SH|CA,0.8039,af03c972bf4d,283deab3c696,an anonymous account sends me sexually explicit messages des,a stranger online sends me sexually explicit messages despit
+test,WSL_0129,OV,WSL_0482,OV,0.7713,913eacb3cbf7,c4cfa3b92b81,my community vandalized my shop and left a threatening note.,my in-laws vandalized my shop and left a threatening note.
+test,WSL_1077,DV|CA,WSL_1084,DV|CA,0.1526,0f757baddedb,0ef8c00241c5,"my husband has been hitting me for years, and last week he t",my husband controls my finances completely and recently thre
+test,WSL_0521,ST,WSL_0585,ST,0.7871,df5ac7429fb9,5f02d31d602a,a classmate has started waiting outside my apartment buildin,a former colleague has started waiting outside my apartment 
+test,WSL_0839,WH,WSL_0607,WH,0.7944,88cf5c7f5a1c,ce02053fe2f6,a senior colleague shared inappropriate content about me in ,a client shared inappropriate content about me in the team g
+test,WSL_1068,WH,WSL_1067,WH,0.0375,9e5ebd3f26a5,4df82c9aa2b6,"after i reported harassment, i was reassigned to a much less",i was told by a colleague that my chances of promotion would
+test,WSL_0065,CA,WSL_0928,CA,0.7569,16fd7267a6a0,f34453ce9156,my ex-partner keeps sending me abusive explicit messages.,my ex-boyfriend keeps sending me abusive explicit messages.
+test,WSL_0813,SH,WSL_0145,SH,0.5998,34dda193e52d,c1d7d888b145,a guest at a party exposed himself to me in public.,my landlord exposed himself to me in public.
+test,WSL_0015,SH,WSL_0581,SH,0.6889,3f6f8d2abe71,b0c399a836c4,a rickshaw driver made inappropriate comments during a priva,my landlord made inappropriate comments during a private ses
+test,WSL_0157,DV,WSL_0793,DV,0.8655,2099f429e733,c628ce447b35,my mother-in-law keeps a knife in the house and threatens me,my in-laws keeps a knife in the house and threatens me with 
+test,WSL_0041,WH,WSL_0744,WH,0.8166,f4c4fcacd4d3,a32ba9733112,my manager keeps making comments implying i should be friend,a client keeps making comments implying i should be friendli
+test,WSL_0493,ST,WSL_0904,ST,0.7439,d7b3e9ec9741,9c33afe21e89,a man from my building found my home address and shows up un,a former colleague found my home address and shows up unanno
+test,WSL_0380,ST,WSL_0653,ST,0.8497,c85e7960fef6,a43fb319463d,my neighbor keeps following me from college to my bus stop e,a classmate keeps following me from college to my bus stop e
+test,WSL_0188,DV,WSL_0264,DV,0.6424,e9fe9bf2fcfd,c35f2768e2bf,my brother-in-law throws things at me during arguments. i am,my mother-in-law throws things at me during arguments.
+test,WSL_0764,WH,WSL_0781,WH,0.7438,7e67d550e0fc,c7eda12d50d8,my team lead excludes me from meetings since i rejected his ,a coworker excludes me from meetings since i rejected his ad
+test,WSL_0217,ST|CA,WSL_0384,ST|CA,0.8188,c8555686309f,50b227887e9d,someone from college keeps following me everywhere i go and ,a man i rejected keeps following me everywhere i go and now 
+test,WSL_0922,OV,WSL_0248,OV,0.7307,3c8f2ffdf9f6,b2f15acebe63,a local group are threatening me over a property dispute.,my family are threatening me over a property dispute.
+test,WSL_0792,ST|CA,WSL_0984,ST|CA,0.8482,4e513332678c,7b439d3d084f,my ex keeps following me everywhere i go and posted my photo,a man i rejected keeps following me everywhere i go and post
+test,WSL_0053,CA,WSL_0774,CA,0.8094,0ffd6d59cee0,6c2163547350,someone recorded me without consent and threatened to post i,a man i rejected recorded me without consent and threatened 
+test,WSL_0879,OV,WSL_0972,OV,0.8553,4d74cc92760c,3bd65d665431,my in-laws are trying to evict me illegally with intimidatio,my family are trying to evict me illegally with intimidation
+test,WSL_0338,ST,WSL_0358,ST,0.729,6afb3f313b8a,da5cb4dbba73,a man i don't know follows my car every day on my commute.,a classmate follows my car every day on my commute.
+test,WSL_0749,ST,WSL_0962,ST,0.8134,5b8382f4ab19,2fecd4f5717d,a man i don't know appears at my gym at the exact same time ,a classmate appears at my gym at the exact same time every d
+test,WSL_0720,CA,WSL_0635,CA,0.779,6cfbbfa80a4c,a40edce7b94e,my ex-partner is sending death threats through anonymous ema,a man i rejected is sending death threats through anonymous 
+test,WSL_0296,ST,WSL_0585,ST,0.729,9e16d84a3f6b,5f02d31d602a,a man from my building has started waiting outside my apartm,a former colleague has started waiting outside my apartment 
+test,WSL_1017,DV,WSL_1001,DV,0.1363,4e4bd2a29aa9,90865ff46e9a,"my husband's temper has gotten worse since the lockdown, and",i have been married for three years and my husband beats me 
+test,WSL_0456,DV,WSL_0051,DV,0.8896,5159300d27d1,627da2cf06f4,my mother-in-law forced me to quit my job. it happens almost,my father-in-law forced me to quit my job. it happens almost
+test,WSL_0816,ST|CA,WSL_0852,ST|CA,0.8572,6ca0ad81ba0a,d9e7262825a7,my ex tracks my location constantly and also created a fake ,a man i rejected tracks my location constantly and also crea
+test,WSL_0270,SH,WSL_0603,SH,0.6488,9e9b285e6d1e,5791f91936e5,a rickshaw driver forcibly kissed me without my consent.,my physiotherapist forcibly kissed me without my consent.
+test,WSL_0996,SH,WSL_0003,SH,0.7027,ca7296643427,eeb25fa30fcc,my driving instructor made sexual comments about me in front,my landlord made sexual comments about me in front of others
+test,WSL_0202,CA,WSL_0043,CA,0.8103,11d10a819aea,e2aad3be32a7,someone is threatening to leak our private videos.,a stranger online is threatening to leak our private videos.
+test,WSL_0162,CA,WSL_0911,CA,0.7918,b377ddbee548,f0f3695f5025,a man i matched with online hacked my social media account.,a stranger online hacked my social media account.
+test,WSL_0730,SH,WSL_0801,SH,0.7221,3ae0e4a98485,a189e70e7b99,a man in the metro tried to touch me before i managed to get,a man on the bus tried to touch me before i managed to get a
+test,WSL_0402,ST,WSL_0904,ST,0.6821,ee3c6c0c81c0,9c33afe21e89,a man i matched with on a dating app found my home address a,a former colleague found my home address and shows up unanno
+test,WSL_0703,DV,WSL_0803,DV,0.8635,bc2a25c12cff,3808a7320661,my husband denies me medical treatment even when injured. th,my brother-in-law denies me medical treatment even when inju
+test,WSL_0566,SH,WSL_0266,SH,0.7278,1b4e9559d3c4,6a91c78792d5,a man at the gym touched me inappropriately and acted like n,a delivery man touched me inappropriately and acted like not
+test,WSL_1022,SH,WSL_0224,SH,0.1761,6930896c7123,a6362a9f601f,i was at a friend's wedding when a distant relative cornered,a relative at a family function tried to touch me before i m
+test,WSL_1026,SH,WSL_0358,ST,0.2618,78407d713c4f,da5cb4dbba73,"every day on my commute, the same group of men make inapprop",a classmate follows my car every day on my commute.
+test,WSL_0206,SH,WSL_0801,SH,0.749,c4af3722d1eb,a189e70e7b99,a delivery man tried to touch me before i managed to get awa,a man on the bus tried to touch me before i managed to get a
+test,WSL_0035,OV,WSL_0482,OV,0.7787,3bafb396fddc,c4cfa3b92b81,my relatives vandalized my shop and left a threatening note.,my in-laws vandalized my shop and left a threatening note.
+test,WSL_0776,SH,WSL_0833,SH,0.7541,ed6a70decff4,5b32f35b65ba,my landlord pressed himself against me deliberately in a cro,my neighbor pressed himself against me deliberately in a cro
+test,WSL_0509,ST,WSL_0527,ST,0.8434,93901b5d3fa8,b50624c86b4a,my neighbor keeps appearing uninvited wherever i mention i'l,a classmate keeps appearing uninvited wherever i mention i'l
+test,WSL_1074,OV,WSL_0515,DV|OV,0.1532,65a04fc66594,4e70780a6f5f,"since my husband's passing, distant relatives have been hara",my husband's family have been cruel to me since marriage and
+test,WSL_0092,SH,WSL_0127,SH,0.6627,4eba5d11faef,ae127cceadcd,a man in the metro made inappropriate comments during a priv,a delivery man made inappropriate comments during a private 
+test,WSL_0898,CA,WSL_0251,CA,0.8133,a23586aad079,5c3cd46cb18b,my ex-partner created a fake profile using my photos to mess,my ex-boyfriend created a fake profile using my photos to me
+test,WSL_0565,DV,WSL_0383,DV,0.8654,f373dc519ce1,c45591301a86,my mother-in-law controls all my money and won't let me work,my in-laws controls all my money and won't let me work. i am
+test,WSL_0777,ST,WSL_0746,ST,0.7596,d98439d3e002,2586b83de19d,a man i don't know sits outside my house in his car watching,a classmate sits outside my house in his car watching me.
+test,WSL_0242,WH,WSL_0921,WH,0.7887,e06d92f1fe1e,409eea4acf63,my manager denied me a raise after i rejected his advances.,a client denied me a raise after i rejected his advances.
+test,WSL_0014,ST,WSL_0494,ST,0.6675,ae0790e8f08d,099c999524cf,my ex-boyfriend waits outside my house every morning.,my neighbor waits outside my house every morning.
+test,WSL_0316,WH,WSL_0118,WH,0.7477,a2fecbf5b614,cf869509fbb2,my team lead sends me inappropriate messages on our work cha,a client sends me inappropriate messages on our work chat.
+test,WSL_0601,ST,WSL_0653,ST,0.729,ed6212f631d2,a43fb319463d,a man i matched with on a dating app keeps following me from,a classmate keeps following me from college to my bus stop e
+test,WSL_0388,CA,WSL_0911,CA,0.6665,573d8404bf5d,f0f3695f5025,my former colleague hacked my social media account.,a stranger online hacked my social media account.
+test,WSL_0167,DV,WSL_0519,DV,0.82,fd025e21c7d6,ffd35e93d1da,my husband and his mother drags me by the hair whenever dinn,my in-laws drags me by the hair whenever dinner is late. it 
+test,WSL_0841,ST|CA,WSL_0384,ST|CA,0.8545,73c339e9ac78,50b227887e9d,my ex keeps following me everywhere i go and now sends me th,a man i rejected keeps following me everywhere i go and now 
+test,WSL_0021,WH,WSL_0797,WH,0.8123,6584b12e66bd,b77d7a358d72,my manager insists on private one-on-one meetings.,a client insists on private one-on-one meetings.
+test,WSL_0647,ST,WSL_0045,ST,0.814,1b476f7b9774,0f3576cd6896,my ex-boyfriend left notes on my car every day for two weeks,a classmate left notes on my car every day for two weeks.
+test,WSL_0832,WH,WSL_0352,WH,0.7273,a93bd5072c88,58deebcc3837,a senior executive touched my shoulder inappropriately when ,a senior colleague touched my shoulder inappropriately when 
+test,WSL_0563,ST,WSL_0389,ST,0.7738,37229a9eb770,76b8b6ff368e,a man i rejected on a matrimonial site has been showing up a,"a classmate has been showing up at every place i go, includi"
+test,WSL_1062,WH,WSL_0838,OV,0.1387,6f3ee6415387,871498f46e08,i filed a complaint with hr about a coworker's behavior mont,a local group ostracized my family after i filed a complaint
+test,WSL_0687,SH|WH,WSL_0080,SH|WH,0.8313,6d9be075319a,fb6af5eb411f,my manager keeps making sexual jokes in front of the entire ,my supervisor keeps making sexual jokes in front of the enti
+test,WSL_0958,SH,WSL_0502,SH,0.7427,bfaa58283135,366f6b751297,a stranger at the market tried to touch me before i managed ,a man at the gym tried to touch me before i managed to get a
+test,WSL_0190,ST,WSL_0274,ST,0.658,b266f6abe4a5,0b9351042347,a man from my building keeps contacting my family members.,a classmate keeps contacting my family members.
+test,WSL_0976,CA,WSL_0043,CA,0.7794,a5280d576fcc,e2aad3be32a7,a man i rejected is threatening to leak our private videos.,a stranger online is threatening to leak our private videos.
+test,WSL_0700,SH,WSL_0405,SH,0.7366,10c5e58c0018,1e9e456443dc,a man on the street touched my hand inappropriately during a,a man on the bus touched my hand inappropriately during a se
+test,WSL_0511,WH,WSL_0607,WH,0.8217,5059afb3b485,ce02053fe2f6,a coworker shared inappropriate content about me in the team,a client shared inappropriate content about me in the team g
+test,WSL_0475,DV|CA,WSL_0788,DV|CA,0.8308,67dc9c5b1f11,f84ab0c859b9,my husband physically abuses me and threatened to post my pr,my partner physically abuses me and threatened to post my pr
+test,WSL_0857,SH,WSL_0428,SH,0.6544,165039aded77,7dbbba589d1f,a man in the metro kept staring and making explicit comments,a delivery man kept staring and making explicit comments.
+test,WSL_0748,DV,WSL_0531,DV,0.7358,ab45aec48e09,dfc80061f7ca,my father-in-law humiliates me in front of guests every time,my mother-in-law humiliates me in front of guests every time
+test,WSL_0253,SH,WSL_0935,SH,0.7169,1b6f1a6a7f5a,cb13381ba660,my physiotherapist tried to start inappropriate conversation,my landlord tried to start inappropriate conversations repea
+test,WSL_0022,SH,WSL_0603,SH,0.6245,d8732b3ba20b,5791f91936e5,my driving instructor forcibly kissed me without my consent.,my physiotherapist forcibly kissed me without my consent.
+test,WSL_0460,ST|CA,WSL_0342,ST|CA,0.8344,b00dff74d195,b8f31a6b413a,my ex tracks my location constantly and posted my photos wit,a man i rejected tracks my location constantly and posted my
+test,WSL_0277,ST,WSL_0389,ST,0.7569,35b5587ce62c,76b8b6ff368e,a man i matched with on a dating app has been showing up at ,"a classmate has been showing up at every place i go, includi"
+test,WSL_0956,WH,WSL_0023,WH,0.8577,73d47663d661,80f2f683d431,my supervisor touched my shoulder inappropriately when alone,my internship supervisor touched my shoulder inappropriately
+test,WSL_0386,CA,WSL_0635,CA,0.8452,80625585e0e6,a40edce7b94e,someone is sending death threats through anonymous email.,a man i rejected is sending death threats through anonymous 
+test,WSL_0806,ST|CA,WSL_0117,ST|CA,0.7987,0238eabfa8bb,612f2c511569,someone from college waits outside my house daily and posted,a man i rejected waits outside my house daily and posted my 
+test,WSL_0344,DV,WSL_0463,DV,0.8987,209518717d87,a4cb30f5197f,my mother-in-law starves me for days as punishment. it happe,my father-in-law starves me for days as punishment. it happe
+test,WSL_0770,SH,WSL_0670,SH,0.7162,ea9900ee31c0,8df7ad89d434,a delivery man groped me and disappeared into the crowd.,my neighbor groped me and disappeared into the crowd.
+test,WSL_0131,DV,WSL_0755,DV,0.9197,9ed3b9474643,ca24f1341ee7,my mother-in-law refuses to let me leave the house without p,my father-in-law refuses to let me leave the house without p
+test,WSL_0872,DV,WSL_0985,DV,0.8101,9fb7a64f11e6,ec4c74cf6043,my husband and his mother keeps demanding more dowry from my,my stepfather keeps demanding more dowry from my parents. th
+test,WSL_0088,DV,WSL_0345,DV,0.8599,622a7206cbb7,5f8f6aeba57b,my husband keeps demanding more dowry from my parents. i am ,my brother-in-law keeps demanding more dowry from my parents
+test,WSL_0331,SH,WSL_0935,SH,0.6747,1d6b01a36c9e,cb13381ba660,a senior at college tried to start inappropriate conversatio,my landlord tried to start inappropriate conversations repea
+test,WSL_0467,CA,WSL_0132,CA,0.8105,020ddbff8cfd,ad5dddbc1273,a man i rejected created a fake dating profile using my pict,someone created a fake dating profile using my pictures.
+test,WSL_0122,SH,WSL_0181,SH,0.7831,f06314d25e93,9dbc679f9e09,my physiotherapist forced himself on me despite me saying no,my neighbor forced himself on me despite me saying no clearl
+test,WSL_1045,ST,WSL_0085,ST,0.2507,f45787919d90,35081f75e297,a former classmate has been messaging me nonstop for weeks a,a classmate has been parking outside my workplace every even
+test,WSL_0861,CA,WSL_0179,CA,0.8311,c12e968d6c78,ae204b24f401,someone created a fake profile using my photos to message my,a stranger online created a fake profile using my photos to 

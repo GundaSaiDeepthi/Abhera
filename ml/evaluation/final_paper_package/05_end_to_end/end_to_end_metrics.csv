@@ -1,0 +1,12 @@
+Indicator,Value
+Total Test Incidents,164
+Exact Classification Success,83.54%
+Partial Classification Success,94.51%
+Classification Failure,5.49%
+NER Extraction Error Rate,0.00%
+Legal Retrieval Miss Rate,0.00%
+Legal Grounding Failure Rate,0.00%
+Anti-Hallucination Failure Rate,0.00%
+Report / Follow-Up Execution Success,100.00%
+Fully Grounded Pipeline Success,94.51%
+Classification Failure Cases,9

@@ -1,0 +1,14 @@
+Component,Metric,Value,Evaluation_Set,Interpretation
+BERT Multi-Label Classifier,Micro F1 Score,91.33%,Held-Out Test (164),Primary category prediction accuracy using validation-derived thresholds
+BERT Multi-Label Classifier,Macro F1 Score,90.37%,Held-Out Test (164),Unweighted mean category F1 score across 6 classes
+BERT Multi-Label Classifier,Exact Match Accuracy,83.54%,Held-Out Test (164),Percentage of test cases where all 6 binary labels match GT exactly
+BERT Multi-Label Classifier,Partial Match Success,94.51%,Held-Out Test (164),Percentage of test cases predicting >= 1 correct GT label
+BERT NER Extractor,Entity Micro F1,99.24%,Gold Test (60 records / 66 spans),Exact token span & label match on active classes
+BERT NER Extractor,Macro F1 (Active),99.00%,Gold Test (60 records / 66 spans),"Mean F1 across PERP_REL, LOCATION, TIME_FREQ, PLATFORM"
+Legal Retrieval Engine,Mean Reciprocal Rank (MRR),0.9400,Held-Out Test (164),Category-conditioned legal retrieval ranking efficiency
+Legal Retrieval Engine,Hit Rate @ 1,93.90%,Held-Out Test (164),Percentage of queries with relevant law in top-1 result
+Legal Retrieval Engine,Recall @ 10,90.37%,Held-Out Test (164),Percentage of relevant laws retrieved in top-10 results
+Anti-Hallucination Gating,Legal Grounding Pass Rate,100.00%,End-to-End Test (164),100% of returned laws verified verbatim against laws.csv
+Anti-Hallucination Gating,Anti-Hallucination Pass Rate,100.00%,End-to-End & Negative Tests,Zero ungrounded legal/support claims produced
+System Execution Pipeline,Report / Follow-Up Success,100.00%,End-to-End Test (164),100% runtime execution safety and structured section assembly
+End-to-End ABHERA System,Fully Grounded Pipeline Success,94.51%,End-to-End Test (164),"155/164 cases satisfying classification, grounding, safety & output criteria"

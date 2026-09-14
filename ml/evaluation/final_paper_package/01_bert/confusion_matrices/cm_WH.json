@@ -1,0 +1,9 @@
+{
+  "label": "WH",
+  "threshold": 0.54,
+  "TP": 19,
+  "FP": 3,
+  "FN": 0,
+  "TN": 142,
+  "support": 19
+}

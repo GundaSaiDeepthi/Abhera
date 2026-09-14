@@ -1,0 +1,21 @@
+ABHERA BERT CLASSIFICATION ERROR ANALYSIS SUMMARY
+=================================================
+Total Test Incidents Evaluated : 164
+Total Exact Match Successes     : 137 (83.54% Exact Match Accuracy)
+Total Partial Match Successes   : 155 (94.51% Partial Classification Success)
+Total Classification Failure Cases : 9 cases (5.49% Failure Rate)
+
+ERROR PATTERN BREAKDOWN:
+1. False-Negative Boundary Cases (7 / 9 cases):
+   - Incidents WSL_0541 (DV), WSL_0691 (OV), WSL_0728 (DV), WSL_1013 (DV), WSL_1077 (DV|CA), WSL_0521 (ST), WSL_0748 (DV).
+   - Cause: Model assigned predicted probabilities slightly below the strict validation-derived thresholds
+     (e.g. DV prob ~0.58 vs threshold 0.65, OV prob ~0.68 vs threshold 0.78), resulting in zero predicted labels.
+
+2. Category Confusion Errors (2 / 9 cases):
+   - Incidents WSL_0767 (GT=OV, Pred=DV) and WSL_1074 (GT=OV, Pred=DV).
+   - Cause: Other Violence (OV) narratives involving family dispute / marriage conflict contain lexical tokens
+     resembling Domestic Violence (DV), causing the classifier to assign higher probability to DV than OV.
+
+RECOMMENDATIONS FOR FUTURE WORK:
+- Incorporate soft label smoothing or dynamic multi-threshold calibration for boundary edge cases.
+- Expand OV training samples to reduce overlap ambiguity between domestic violence and general family disputes.

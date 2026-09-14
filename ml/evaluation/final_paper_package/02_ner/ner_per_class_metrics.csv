@@ -1,0 +1,7 @@
+Class,Precision,Recall,F1,Support,TP,FP,FN,Evaluation_Status
+PERP_REL,1.0,1.0,1.0,14,14,0,0,Fully Evaluated
+LOCATION,1.0,1.0,1.0,18,18,0,0,Fully Evaluated
+TIME_FREQ,1.0,1.0,1.0,14,14,0,0,Fully Evaluated
+PLATFORM,1.0,0.95,0.9744,20,19,0,1,Fully Evaluated
+EVIDENCE,0.0,0.0,0.0,0,0,0,0,Not evaluated due to zero support
+LAW_SEC,0.0,0.0,0.0,0,0,0,0,Not evaluated due to zero support

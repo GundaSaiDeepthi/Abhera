@@ -1,0 +1,9 @@
+6. LIMITATIONS
+==============
+1. Classification and retrieval test sets comprise 164 held-out incident narratives.
+2. The NER test set contains 60 gold records (66 entity spans) with zero support for EVIDENCE and LAW_SEC.
+3. Legal retrieval evaluation is category-conditioned based on database mappings.
+4. Legal grounding validates consistency with the supplied laws.csv knowledge base, not universal legal advice correctness.
+5. Support-service coverage depends on the supplied database records.
+6. Classification error cases (9/164) require future work on soft label smoothing and category disambiguation.
+7. Real-world legal deployment requires professional legal-domain validation and broader field testing.

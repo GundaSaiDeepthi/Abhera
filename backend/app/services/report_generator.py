@@ -10,7 +10,7 @@ Core Principle:
 """
 
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 from sqlalchemy.orm import Session as DBSession
 
 from app.database import SessionLocal
@@ -38,6 +38,40 @@ DEFAULT_NEXT_STEPS = [
     "Consider contacting an appropriate support service or helpline from the verified database.",
     "If you are in immediate physical danger, seek emergency assistance through local police (112) or emergency services.",
 ]
+
+def _extract_location_or_platform_from_answers(user_details: List[Dict[str, Any]]) -> Optional[Tuple[str, str]]:
+    if not user_details or not isinstance(user_details, list):
+        return None
+
+    for item in user_details:
+        if not isinstance(item, dict):
+            continue
+        q_id = str(item.get("question_id") or "").upper()
+        q_text = str(item.get("question") or "").lower()
+        ans = str(item.get("answer") or "").strip()
+
+        if not ans or ans.lower() == "not provided":
+            continue
+
+        is_loc_q = (
+            "LOCATION" in q_id or "VENUE" in q_id or "SITE" in q_id
+            or any(k in q_text for k in ["where did", "occur at", "take place", "workplace", "location"])
+        )
+        is_plat_q = (
+            "PLATFORM" in q_id or "CHANNEL" in q_id or "APP" in q_id
+            or any(k in q_text for k in ["platform", "app", "communication channel", "social media", "messaging platform"])
+        )
+
+        if is_loc_q or is_plat_q:
+            if ans == ans.lower():
+                normalized = " ".join(w.capitalize() for w in ans.split())
+            else:
+                normalized = ans[0].upper() + ans[1:]
+
+            target_key = "LOCATION" if is_loc_q else "PLATFORM"
+            return (target_key, normalized)
+
+    return None
 
 
 class ReportGeneratorService:
@@ -163,8 +197,8 @@ class ReportGeneratorService:
                 if isinstance(ner_entities, list):
                     for ent in ner_entities:
                         if isinstance(ent, dict):
-                            lbl = ent.get("label") or ent.get("entity_type")
-                            txt = ent.get("text") or ent.get("entity_text")
+                            lbl = ent.get("label") or ent.get("entity_type") or ent.get("entity_group")
+                            txt = ent.get("text") or ent.get("entity_text") or ent.get("word")
                             if lbl in extracted_info and txt and str(txt).strip():
                                 val = str(txt).strip()
                                 if val not in extracted_info[lbl]:
@@ -240,6 +274,13 @@ class ReportGeneratorService:
                                 "question": str(q_text).strip(),
                                 "answer": str(sqa.answer).strip(),
                             })
+
+            # Fallback LOCATION / PLATFORM from questionnaire answers if missing in NER extractions
+            if not extracted_info["LOCATION"] and not extracted_info["PLATFORM"]:
+                loc_context = _extract_location_or_platform_from_answers(formatted_user_details)
+                if loc_context:
+                    target_key, normalized_val = loc_context
+                    extracted_info[target_key].append(normalized_val)
 
             # ------------------------------------------------------------------
             # SECTION 5 & 7 — LEGAL & SUPPORT MAPPING via Anti-Hallucination Layer

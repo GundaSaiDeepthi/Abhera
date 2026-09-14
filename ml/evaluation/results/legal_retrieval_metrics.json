@@ -1,0 +1,38 @@
+{
+  "dataset_name": "test_data.csv",
+  "total_test_records": 164,
+  "evaluated_queries": 164,
+  "unmapped_queries": 0,
+  "retrieval_methodology": "Category-Based Relational Database Query (Rule-Based Filter on data/laws.csv)",
+  "ground_truth_definition": "Laws in data/laws.csv matching ground-truth incident category labels",
+  "end_to_end_system_metrics": {
+    "mrr": 0.9163279132791328,
+    "hit_rate_at_1": 0.9085365853658537,
+    "hit_rate_at_3": 0.9085365853658537,
+    "hit_rate_at_5": 0.9085365853658537,
+    "hit_rate_at_10": 0.975609756097561,
+    "precision_at_1": 0.9085365853658537,
+    "precision_at_3": 0.9065040650406504,
+    "precision_at_5": 0.9048780487804878,
+    "precision_at_10": 0.9088584010840106,
+    "recall_at_1": 0.15870987075255366,
+    "recall_at_3": 0.4740970919324578,
+    "recall_at_5": 0.693955857827809,
+    "recall_at_10": 0.9231824577861164
+  },
+  "oracle_category_retrieval_metrics": {
+    "mrr": 1.0,
+    "hit_rate_at_1": 1.0,
+    "hit_rate_at_3": 1.0,
+    "hit_rate_at_5": 1.0,
+    "hit_rate_at_10": 1.0,
+    "precision_at_1": 1.0,
+    "precision_at_3": 1.0,
+    "precision_at_5": 1.0,
+    "precision_at_10": 1.0,
+    "recall_at_1": 0.22659604961434224,
+    "recall_at_3": 0.5578369293308317,
+    "recall_at_5": 0.7874517927871587,
+    "recall_at_10": 0.9873358348968105
+  }
+}

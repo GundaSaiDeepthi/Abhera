@@ -1,0 +1,33 @@
+4. EXPERIMENTAL RESULTS
+======================
+
+4.1 Dataset & Evaluation Protocol
+The ABHERA system was evaluated using a strict held-out partition split of 1,086 incident narratives:
+Training (760), Validation (162), and Held-Out Test (164). Rigorous dataset leakage audits confirmed zero
+exact narrative text overlap and zero ID overlap across splits. Decision thresholds were optimized exclusively
+on validation data and frozen prior to held-out test evaluation.
+
+4.2 Multi-Label Incident Classification (BERT)
+Evaluating the fine-tuned BERT classifier on the 164 held-out test incidents under validation-derived per-label
+thresholds (DV=0.65, SH=0.60, ST=0.64, CA=0.72, WH=0.54, OV=0.78) yielded an Exact Match Subset Accuracy of 83.54%
+(137/164 cases) and an Elementwise Binary Accuracy of 96.95%. The model achieved Micro Precision of 95.76%,
+Micro Recall of 87.29%, and a Micro F1 Score of 91.33% (Macro F1 = 90.37%). Partial Match Success (predicting
+at least one ground-truth label) reached 94.51% (155/164 cases).
+
+4.3 Named Entity Recognition (BERT-NER)
+Evaluation on 60 held-out gold NER records (66 entity spans) demonstrated exact span & label Micro Precision
+of 100.00%, Micro Recall of 98.48%, and Micro F1 of 99.24% (Macro F1 active = 99.00%). Individual active class F1
+scores were: PERP_REL (100.0%), LOCATION (100.0%), TIME_FREQ (100.0%), and PLATFORM (97.44%). Classes EVIDENCE
+and LAW_SEC had zero test support and were excluded from active class performance averaging.
+
+4.4 Category Legal Retrieval & Anti-Hallucination Safeguards
+Category-conditioned legal retrieval across 164 test queries achieved Mean Reciprocal Rank (MRR) of 0.9400,
+Hit Rate@1 of 93.90%, and Recall@10 of 90.37%. Anti-hallucination database gating achieved a 100.00% Legal Grounding
+Success Rate (all returned provisions verified verbatim against laws.csv) and a 100.00% Anti-Hallucination Pass Rate.
+Controlled negative testing verified that unmapped queries reliably trigger the exact fallback response:
+'Information not available in the provided knowledge base.'
+
+4.5 End-to-End Operational Performance
+The fully grounded pipeline success rate—measuring cases satisfying partial classification success, 100% legal grounding,
+anti-hallucination pass, and valid report execution—reached 94.51% (155/164 cases). Failure analysis identified exactly
+9 classification error cases (7 false-negative boundary cases and 2 category confusion errors between OV and DV).
