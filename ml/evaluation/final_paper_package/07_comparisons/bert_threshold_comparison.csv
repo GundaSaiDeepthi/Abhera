@@ -1,0 +1,9 @@
+Metric,Old_Evaluation_Default,New_Validated_Evaluation,Absolute_Difference
+Decision Threshold Strategy,Uniform 0.50 for all labels,Validation-Derived Per-Label Optimal Thresholds,N/A
+Threshold Values,"DV=0.50, SH=0.50, ST=0.50, CA=0.50, WH=0.50, OV=0.50","DV=0.65, SH=0.60, ST=0.64, CA=0.72, WH=0.54, OV=0.78",Calibrated
+Exact Match / Subset Accuracy,15.24%,83.54%,+68.29 pp
+Elementwise Binary Accuracy,77.64%,96.95%,+19.31 pp
+Micro Precision,45.09%,95.76%,+50.67 pp
+Micro Recall,98.90%,87.29%,-11.60 pp
+Micro F1 Score,61.94%,91.33%,+29.39 pp
+Macro F1 Score,61.03%,90.37%,+29.33 pp

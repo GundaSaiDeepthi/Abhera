@@ -1,0 +1,9 @@
+{
+  "label": "OV",
+  "threshold": 0.78,
+  "TP": 8,
+  "FP": 0,
+  "FN": 3,
+  "TN": 153,
+  "support": 11
+}

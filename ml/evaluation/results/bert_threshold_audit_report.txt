@@ -1,0 +1,60 @@
+================================================================================
+BERT MULTI-LABEL OPTIMAL THRESHOLD AUDIT & SCIENTIFIC VALIDITY REPORT
+================================================================================
+1. FILES & ARTIFACTS INSPECTED:
+   - Training Script       : D:\Abhera(Mini)\ml\training\train_bert.py
+   - Evaluation Script     : D:\Abhera(Mini)\ml\training\evaluate_bert.py
+   - Data Prep Script       : D:\Abhera(Mini)\ml\preprocessing\prepare_classification.py
+   - Training Dataset      : D:\Abhera(Mini)\ml\preprocessing\train_data.csv (760 samples, 70%)
+   - Validation Dataset    : D:\Abhera(Mini)\ml\preprocessing\val_data.csv (162 samples, 15%)
+   - Held-Out Test Dataset : D:\Abhera(Mini)\ml\preprocessing\test_data.csv (164 samples, 15%)
+   - Threshold Tuning Report: D:\Abhera(Mini)\models\bert_multilabel\threshold_tuning_report.txt
+   - Optimal Thresholds    : D:\Abhera(Mini)\models\bert_multilabel\optimal_thresholds.json
+   - Final Test Evaluation : D:\Abhera(Mini)\models\bert_multilabel\final_test_evaluation.json
+   - Final Test Report     : D:\Abhera(Mini)\models\bert_multilabel\final_test_report.txt
+
+2. THRESHOLD-SELECTION PROCEDURE:
+   - Optimization Objective : Independent F1 Score Maximization per category label
+   - Search Grid            : Range 0.10 to 0.90, step size 0.01
+   - Dataset Used           : Derived EXCLUSIVELY from the validation split (val_data.csv)
+   - Test Set Exposure      : ZERO. Test set labels were NOT used or inspected during tuning.
+
+3. OPTIMAL PER-LABEL THRESHOLDS DERIVED (FROM VALIDATION SPLIT):
+   - Domestic Violence (DV)         : 0.65
+   - Sexual Harassment (SH)         : 0.60
+   - Stalking (ST)                  : 0.64
+   - Cyber Abuse (CA)               : 0.72
+   - Workplace Harassment (WH)      : 0.54
+   - Other Violence (OV)            : 0.78
+
+4. TEST SET METRICS COMPARISON ON HELD-OUT TEST SPLIT (test_data.csv, 164 samples):
+   Metric                   | Default Threshold (0.50) | Validation-Tuned Optimal Thresholds
+   -----------------------------------------------------------------------------------------
+   Exact Match Accuracy     | 0.1524 (15.24%)          | 0.8354 (83.54%)
+   Elementwise Accuracy     | 0.7764 (77.64%)          | 0.9695 (96.95%)
+   Micro Precision          | 0.4509                   | 0.9576
+   Micro Recall             | 0.9890                   | 0.8729
+   Micro F1 Score           | 0.6194                   | 0.9133 (91.33%)
+   Macro Precision          | 0.4609                   | 0.9582
+   Macro Recall             | 0.9910                   | 0.8645
+   Macro F1 Score           | 0.6103                   | 0.9037 (90.37%)
+
+5. DATA LEAKAGE ASSESSMENT:
+   - Data Leakage Detected  : NO
+   - Validation/Test Split  : Partitioned reproducibly via np.random.seed(42) shuffling into disjoint sets.
+   - Ground-Truth Integrity : Test set ground-truth labels were kept strictly untouched during hyperparameter selection.
+
+6. SCIENTIFIC VALIDITY CLASSIFICATION:
+   -----------------------------------------------------------------------------------------
+   CLASSIFICATION: CATEGORY A — VALID
+   -----------------------------------------------------------------------------------------
+   STATEMENT:
+   The optimized-threshold results are valid held-out test results because the decision thresholds
+   were determined independently using non-test data (val_data.csv) and subsequently applied
+   to the untouched test set (test_data.csv).
+
+7. RECOMMENDATION FOR RESEARCH-PAPER REPORTING:
+   - Both the default-threshold (0.50) and validation-tuned threshold results should be reported in the research paper.
+   - Presenting the default-threshold result illustrates the raw model logit calibration before tuning.
+   - Presenting the validation-tuned result demonstrates the system's operational performance when applying standard validation-derived threshold optimization.
+================================================================================

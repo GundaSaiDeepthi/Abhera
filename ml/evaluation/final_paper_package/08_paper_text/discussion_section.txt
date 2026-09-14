@@ -1,0 +1,14 @@
+5. DISCUSSION
+=============
+
+5.1 Impact of Decision Threshold Calibration
+A key finding of this research is the critical role of decision boundary calibration in multi-label neural classification.
+Applying uncalibrated default thresholds (0.50) to raw BERT probabilities resulted in severe over-prediction
+(Micro Recall 98.90%, Micro Precision 45.09%), causing Exact Match Accuracy to collapse to 15.24% (Micro F1 61.94%).
+Post-processing threshold calibration derived from validation distributions dramatically boosted Micro Precision to 95.76%,
+Exact Match to 83.54%, and Micro F1 to 91.33% (+29.39 percentage points) without mutating BERT model weights.
+
+5.2 Architectural Synergy & Safety Guarantees
+ABHERA decouples neural prediction from legal information delivery. While neural components predict categories and extract
+entities, PostgreSQL database queries and anti-hallucination gating verify all legal provisions verbatim. This architectural
+separation guarantees 100% legal grounding while maintaining high operational throughput.

@@ -1,0 +1,14 @@
+ABHERA FINE-TUNED BERT MULTI-LABEL CLASSIFICATION OVERALL METRICS
+=================================================================
+Evaluation Split: Held-Out Test Set (164 incidents)
+Threshold Strategy: Validation-Derived Per-Label Optimal Thresholds
+
+Exact Match / Subset Accuracy : 83.54% (137 / 164 cases)
+Elementwise Binary Accuracy    : 96.95%
+Micro Precision                : 95.76%
+Micro Recall                   : 87.29%
+Micro F1 Score                 : 91.33%
+Macro Precision                : 95.82%
+Macro Recall                   : 86.45%
+Macro F1 Score                 : 90.37%
+Partial Match Success Rate     : 94.51% (155 / 164 cases)

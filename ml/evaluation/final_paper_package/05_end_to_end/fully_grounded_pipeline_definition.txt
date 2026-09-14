@@ -1,0 +1,19 @@
+FULLY GROUNDED PIPELINE SUCCESS FORMULA DEFINITION
+==================================================
+Formula:
+Fully Grounded Pipeline Success = N_successful / N_total
+
+Where:
+  - N_total = 164 held-out test incident narratives
+  - N_successful = 155 test incidents that simultaneously satisfy all 4 criteria:
+    1. Classification Success: Predicted label set contains at least 1 correct ground-truth label.
+    2. Legal Grounding Success: All retrieved legal provisions exist verbatim in laws.csv.
+    3. Anti-Hallucination Pass: Zero ungrounded or fabricated legal/support claims are produced.
+    4. Pipeline Execution Success: Successfully generates complete 10-section report or valid follow-up state.
+
+Calculation:
+Fully Grounded Pipeline Success = 155 / 164 = 94.51%
+
+Note on Report Execution Success (100%):
+The 100% report/follow-up execution result reflects runtime execution safety and structured section assembly.
+It must NOT be described as 100% semantic correctness of generated text.

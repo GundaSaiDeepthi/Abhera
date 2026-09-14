@@ -151,6 +151,41 @@ const normalizeReportData = (reportData) => {
     }));
   }
 
+  // 3b. Fallback LOCATION / PLATFORM from questionnaire answers if missing in NER extractions
+  const hasLoc = extractedMap['LOCATION'] && extractedMap['LOCATION'].length > 0;
+  const hasPlat = extractedMap['PLATFORM'] && extractedMap['PLATFORM'].length > 0;
+  if (!hasLoc && !hasPlat && Array.isArray(userDetails)) {
+    for (const item of userDetails) {
+      if (!item || typeof item !== 'object') continue;
+      const qId = String(item.question_id || '').toUpperCase();
+      const qText = String(item.question || '').toLowerCase();
+      const ans = String(item.answer || '').trim();
+
+      if (!ans || ans.toLowerCase() === 'not provided') continue;
+
+      const isLocQ = (
+        qId.includes('LOCATION') || qId.includes('VENUE') || qId.includes('SITE') ||
+        ['where did', 'occur at', 'take place', 'workplace', 'location'].some((k) => qText.includes(k))
+      );
+      const isPlatQ = (
+        qId.includes('PLATFORM') || qId.includes('CHANNEL') || qId.includes('APP') ||
+        ['platform', 'app', 'communication channel', 'social media', 'messaging platform'].some((k) => qText.includes(k))
+      );
+
+      if (isLocQ || isPlatQ) {
+        let normalized = ans;
+        if (ans === ans.toLowerCase()) {
+          normalized = ans.split(/\s+/).map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        } else {
+          normalized = ans.charAt(0).toUpperCase() + ans.slice(1);
+        }
+        const targetKey = isLocQ ? 'LOCATION' : 'PLATFORM';
+        extractedMap[targetKey] = [normalized];
+        break;
+      }
+    }
+  }
+
   // 4. Relevant Legal Information
   let legalList = [];
   let legalMsg = null;
@@ -513,7 +548,10 @@ const Report = () => {
     const conc = norm.incidentLabels.join(' + ') || 'Incident Under Analysis';
     const rawPerp = norm.extractedMap['PERP_REL']?.join(', ') || 'Not provided';
     const perp = rawPerp !== 'Not provided' ? rawPerp.charAt(0).toUpperCase() + rawPerp.slice(1) : 'Not provided';
-    const loc = [...(norm.extractedMap['LOCATION'] || []), ...(norm.extractedMap['PLATFORM'] || [])].join(', ') || 'Not provided';
+    const rawLocPdf = [...(norm.extractedMap['LOCATION'] || []), ...(norm.extractedMap['PLATFORM'] || [])].filter(Boolean);
+    const loc = rawLocPdf.length > 0
+      ? rawLocPdf.map((s) => (s === s.toLowerCase() ? s.split(/\s+/).map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : s.charAt(0).toUpperCase() + s.slice(1))).join(', ')
+      : 'Not provided';
 
     const safeItem = (norm.userDetails || []).find(
       (d) => d.question_id === 'Q_SAFETY_01' || (d.question && String(d.question).toLowerCase().includes('danger'))
@@ -1294,10 +1332,13 @@ const Report = () => {
   const summaryConcern = incidentTypes.length > 0 ? incidentTypes.join(' + ') : 'Incident Under Analysis';
   const rawPerson = extractedInfo['PERP_REL'] && extractedInfo['PERP_REL'].length > 0 ? extractedInfo['PERP_REL'].join(', ') : 'Not provided';
   const summaryPerson = rawPerson !== 'Not provided' ? rawPerson.charAt(0).toUpperCase() + rawPerson.slice(1) : 'Not provided';
-  const summaryLocation = [
+  const rawLocReact = [
     ...(extractedInfo['LOCATION'] || []),
     ...(extractedInfo['PLATFORM'] || [])
-  ].filter(Boolean).join(', ') || 'Not provided';
+  ].filter(Boolean);
+  const summaryLocation = rawLocReact.length > 0
+    ? rawLocReact.map((s) => (s === s.toLowerCase() ? s.split(/\s+/).map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : s.charAt(0).toUpperCase() + s.slice(1))).join(', ')
+    : 'Not provided';
 
   const safetyDetail = userDetails.find(
     (d) => d.question_id === 'Q_SAFETY_01' || (d.question && String(d.question).toLowerCase().includes('danger'))

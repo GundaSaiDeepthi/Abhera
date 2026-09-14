@@ -1,0 +1,9 @@
+{
+  "label": "SH",
+  "threshold": 0.6,
+  "TP": 38,
+  "FP": 0,
+  "FN": 7,
+  "TN": 119,
+  "support": 45
+}

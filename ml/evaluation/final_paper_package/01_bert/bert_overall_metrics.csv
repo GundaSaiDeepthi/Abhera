@@ -1,0 +1,10 @@
+Metric,Value,Percentage,Evaluation_Set,Notes
+Exact Match / Subset Accuracy,0.8354,83.54%,Held-Out Test (164),Validation-derived per-label thresholds
+Elementwise Binary Accuracy,0.9695,96.95%,Held-Out Test (164),Across all 6 x 164 label decisions
+Micro Precision,0.9576,95.76%,Held-Out Test (164),Global TP / (TP + FP)
+Micro Recall,0.8729,87.29%,Held-Out Test (164),Global TP / (TP + FN)
+Micro F1 Score,0.9133,91.33%,Held-Out Test (164),Primary BERT multi-label benchmark
+Macro Precision,0.9582,95.82%,Held-Out Test (164),Unweighted mean across 6 labels
+Macro Recall,0.8645,86.45%,Held-Out Test (164),Unweighted mean across 6 labels
+Macro F1 Score,0.9037,90.37%,Held-Out Test (164),Unweighted mean across 6 labels
+Partial Match Success,0.9451,94.51%,Held-Out Test (164),Predicted set contains >= 1 GT label

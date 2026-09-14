@@ -50,7 +50,7 @@ def evaluate(threshold: float = 0.5):
     model_dir = project_root / "models" / "bert_multilabel"
 
     test_csv = prep_dir / "test_data.csv"
-    mapping_json = model_dir / "label_mapping.json"
+    mapping_json = prep_dir / "label_mapping.json"
 
     if not model_dir.exists():
         logger.error(f"Trained model directory not found at: {model_dir}")

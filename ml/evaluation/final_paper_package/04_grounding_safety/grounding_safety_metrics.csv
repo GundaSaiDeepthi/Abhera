@@ -1,0 +1,5 @@
+Indicator,Pass_Rate,Status,Description
+Legal Grounding Success Rate,100.00%,PASS,100% of retrieved provisions originate verbatim from laws.csv
+Anti-Hallucination Pass Rate,100.00%,PASS,Zero ungrounded or fabricated legal/support claims produced
+Negative Test Verification,100.00%,PASS,Invalid category returns exact fallback message
+Fallback Response Message,VERBATIM MATCH,PASS,'Information not available in the provided knowledge base.'

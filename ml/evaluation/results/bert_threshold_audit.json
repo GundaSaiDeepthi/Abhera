@@ -1,0 +1,42 @@
+{
+  "audit_target": "BERT Multi-Label Classifier Optimal Threshold Evaluation",
+  "audit_timestamp": "2026-09-14T23:10:00+05:30",
+  "scientific_validity_category": "CATEGORY A — VALID",
+  "data_leakage_detected": false,
+  "threshold_selection_dataset": "ml/preprocessing/val_data.csv (162 samples)",
+  "held_out_test_dataset": "ml/preprocessing/test_data.csv (164 samples)",
+  "threshold_tuning_strategy": "Independent F1 Score Maximization per label",
+  "search_range": [0.10, 0.90],
+  "search_step": 0.01,
+  "optimal_thresholds_applied": {
+    "DV": 0.65,
+    "SH": 0.60,
+    "ST": 0.64,
+    "CA": 0.72,
+    "WH": 0.54,
+    "OV": 0.78
+  },
+  "test_metrics_comparison": {
+    "fixed_threshold_0_50": {
+      "exact_match_accuracy": 0.1524,
+      "elementwise_accuracy": 0.7764,
+      "micro_precision": 0.4509,
+      "micro_recall": 0.9890,
+      "micro_f1": 0.6194,
+      "macro_precision": 0.4609,
+      "macro_recall": 0.9910,
+      "macro_f1": 0.6103
+    },
+    "validation_tuned_optimal_thresholds": {
+      "exact_match_accuracy": 0.8354,
+      "elementwise_accuracy": 0.9695,
+      "micro_precision": 0.9576,
+      "micro_recall": 0.8729,
+      "micro_f1": 0.9133,
+      "macro_precision": 0.9582,
+      "macro_recall": 0.8645,
+      "macro_f1": 0.9037
+    }
+  },
+  "verdict_summary": "The optimized-threshold BERT test results are scientifically valid held-out test results because decision thresholds were determined independently using the validation split (val_data.csv) without any exposure to test labels, and subsequently applied to the untouched 164-sample test set."
+}

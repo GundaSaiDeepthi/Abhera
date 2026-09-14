@@ -1,0 +1,20 @@
+ABHERA REPRODUCIBILITY NOTES & ENVIRONMENT SPECIFICATION
+========================================================
+Project Root              : D:\Abhera(Mini)
+Python Environment        : D:\Abhera(Mini)\backend\venv\Scripts\python.exe
+Training Dataset          : D:\Abhera(Mini)\ml\preprocessing\train_data.csv (760 samples)
+Validation Dataset        : D:\Abhera(Mini)\ml\preprocessing\val_data.csv (162 samples)
+Test Dataset              : D:\Abhera(Mini)\ml\preprocessing\test_data.csv (164 samples)
+BERT Model Directory      : D:\Abhera(Mini)\models\bert_multilabel
+NER Model Directory       : D:\Abhera(Mini)\models\ner
+NER Test Dataset          : D:\Abhera(Mini)\ml\ner\training\test.jsonl (60 records)
+Laws Database             : D:\Abhera(Mini)\data\laws.csv
+Support Services Database : D:\Abhera(Mini)\data\support_services.csv
+
+DECISION THRESHOLDS (VAL DERIVED):
+  - DV = 0.65, SH = 0.60, ST = 0.64, CA = 0.72, WH = 0.54, OV = 0.78
+
+SPLIT SEPARATION VERIFICATION:
+  - Train vs Test Exact Overlap: 0
+  - Val vs Test Exact Overlap: 0
+  - ID Overlap: 0
