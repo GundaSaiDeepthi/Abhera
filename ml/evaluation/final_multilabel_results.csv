@@ -1,0 +1,4 @@
+Subset Category,Total Samples,Exact Match Count,Exact Match Accuracy (%)
+Single-Label Narratives,147,141,95.92
+Multi-Label Narratives,17,16,94.12
+Total Test Dataset,164,157,95.73

@@ -1,3 +1,21 @@
+/**
+ * ABHERA — React Conversation Context & State Management
+ *
+ * This context provider manages the central global state for the ABHERA web application,
+ * coordinating data flow between UI components, the conversational intake pipeline,
+ * and REST API service calls.
+ *
+ * State Architecture & Responsibilities:
+ * ---------------------------------------
+ * 1. Session Persistence: Synchronizes `sessionId` and `submissionId` with `sessionStorage`
+ *    to preserve active survivor intake sessions across browser refreshes.
+ * 2. Message History: Tracks ordered list of user and bot messages with metadata.
+ * 3. ML Results & Entities: Stores real-time predicted legal labels and extracted NER entities.
+ * 4. Questionnaire State: Manages current active dynamic question and question answers.
+ * 5. Report Sync: Holds final generated incident report markdown and metadata.
+ * 6. UI Async Feedback: Controls global `loading` indicator state and `error` boundary messages.
+ */
+
 import React, { createContext, useContext, useState, useCallback } from 'react';
 
 const initialConversationState = {

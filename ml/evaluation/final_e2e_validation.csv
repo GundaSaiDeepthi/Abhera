@@ -1,0 +1,12 @@
+Pipeline Subsystem,Evaluation Focus,Audit Status,Verification Evidence
+BERT -> Backend Integration,Multi-Label Category Inference,PASS,9/9 representative test scenarios verified
+BERT -> NER Coexistence,Entity Extraction Coexistence,PASS,Zero label collisions across PERP/LOC/PLATFORM
+Dynamic Question Engine,Adaptive Follow-up Selection,PASS,Relevant non-repeating questions determined
+PostgreSQL Legal Mapping,Law & Section Retrieval,PASS,100% DB-backed laws (IPC/BNS/PWDVA/POSH/IT)
+Support Helpline Mapping,Agency & Contact Retrieval,PASS,Verified helpline contact numbers returned
+Executive Report Assembly,10-Section Content Generation,PASS,All 10 conceptual sections present & validated
+Client-Side PDF Exporter,jsPDF Document Export,PASS,7-page document rendered without clipping/errors
+Database Consistency,FK & Submission ID Continuity,PASS,Zero orphaned records across DB tables
+FastAPI Route Integration,RESTful HTTP Endpoints,PASS,HTTP 200 OK responses across all routes
+Anti-Hallucination Layer,Provenance & Fallback Enforcement,PASS,Exact fallback messages for unmapped queries
+Backend Regression Suite,Unit & Integration Test Suite,PASS,154/154 backend tests passed cleanly

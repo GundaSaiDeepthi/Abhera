@@ -1,0 +1,93 @@
+{
+  "experiment_name": "BERT_MultiLabel_Experiment_v2",
+  "description": "Controlled BERT training experiment: epochs=6, max_length=128, batch_size=32, lr=3e-5, weight_decay=0.01",
+  "best_epoch_selected": 6,
+  "optimal_thresholds_val_derived": {
+    "DV": 0.73,
+    "SH": 0.5,
+    "ST": 0.79,
+    "CA": 0.45,
+    "WH": 0.29,
+    "OV": 0.63
+  },
+  "test_metrics": {
+    "exact_match_accuracy": 0.9573,
+    "elementwise_accuracy": 0.9929,
+    "micro_precision": 0.9677,
+    "micro_recall": 0.9945,
+    "micro_f1": 0.9809,
+    "macro_precision": 0.9571,
+    "macro_recall": 0.9963,
+    "macro_f1": 0.9758,
+    "single_label_exact_match_acc": 0.9592,
+    "multi_label_exact_match_acc": 0.9412
+  },
+  "per_label_metrics": {
+    "DV": {
+      "threshold": 0.73,
+      "precision": 0.9459459459459459,
+      "recall": 1.0,
+      "f1": 0.9722222222222222,
+      "support": 35,
+      "tp": 35,
+      "fp": 2,
+      "fn": 0,
+      "tn": 127
+    },
+    "SH": {
+      "threshold": 0.5,
+      "precision": 1.0,
+      "recall": 0.9777777777777777,
+      "f1": 0.9887640449438202,
+      "support": 45,
+      "tp": 44,
+      "fp": 0,
+      "fn": 1,
+      "tn": 119
+    },
+    "ST": {
+      "threshold": 0.79,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 32,
+      "tp": 32,
+      "fp": 0,
+      "fn": 0,
+      "tn": 132
+    },
+    "CA": {
+      "threshold": 0.45,
+      "precision": 0.975,
+      "recall": 1.0,
+      "f1": 0.9873417721518987,
+      "support": 39,
+      "tp": 39,
+      "fp": 1,
+      "fn": 0,
+      "tn": 124
+    },
+    "WH": {
+      "threshold": 0.29,
+      "precision": 0.9047619047619048,
+      "recall": 1.0,
+      "f1": 0.9500000000000001,
+      "support": 19,
+      "tp": 19,
+      "fp": 2,
+      "fn": 0,
+      "tn": 143
+    },
+    "OV": {
+      "threshold": 0.63,
+      "precision": 0.9166666666666666,
+      "recall": 1.0,
+      "f1": 0.9565217391304348,
+      "support": 11,
+      "tp": 11,
+      "fp": 1,
+      "fn": 0,
+      "tn": 152
+    }
+  }
+}

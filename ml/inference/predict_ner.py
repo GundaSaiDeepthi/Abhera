@@ -1,3 +1,24 @@
+"""
+ABHERA — Named Entity Recognition (NER) Inference Module
+
+This module implements the production inference wrapper for ABHERA's fine-tuned
+BERT Token Classification model (`models/ner`).
+
+Architecture & NER Pipeline Details:
+------------------------------------
+1. Model Architecture: Fine-tuned `bert-base-uncased` token-level classification head.
+2. Labeling Scheme: BIO Tagging (Begin, Inside, Outside) for legal entities:
+   - PERP_REL (Perpetrator Relationship, e.g. "husband", "colleague")
+   - LOCATION (Incident Location, e.g. "office", "bus stop")
+   - DATE_TIME (Time/Frequency details, e.g. "last night", "for 2 weeks")
+   - CONTACT_INFO (Phone/Handle/Email, e.g. "WhatsApp", "@anon_user")
+   - EVIDENCE (Physical/Digital Evidence, e.g. "screenshots", "audio recording")
+3. Token Alignment: Offsets mapping aligns WordPiece sub-tokens back to original
+   character character spans in raw narrative text.
+4. Functional Distinction: NER identifies structured evidentiary entities;
+   BERT classification (`predict_bert.py`) categorizes legal incident types.
+"""
+
 import json
 import logging
 from pathlib import Path
@@ -16,7 +37,14 @@ logger = logging.getLogger("NERPredictor")
 
 def extract_spans_from_bio(tags: List[str]) -> List[tuple]:
     """
-    Extracts entity spans (start_token_idx, end_token_idx, label) from a list of BIO tags.
+    Extracts contiguous entity spans (start_token_idx, end_token_idx, label)
+    from a sequence of BIO token tags.
+
+    Args:
+        tags (List[str]): Sequence of predicted BIO tags (e.g. ['B-PERP_REL', 'I-PERP_REL', 'O']).
+
+    Returns:
+        List[tuple]: Extracted spans as (start_idx, end_idx, entity_type).
     """
     spans = []
     current_label = None

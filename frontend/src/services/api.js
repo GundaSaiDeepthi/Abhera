@@ -1,3 +1,18 @@
+/**
+ * ABHERA — Frontend REST API Client Service Module
+ *
+ * This module configures the Axios HTTP client instance and defines async service functions
+ * for communicating with the FastAPI backend endpoints (`/api/session`, `/api/chat`, `/api/report`).
+ *
+ * Configuration & Network Architecture:
+ * -------------------------------------
+ * 1. Base URL Resolution: Resolves `VITE_API_URL` from environment variables, falling back
+ *    to `http://localhost:8000` for local development environments.
+ * 2. Session Management API: `startSession()`, `getSession()` for initializing intake state.
+ * 3. Conversational API: `sendChatMessage()` submits survivor text and questionnaire answers.
+ * 4. Report Generation API: `generateReport()`, `getReport()` retrieves compiled incident summaries.
+ */
+
 import axios from 'axios';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';

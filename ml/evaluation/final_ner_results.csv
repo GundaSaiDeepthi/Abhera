@@ -1,0 +1,7 @@
+Evaluation Metric,Verified Value (%),Target Threshold,Status
+Held-out Test Records,60,-,Verified
+Gold Entity Spans,66,-,Verified
+Entity-level Micro Precision,100.0,95.0,PASSED
+Entity-level Micro Recall,98.48,95.0,PASSED
+Entity-level Micro-F1,99.24,95.0,PASSED
+Active-class Macro-F1,99.0,95.0,PASSED

@@ -1,3 +1,23 @@
+"""
+ABHERA — Central Conversational Chat Service Orchestrator
+
+This service encapsulates the core business logic for processing user messages
+throughout the multi-turn conversational intake workflow.
+
+Pipeline Flow & Orchestration Responsibilities:
+----------------------------------------------
+1. Session & Submission Lifecycle: Fetches or creates DB session and incident submission records.
+2. Questionnaire Response Capture: Records user answer if currently answering a dynamic follow-up question.
+3. ML Prediction Execution:
+   - Invokes fine-tuned BERT Multi-Label Classifier (`predict_bert.py`) to categorize legal incident classes.
+   - Invokes fine-tuned NER Entity Extraction (`predict_ner.py`) to extract evidentiary entities (PERP_REL, LOCATION, etc.).
+4. Narrative Consolidation: Merges initial survivor narrative with answer context for complete incident representation.
+5. Dynamic Question Engine: Selects contextually relevant, non-duplicate follow-up questions to fill missing information gaps.
+6. Legal & Support Knowledge-Base Retrieval: Maps verified statutory laws (IPC/BNS) and support helplines from DB.
+7. Anti-Hallucination & Provenance Safeguard: Ensures responses derive strictly from verified DB content.
+8. Report Generation & DB Persistence: Triggers automatic Markdown report compilation and updates session state.
+"""
+
 import logging
 import sys
 from pathlib import Path

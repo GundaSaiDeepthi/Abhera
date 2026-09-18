@@ -1,0 +1,8 @@
+Label Code,Category Name,Optimal Threshold,Support,TP,FP,FN,TN,Precision (%),Recall (%),F1 Score (%)
+DV,Domestic Violence,0.73,35,35,2,0,127,94.59,100.0,97.22
+SH,Sexual Harassment,0.5,45,44,0,1,119,100.0,97.78,98.88
+ST,Stalking,0.79,32,32,0,0,132,100.0,100.0,100.0
+CA,Cyber Abuse,0.45,39,39,1,0,124,97.5,100.0,98.73
+WH,Workplace Harassment,0.29,19,19,2,0,143,90.48,100.0,95.0
+OV,Other Violence,0.63,11,11,1,0,152,91.67,100.0,95.65
+OVERALL,Micro-Averaged Metric,-,181,180,6,1,797,96.77,99.45,98.09
