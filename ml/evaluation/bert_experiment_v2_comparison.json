@@ -1,0 +1,30 @@
+{
+  "metrics_comparison": {
+    "Existing_BERT_v1": {
+      "epochs": 2,
+      "max_length": 64,
+      "exact_match_accuracy": 0.8354,
+      "micro_precision": 0.9576,
+      "micro_recall": 0.8729,
+      "micro_f1": 0.9133,
+      "macro_f1": 0.9037
+    },
+    "Experimental_BERT_v2": {
+      "epochs": 6,
+      "best_epoch": 6,
+      "max_length": 128,
+      "exact_match_accuracy": 0.9573,
+      "micro_precision": 0.9677,
+      "micro_recall": 0.9945,
+      "micro_f1": 0.9809,
+      "macro_f1": 0.9758
+    },
+    "delta_experimental_minus_existing": {
+      "exact_match_accuracy_diff": 0.122,
+      "micro_precision_diff": 0.0102,
+      "micro_recall_diff": 0.1215,
+      "micro_f1_diff": 0.0676,
+      "macro_f1_diff": 0.0721
+    }
+  }
+}

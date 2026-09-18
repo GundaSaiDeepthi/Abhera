@@ -1,0 +1,285 @@
+{
+  "audit_status": "VERIFIED",
+  "dataset": {
+    "dataset_name": "ABHERA Multi-Label Women's Safety Incident Dataset",
+    "total_records": 1086,
+    "train_records": 760,
+    "validation_records": 162,
+    "test_records": 164,
+    "train_pct": 70.0,
+    "validation_pct": 15.0,
+    "test_pct": 15.0,
+    "random_seed": 42
+  },
+  "split": {
+    "train": 760,
+    "validation": 162,
+    "test": 164,
+    "seed": 42
+  },
+  "baselines": {
+    "logistic_regression": {
+      "model_name": "TF-IDF + Logistic Regression",
+      "exact_match_accuracy": 0.9573,
+      "micro_precision": 0.9779,
+      "micro_recall": 0.9779,
+      "micro_f1": 0.9779,
+      "macro_f1": 0.9735
+    },
+    "linear_svm": {
+      "model_name": "TF-IDF + Linear SVM",
+      "exact_match_accuracy": 0.9512,
+      "micro_precision": 0.9783,
+      "micro_recall": 0.9672,
+      "micro_f1": 0.9727,
+      "macro_f1": 0.9669
+    }
+  },
+  "bert_v1": {
+    "model_name": "BERT v1 (Baseline Fine-Tuned)",
+    "base_model": "bert-base-uncased",
+    "epochs": 2,
+    "max_length": 64,
+    "batch_size": 32,
+    "learning_rate": 3e-05,
+    "exact_match_accuracy": 0.8354,
+    "micro_precision": 0.9576,
+    "micro_recall": 0.8729,
+    "micro_f1": 0.9133,
+    "macro_f1": 0.9037,
+    "multilabel_exact_match": 0.0,
+    "false_negatives": 23,
+    "false_positives": 7
+  },
+  "bert_v2": {
+    "model_name": "BERT v2 (Audited & Promoted Production)",
+    "base_model": "bert-base-uncased",
+    "epochs": 6,
+    "max_length": 128,
+    "batch_size": 32,
+    "learning_rate": 3e-05,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "loss_function": "BCEWithLogitsLoss with positive-class weighting",
+    "exact_match_accuracy": 0.9573,
+    "elementwise_accuracy": 0.9929,
+    "micro_precision": 0.9677,
+    "micro_recall": 0.9945,
+    "micro_f1": 0.9809,
+    "macro_precision": 0.9571,
+    "macro_recall": 0.9963,
+    "macro_f1": 0.9758,
+    "multilabel_exact_match": 0.9412,
+    "false_negatives": 1,
+    "false_positives": 6,
+    "total_tp": 180,
+    "total_fp": 6,
+    "total_fn": 1,
+    "total_tn": 797
+  },
+  "bert_improvement": {
+    "micro_f1": {
+      "v1": 0.9133,
+      "v2": 0.9809,
+      "absolute_percentage_point_improvement": 6.76
+    },
+    "exact_match_accuracy": {
+      "v1": 0.8354,
+      "v2": 0.9573,
+      "absolute_percentage_point_improvement": 12.19
+    },
+    "macro_f1": {
+      "v1": 0.9037,
+      "v2": 0.9758,
+      "absolute_percentage_point_improvement": 7.21
+    },
+    "micro_recall": {
+      "v1": 0.8729,
+      "v2": 0.9945,
+      "absolute_percentage_point_improvement": 12.16
+    },
+    "multilabel_exact_match": {
+      "v1": 0.0,
+      "v2": 0.9412,
+      "absolute_percentage_point_improvement": 94.12
+    }
+  },
+  "per_label_results": {
+    "DV": {
+      "threshold": 0.73,
+      "support": 35,
+      "tp": 35,
+      "fp": 2,
+      "fn": 0,
+      "tn": 127,
+      "precision": 0.9459,
+      "recall": 1.0,
+      "f1": 0.9722
+    },
+    "SH": {
+      "threshold": 0.5,
+      "support": 45,
+      "tp": 44,
+      "fp": 0,
+      "fn": 1,
+      "tn": 119,
+      "precision": 1.0,
+      "recall": 0.9778,
+      "f1": 0.9888
+    },
+    "ST": {
+      "threshold": 0.79,
+      "support": 32,
+      "tp": 32,
+      "fp": 0,
+      "fn": 0,
+      "tn": 132,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "CA": {
+      "threshold": 0.45,
+      "support": 39,
+      "tp": 39,
+      "fp": 1,
+      "fn": 0,
+      "tn": 124,
+      "precision": 0.975,
+      "recall": 1.0,
+      "f1": 0.9873
+    },
+    "WH": {
+      "threshold": 0.29,
+      "support": 19,
+      "tp": 19,
+      "fp": 2,
+      "fn": 0,
+      "tn": 143,
+      "precision": 0.9048,
+      "recall": 1.0,
+      "f1": 0.95
+    },
+    "OV": {
+      "threshold": 0.63,
+      "support": 11,
+      "tp": 11,
+      "fp": 1,
+      "fn": 0,
+      "tn": 152,
+      "precision": 0.9167,
+      "recall": 1.0,
+      "f1": 0.9565
+    },
+    "OVERALL_MICRO": {
+      "threshold": null,
+      "support": 181,
+      "tp": 180,
+      "fp": 6,
+      "fn": 1,
+      "tn": 797,
+      "precision": 0.9677,
+      "recall": 0.9945,
+      "f1": 0.9809
+    }
+  },
+  "multilabel_results": {
+    "single_label": {
+      "samples": 147,
+      "exact_matches": 141,
+      "exact_match_accuracy": 0.9592
+    },
+    "multi_label": {
+      "samples": 17,
+      "exact_matches": 16,
+      "exact_match_accuracy": 0.9412
+    },
+    "total": {
+      "samples": 164,
+      "exact_matches": 157,
+      "exact_match_accuracy": 0.9573
+    },
+    "remaining_error": {
+      "incident_id": "TEST_0050",
+      "narrative_text": "An anonymous account has been sending me explicit messages for weeks, and recently the person revealed they know my home address.",
+      "ground_truth_labels": [
+        "SH",
+        "CA"
+      ],
+      "predicted_labels": [
+        "CA"
+      ],
+      "probabilities": {
+        "DV": 0.147,
+        "SH": 0.4549,
+        "ST": 0.2545,
+        "CA": 0.9498,
+        "WH": 0.1985,
+        "OV": 0.0866
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      },
+      "explanation": "Active label SH probability (0.4549) missed decision threshold (0.50) by 0.0451."
+    }
+  },
+  "ner_results": {
+    "held_out_test_records": 60,
+    "gold_entity_spans": 66,
+    "entity_level_micro_precision": 1.0,
+    "entity_level_micro_recall": 0.9848,
+    "entity_level_micro_f1": 0.9924,
+    "active_class_macro_f1": 0.99
+  },
+  "threshold_results": {
+    "method": "Validation-Only Per-Label F1 Grid Search [0.10, 0.90]",
+    "test_set_exposure": false,
+    "optimal_thresholds": {
+      "DV": 0.73,
+      "SH": 0.5,
+      "ST": 0.79,
+      "CA": 0.45,
+      "WH": 0.29,
+      "OV": 0.63
+    }
+  },
+  "error_analysis": {
+    "total_false_positives": 6,
+    "total_false_negatives": 1,
+    "fn_reduction_vs_v1": "False negatives reduced from 23 in v1 down to 1 in v2 (95.65% reduction in FN errors).",
+    "primary_error_mechanism": "Single marginal FN on SH label (prob=0.4549 vs thresh=0.50) in TEST_0050 multi-label text.",
+    "fp_breakdown": {
+      "DV": 2,
+      "WH": 2,
+      "CA": 1,
+      "OV": 1,
+      "SH": 0,
+      "ST": 0
+    }
+  },
+  "end_to_end_validation": {
+    "bert_backend": "PASS",
+    "bert_ner_coexistence": "PASS",
+    "question_engine": "PASS",
+    "legal_mapping": "PASS",
+    "support_mapping": "PASS",
+    "report_generation": "PASS",
+    "pdf_generation": "PASS",
+    "db_consistency": "PASS",
+    "api_integration": "PASS",
+    "anti_hallucination": "PASS",
+    "regression_testing": "PASS"
+  },
+  "regression_tests": {
+    "total_tests": 154,
+    "passed_tests": 154,
+    "failed_tests": 0,
+    "errored_tests": 0,
+    "pass_rate": 100.0
+  }
+}

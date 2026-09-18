@@ -1,3 +1,21 @@
+"""
+ABHERA — BERT Multi-Label Incident Classification Inference Module
+
+This module implements the production inference wrapper for ABHERA's fine-tuned
+BERT multi-label classification model (`models/bert_multilabel_experiment_v2`).
+
+Architecture & ML Pipeline Details:
+-----------------------------------
+1. Model Architecture: Fine-tuned `bert-base-uncased` sequence classification head.
+2. Output Layer: Multi-label binary cross-entropy logits with independent Sigmoids:
+   p_i = 1 / (1 + exp(-z_i)) for each legal incident class i in {DV, SH, ST, CA, WH, OV}.
+3. Decision Thresholding: Applies validation-derived per-class optimal thresholds
+   from `optimal_thresholds.json` (DV: 0.73, SH: 0.50, ST: 0.79, CA: 0.45, WH: 0.29, OV: 0.63).
+   Independent thresholds maximize validation Micro-F1 while maintaining held-out test isolation.
+4. Multi-Label Explicit Evidence Reinforcement: Rules enforce safety overlays for critical
+   survivor evidence (e.g. physical domestic violence, dowry demands, false promise of marriage).
+"""
+
 import json
 import logging
 from pathlib import Path
@@ -19,6 +37,12 @@ def has_explicit_dv_evidence(text: str) -> bool:
     """
     Detects whether the incident narrative contains explicit domestic-violence evidence
     such as physical violence, physical abuse/cruelty, or physical threats.
+
+    Args:
+        text (str): Input survivor narrative string.
+
+    Returns:
+        bool: True if explicit physical domestic violence keywords/patterns are detected.
     """
     if not text or not isinstance(text, str):
         return False
@@ -91,6 +115,32 @@ def has_explicit_dowry_evidence(text: str) -> bool:
     return False
 
 
+def has_explicit_wh_evidence(text: str) -> bool:
+    """Detects whether narrative contains explicit workplace harassment evidence."""
+    if not text or not isinstance(text, str):
+        return False
+    import re
+    lower = text.lower()
+    wh_terms = [
+        "work", "office", "boss", "manager", "colleague", "coworker", "job",
+        "employee", "employer", "workplace", "company", "career", "promotion", "shift"
+    ]
+    return any(re.search(r"\b" + re.escape(term) + r"\b", lower) for term in wh_terms)
+
+
+def has_explicit_ov_evidence(text: str) -> bool:
+    """Detects whether narrative contains explicit other/street violence evidence."""
+    if not text or not isinstance(text, str):
+        return False
+    import re
+    lower = text.lower()
+    ov_terms = [
+        "attack", "attacked", "assault", "assaulted", "stranger", "weapon",
+        "gun", "knife", "street", "bus stand", "road", "public", "gang", "crowd"
+    ]
+    return any(re.search(r"\b" + re.escape(term) + r"\b", lower) for term in ov_terms)
+
+
 LABEL_NAME_MAP = {
     "DV": "Domestic Violence",
     "SH": "Sexual Harassment",
@@ -109,7 +159,7 @@ class BERTIncidentPredictor:
     def __init__(self, model_dir: Optional[Path] = None):
         if model_dir is None:
             project_root = Path(__file__).resolve().parent.parent.parent
-            model_dir = project_root / "models" / "bert_multilabel"
+            model_dir = project_root / "models" / "bert_multilabel_experiment_v2"
 
         self.model_dir = Path(model_dir)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -248,6 +298,18 @@ class BERTIncidentPredictor:
                     "probability": round(prob, 4),
                 })
 
+        # 1. Rule-based FPM (False Promise of Marriage) keyword overlay
+        if any(kw in lower_text for kw in fpm_keywords):
+            fpm_prob = 0.95
+            fpm_thresh = float(self.optimal_thresholds.get("FPM", 0.50))
+            all_scores["FPM"] = round(fpm_prob, 4)
+            if fpm_prob >= fpm_thresh:
+                predicted_labels.append({
+                    "code": "FPM",
+                    "name": LABEL_NAME_MAP.get("FPM", "False Promise of Marriage"),
+                    "probability": round(fpm_prob, 4),
+                })
+
         # 2. Multi-label explicit evidence reinforcement for Domestic Violence
         is_dv_already_selected = any(item["code"] == "DV" for item in predicted_labels)
         if not is_dv_already_selected and has_explicit_dv_evidence(clean_text):
@@ -269,13 +331,15 @@ class BERTIncidentPredictor:
                 "probability": round(dowry_prob, 4),
             })
 
-        # 3. Post-classification disambiguation for FPM and DV
+        # 3. Post-classification disambiguation for FPM
         is_fpm_selected = any(item["code"] == "FPM" for item in predicted_labels)
-        is_dv_selected = any(item["code"] == "DV" for item in predicted_labels)
-
-        if is_fpm_selected and is_dv_selected:
+        if is_fpm_selected:
             if not has_explicit_dv_evidence(clean_text):
                 predicted_labels = [item for item in predicted_labels if item["code"] != "DV"]
+            if not has_explicit_wh_evidence(clean_text):
+                predicted_labels = [item for item in predicted_labels if item["code"] != "WH"]
+            if not has_explicit_ov_evidence(clean_text):
+                predicted_labels = [item for item in predicted_labels if item["code"] != "OV"]
 
         # 4. Deduplicate predicted labels by code
         seen_codes = set()

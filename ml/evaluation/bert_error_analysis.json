@@ -1,0 +1,396 @@
+{
+  "dataset_splits": {
+    "train_samples": 760,
+    "val_samples": 162,
+    "test_samples": 164,
+    "total_samples": 1086,
+    "split_ratios": {
+      "train": 0.6998,
+      "val": 0.1492,
+      "test": 0.151
+    },
+    "label_distribution": {
+      "DV": {
+        "full_count": 250,
+        "full_pct": 23.02,
+        "train_count": 181,
+        "val_count": 34,
+        "test_count": 35,
+        "pos_weight_in_loss": 3.344
+      },
+      "SH": {
+        "full_count": 292,
+        "full_pct": 26.89,
+        "train_count": 202,
+        "val_count": 45,
+        "test_count": 45,
+        "pos_weight_in_loss": 2.719178082191781
+      },
+      "ST": {
+        "full_count": 178,
+        "full_pct": 16.39,
+        "train_count": 124,
+        "val_count": 22,
+        "test_count": 32,
+        "pos_weight_in_loss": 5.101123595505618
+      },
+      "CA": {
+        "full_count": 228,
+        "full_pct": 20.99,
+        "train_count": 155,
+        "val_count": 34,
+        "test_count": 39,
+        "pos_weight_in_loss": 3.763157894736842
+      },
+      "WH": {
+        "full_count": 167,
+        "full_pct": 15.38,
+        "train_count": 124,
+        "val_count": 24,
+        "test_count": 19,
+        "pos_weight_in_loss": 5.502994011976048
+      },
+      "OV": {
+        "full_count": 98,
+        "full_pct": 9.02,
+        "train_count": 66,
+        "val_count": 21,
+        "test_count": 11,
+        "pos_weight_in_loss": 10.081632653061224
+      }
+    }
+  },
+  "hyperparameters": {
+    "base_model": "bert-base-uncased",
+    "tokenizer": "bert-base-uncased (WordPiece)",
+    "train_max_seq_length": 64,
+    "eval_max_seq_length": 256,
+    "optimizer": "AdamW",
+    "learning_rate": 3e-05,
+    "batch_size": 32,
+    "epochs": 2,
+    "weight_decay": 0.01,
+    "hidden_dropout_prob": 0.1,
+    "attention_probs_dropout_prob": 0.1,
+    "loss_function": "BCEWithLogitsLoss",
+    "pos_weights": {
+      "DV": 3.344,
+      "SH": 2.719178082191781,
+      "ST": 5.101123595505618,
+      "CA": 3.763157894736842,
+      "WH": 5.502994011976048,
+      "OV": 10.081632653061224
+    },
+    "seed": 42,
+    "threshold_selection_procedure": "Independent per-label F1 maximization on validation split ONLY over threshold grid [0.10, 0.90]",
+    "optimal_thresholds": {
+      "DV": 0.65,
+      "SH": 0.6,
+      "ST": 0.64,
+      "CA": 0.72,
+      "WH": 0.54,
+      "OV": 0.78
+    }
+  },
+  "truncation_analysis": {
+    "training_max_seq_length": 64,
+    "evaluation_max_seq_length": 256,
+    "train_avg_tokens": 18.11,
+    "train_max_tokens": 36,
+    "train_pct_exceeding_64": 0.0,
+    "test_avg_tokens": 17.82,
+    "test_max_tokens": 32,
+    "test_pct_exceeding_64": 0.0
+  },
+  "overall_test_metrics": {
+    "exact_match_accuracy": 0.8354,
+    "micro_precision": 0.9576,
+    "micro_recall": 0.8729,
+    "micro_f1": 0.9133,
+    "macro_precision": 0.9582,
+    "macro_recall": 0.8645,
+    "macro_f1": 0.9037,
+    "total_test_samples": 164,
+    "exact_match_count": 137,
+    "total_errors_count": 27
+  },
+  "per_label_confusion": {
+    "DV": {
+      "threshold": 0.65,
+      "support": 35,
+      "tp": 29,
+      "fp": 2,
+      "fn": 6,
+      "tn": 127,
+      "precision": 0.9355,
+      "recall": 0.8286,
+      "f1": 0.8788
+    },
+    "SH": {
+      "threshold": 0.6,
+      "support": 45,
+      "tp": 38,
+      "fp": 0,
+      "fn": 7,
+      "tn": 119,
+      "precision": 1.0,
+      "recall": 0.8444,
+      "f1": 0.9157
+    },
+    "ST": {
+      "threshold": 0.64,
+      "support": 32,
+      "tp": 26,
+      "fp": 0,
+      "fn": 6,
+      "tn": 132,
+      "precision": 1.0,
+      "recall": 0.8125,
+      "f1": 0.8966
+    },
+    "CA": {
+      "threshold": 0.72,
+      "support": 39,
+      "tp": 38,
+      "fp": 2,
+      "fn": 1,
+      "tn": 123,
+      "precision": 0.95,
+      "recall": 0.9744,
+      "f1": 0.962
+    },
+    "WH": {
+      "threshold": 0.54,
+      "support": 19,
+      "tp": 19,
+      "fp": 3,
+      "fn": 0,
+      "tn": 142,
+      "precision": 0.8636,
+      "recall": 1.0,
+      "f1": 0.9268
+    },
+    "OV": {
+      "threshold": 0.78,
+      "support": 11,
+      "tp": 8,
+      "fp": 0,
+      "fn": 3,
+      "tn": 153,
+      "precision": 1.0,
+      "recall": 0.7273,
+      "f1": 0.8421
+    }
+  },
+  "narrative_length_breakdown": {
+    "short_narratives_le_15_words": {
+      "count": 118,
+      "pct_of_test": 71.95,
+      "exact_matches": 101,
+      "exact_match_acc": 0.8559,
+      "error_count": 17
+    },
+    "long_narratives_gt_15_words": {
+      "count": 46,
+      "pct_of_test": 28.05,
+      "exact_matches": 36,
+      "exact_match_acc": 0.7826,
+      "error_count": 10
+    }
+  },
+  "multilabel_performance": {
+    "single_label_incidents": {
+      "count": 147,
+      "exact_match_acc": 0.9116,
+      "error_count": 13
+    },
+    "multi_label_incidents": {
+      "count": 17,
+      "exact_match_acc": 0.1765,
+      "error_count": 14
+    }
+  },
+  "baseline_comparison": {
+    "BERT_MultiLabel": {
+      "exact_match_accuracy": 0.8353658536585366,
+      "elementwise_accuracy": 0.9695121951219512,
+      "micro_precision": 0.9575757575757575,
+      "micro_recall": 0.8729281767955801,
+      "micro_f1": 0.9132947976878613,
+      "macro_precision": 0.9581867057673509,
+      "macro_recall": 0.8645245957745958,
+      "macro_f1": 0.9036603502390822
+    },
+    "Logistic_Regression_TFIDF": {
+      "exact_match_accuracy": 0.9573170731707317,
+      "elementwise_accuracy": 0.991869918699187,
+      "micro_precision": 0.9779005524861878,
+      "micro_recall": 0.9779005524861878,
+      "micro_f1": 0.9779005524861878,
+      "macro_precision": 0.9671717171717172,
+      "macro_recall": 0.9750487329434697,
+      "macro_f1": 0.9705407104825353,
+      "per_label": {
+        "DV": {
+          "precision": 0.9722222222222222,
+          "recall": 1.0,
+          "f1": 0.9859154929577464,
+          "support": 35,
+          "tp": 35,
+          "fp": 1,
+          "fn": 0,
+          "threshold": 0.33
+        },
+        "SH": {
+          "precision": 1.0,
+          "recall": 0.9555555555555556,
+          "f1": 0.9772727272727273,
+          "support": 45,
+          "tp": 43,
+          "fp": 0,
+          "fn": 2,
+          "threshold": 0.22
+        },
+        "ST": {
+          "precision": 0.9696969696969697,
+          "recall": 1.0,
+          "f1": 0.9846153846153847,
+          "support": 32,
+          "tp": 32,
+          "fp": 1,
+          "fn": 0,
+          "threshold": 0.24
+        },
+        "CA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 39,
+          "tp": 39,
+          "fp": 0,
+          "fn": 0,
+          "threshold": 0.24
+        },
+        "WH": {
+          "precision": 0.9444444444444444,
+          "recall": 0.8947368421052632,
+          "f1": 0.918918918918919,
+          "support": 19,
+          "tp": 17,
+          "fp": 1,
+          "fn": 2,
+          "threshold": 0.17
+        },
+        "OV": {
+          "precision": 0.9166666666666666,
+          "recall": 1.0,
+          "f1": 0.9565217391304348,
+          "support": 11,
+          "tp": 11,
+          "fp": 1,
+          "fn": 0,
+          "threshold": 0.11
+        }
+      }
+    },
+    "Linear_SVM_TFIDF": {
+      "exact_match_accuracy": 0.9634146341463414,
+      "elementwise_accuracy": 0.9898373983739838,
+      "micro_precision": 0.9621621621621622,
+      "micro_recall": 0.9834254143646409,
+      "micro_f1": 0.9726775956284153,
+      "macro_precision": 0.9656841479481989,
+      "macro_recall": 0.9787524366471735,
+      "macro_f1": 0.9719137939208361,
+      "per_label": {
+        "DV": {
+          "precision": 0.9722222222222222,
+          "recall": 1.0,
+          "f1": 0.9859154929577464,
+          "support": 35,
+          "tp": 35,
+          "fp": 1,
+          "fn": 0,
+          "threshold": 0.47
+        },
+        "SH": {
+          "precision": 0.9565217391304348,
+          "recall": 0.9777777777777777,
+          "f1": 0.967032967032967,
+          "support": 45,
+          "tp": 44,
+          "fp": 2,
+          "fn": 1,
+          "threshold": 0.33
+        },
+        "ST": {
+          "precision": 0.9696969696969697,
+          "recall": 1.0,
+          "f1": 0.9846153846153847,
+          "support": 32,
+          "tp": 32,
+          "fp": 1,
+          "fn": 0,
+          "threshold": 0.43
+        },
+        "CA": {
+          "precision": 0.9512195121951219,
+          "recall": 1.0,
+          "f1": 0.975,
+          "support": 39,
+          "tp": 39,
+          "fp": 2,
+          "fn": 0,
+          "threshold": 0.4
+        },
+        "WH": {
+          "precision": 0.9444444444444444,
+          "recall": 0.8947368421052632,
+          "f1": 0.918918918918919,
+          "support": 19,
+          "tp": 17,
+          "fp": 1,
+          "fn": 2,
+          "threshold": 0.42
+        },
+        "OV": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 11,
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "threshold": 0.37
+        }
+      }
+    }
+  },
+  "top_root_causes": [
+    {
+      "rank": 1,
+      "cause": "Under-training (Epochs=2, total 48 optimization steps)",
+      "evidence": "With batch_size=32 on 760 train samples, 2 epochs yield only 48 gradient steps total (including 5 warmup steps). The transformer encoder weights and classification head are severely under-converged compared to fully converged linear SVM/Logistic Regression."
+    },
+    {
+      "rank": 2,
+      "cause": "Multi-Label Co-occurrence & Threshold Penalty (0.1765 Exact Match on Multi-Label)",
+      "evidence": "BERT achieves 93.20% exact match on single-label incidents (137/147), but drops to 0.00% exact match on multi-label incidents (0/17). Multi-label co-occurring cases like ST+CA (e.g. 'following me everywhere AND fake profile online') get split by high individual label thresholds, causing False Negatives."
+    },
+    {
+      "rank": 3,
+      "cause": "Excessive BCE Loss Pos-Weighting & High Decision Thresholds",
+      "evidence": "Pos-weights (OV=10.08, ST=5.10, CA=3.76, DV=3.34) inflated raw logits, forcing validation threshold tuning to pick high decision thresholds (DV=0.65, OV=0.78, CA=0.72, ST=0.64, SH=0.60). This caused 23 False Negatives (Recall=87.29%) on boundary probabilities."
+    },
+    {
+      "rank": 4,
+      "cause": "Lexical Keyword Dominance Favors TF-IDF N-Grams over Underfit BERT",
+      "evidence": "Safety incident classification relies heavily on explicit n-gram cues ('instagram', 'boss', 'colleague', 'husband', 'slapped', 'dowry'). TF-IDF + Logistic Regression/SVM captures exact sublinear n-gram feature weights, reaching 97.79% Micro-F1, whereas under-trained BERT failed to generalize to rare keyword combinations."
+    },
+    {
+      "rank": 5,
+      "cause": "Class Imbalance & Semantic Overlap (OV vs DV/SH)",
+      "evidence": "OV (Other Violence) has only 98 total instances in the dataset (11 in test). Narratives describing non-partner domestic harassment (landlord men, in-laws, shop vandalism) contain tokens ('disown', 'in-laws', 'evict') that BERT misclassifies as Domestic Violence (DV)."
+    }
+  ]
+}

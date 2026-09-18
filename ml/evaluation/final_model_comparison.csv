@@ -1,0 +1,5 @@
+Model Pipeline,Exact Match Accuracy (%),Micro Precision (%),Micro Recall (%),Micro F1 Score (%),Macro F1 Score (%)
+TF-IDF + Logistic Regression,95.73,97.79,97.79,97.79,97.35
+TF-IDF + Linear SVM,95.12,97.83,96.72,97.27,96.69
+BERT v1 (Baseline),83.54,95.76,87.29,91.33,90.37
+BERT v2 (Audited & Promoted),95.73,96.77,99.45,98.09,97.58

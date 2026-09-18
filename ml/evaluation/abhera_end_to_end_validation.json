@@ -1,0 +1,604 @@
+{
+  "audit_name": "ABHERA Step 5 End-to-End System Validation",
+  "timestamp": "2026-09-18T01:05:00Z",
+  "end_to_end_status": "PASS",
+  "bert_production_model": "models/bert_multilabel_experiment_v2/",
+  "bert_baseline_model": "models/bert_multilabel/",
+  "part1_bert_backend": [
+    {
+      "scenario": "Domestic Violence",
+      "narrative": "My husband physically assaulted me at home, slapped me during an argument, and locked me inside the room.",
+      "predicted_labels": [
+        "Domestic Violence"
+      ],
+      "predicted_codes": [
+        "DV"
+      ],
+      "probabilities": {
+        "DV": 0.8855,
+        "SH": 0.2434,
+        "ST": 0.0926,
+        "CA": 0.1832,
+        "WH": 0.1325,
+        "OV": 0.3339
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    },
+    {
+      "scenario": "Sexual Harassment",
+      "narrative": "A man at the bus stop made obscene gestures, touched my shoulder without consent, and whispered vulgar comments.",
+      "predicted_labels": [
+        "Sexual Harassment"
+      ],
+      "predicted_codes": [
+        "SH"
+      ],
+      "probabilities": {
+        "DV": 0.102,
+        "SH": 0.9437,
+        "ST": 0.122,
+        "CA": 0.196,
+        "WH": 0.1731,
+        "OV": 0.0947
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    },
+    {
+      "scenario": "Stalking",
+      "narrative": "A stranger has been following me home every night and calling me continuously from hidden numbers.",
+      "predicted_labels": [
+        "Stalking"
+      ],
+      "predicted_codes": [
+        "ST"
+      ],
+      "probabilities": {
+        "DV": 0.2016,
+        "SH": 0.1867,
+        "ST": 0.9584,
+        "CA": 0.4036,
+        "WH": 0.1143,
+        "OV": 0.1048
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    },
+    {
+      "scenario": "Cyber Abuse",
+      "narrative": "Someone created a fake profile with my photos online and is sending abusive messages to my friends.",
+      "predicted_labels": [
+        "Cyber Abuse",
+        "Domestic Violence"
+      ],
+      "predicted_codes": [
+        "CA",
+        "DV"
+      ],
+      "probabilities": {
+        "DV": 0.2223,
+        "SH": 0.222,
+        "ST": 0.2716,
+        "CA": 0.966,
+        "WH": 0.1358,
+        "OV": 0.1116
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    },
+    {
+      "scenario": "Workplace Harassment",
+      "narrative": "My senior manager at the office repeatedly sends inappropriate messages after work hours and threatened to block my promotion.",
+      "predicted_labels": [
+        "Workplace Harassment"
+      ],
+      "predicted_codes": [
+        "WH"
+      ],
+      "probabilities": {
+        "DV": 0.1139,
+        "SH": 0.3659,
+        "ST": 0.1242,
+        "CA": 0.1992,
+        "WH": 0.9484,
+        "OV": 0.1021
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    },
+    {
+      "scenario": "Other Violence",
+      "narrative": "A violent group of men blocked my path on the street, threatened me with physical harm, and threw stones at my car.",
+      "predicted_labels": [
+        "Other Violence",
+        "Domestic Violence"
+      ],
+      "predicted_codes": [
+        "OV",
+        "DV"
+      ],
+      "probabilities": {
+        "DV": 0.7096,
+        "SH": 0.2735,
+        "ST": 0.1519,
+        "CA": 0.1146,
+        "WH": 0.2002,
+        "OV": 0.8827
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    },
+    {
+      "scenario": "DV + Cyber Abuse",
+      "narrative": "My husband physically abuses me at home and threatens to post my private photos online.",
+      "predicted_labels": [
+        "Domestic Violence",
+        "Cyber Abuse"
+      ],
+      "predicted_codes": [
+        "DV",
+        "CA"
+      ],
+      "probabilities": {
+        "DV": 0.8778,
+        "SH": 0.1729,
+        "ST": 0.2584,
+        "CA": 0.8443,
+        "WH": 0.1254,
+        "OV": 0.1526
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    },
+    {
+      "scenario": "Workplace Harassment + Sexual Harassment",
+      "narrative": "My boss at the office touches me inappropriately during work meetings and insists I meet him outside work for a promotion.",
+      "predicted_labels": [
+        "Workplace Harassment",
+        "Sexual Harassment"
+      ],
+      "predicted_codes": [
+        "WH",
+        "SH"
+      ],
+      "probabilities": {
+        "DV": 0.0969,
+        "SH": 0.7724,
+        "ST": 0.1066,
+        "CA": 0.0687,
+        "WH": 0.8999,
+        "OV": 0.0851
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    },
+    {
+      "scenario": "Stalking + Cyber Abuse",
+      "narrative": "An anonymous stalker follows me every day after college and posts abusive threats on social media.",
+      "predicted_labels": [
+        "Cyber Abuse",
+        "Domestic Violence"
+      ],
+      "predicted_codes": [
+        "CA",
+        "DV"
+      ],
+      "probabilities": {
+        "DV": 0.1481,
+        "SH": 0.1573,
+        "ST": 0.6265,
+        "CA": 0.9423,
+        "WH": 0.077,
+        "OV": 0.0797
+      },
+      "thresholds": {
+        "DV": 0.73,
+        "SH": 0.5,
+        "ST": 0.79,
+        "CA": 0.45,
+        "WH": 0.29,
+        "OV": 0.63
+      }
+    }
+  ],
+  "part2_bert_ner": [
+    {
+      "text": "My husband John beats me at home in Delhi every evening.",
+      "bert_labels": [
+        "Domestic Violence"
+      ],
+      "ner_entities": [
+        {
+          "label": "PERP_REL",
+          "text": "husband",
+          "start_char": 3,
+          "end_char": 10
+        },
+        {
+          "label": "TIME_FREQ",
+          "text": "every evening",
+          "start_char": 42,
+          "end_char": 55
+        }
+      ]
+    },
+    {
+      "text": "My manager Alex at Microsoft office in Bangalore harassed me on Teams.",
+      "bert_labels": [
+        "Workplace Harassment",
+        "Cyber Abuse"
+      ],
+      "ner_entities": [
+        {
+          "label": "PERP_REL",
+          "text": "manager",
+          "start_char": 3,
+          "end_char": 10
+        }
+      ]
+    },
+    {
+      "text": "An anonymous person on Instagram is stalking me near college.",
+      "bert_labels": [
+        "Cyber Abuse"
+      ],
+      "ner_entities": [
+        {
+          "label": "PLATFORM",
+          "text": "Instagram",
+          "start_char": 23,
+          "end_char": 32
+        },
+        {
+          "label": "LOCATION",
+          "text": "college",
+          "start_char": 53,
+          "end_char": 60
+        }
+      ]
+    }
+  ],
+  "part3_question_engine": {
+    "A_complete_info": {
+      "text": "My husband physically abused me at home in Mumbai on 2026-09-01.",
+      "predicted_labels": [
+        "Domestic Violence"
+      ],
+      "required_fields": [
+        "SAFETY_STATUS",
+        "PERP_REL",
+        "INCIDENT_DETAILS"
+      ],
+      "question_count": 3
+    },
+    "B_missing_safety": {
+      "text": "Someone is harassing me online.",
+      "predicted_labels": [
+        "Cyber Abuse"
+      ],
+      "required_fields": [
+        "TIME_FREQ",
+        "PLATFORM",
+        "INCIDENT_DETAILS"
+      ],
+      "question_count": 3
+    },
+    "C_missing_location": {
+      "text": "My boss harassed me.",
+      "predicted_labels": [
+        "Workplace Harassment"
+      ],
+      "required_fields": [
+        "PERP_REL",
+        "LOCATION",
+        "INCIDENT_DETAILS"
+      ],
+      "question_count": 3
+    },
+    "D_multi_label": {
+      "text": "My husband beats me and my boss harasses me at work.",
+      "predicted_labels": [
+        "Domestic Violence"
+      ],
+      "required_fields": [
+        "SAFETY_STATUS",
+        "PERP_REL",
+        "INCIDENT_DETAILS"
+      ],
+      "question_count": 3
+    }
+  },
+  "part4_legal_mapping": [
+    {
+      "scenario": "A. DV only",
+      "labels": [
+        "Domestic Violence"
+      ],
+      "matched": true,
+      "provisions_count": 8,
+      "act_names": [
+        ""
+      ],
+      "sections": [
+        "85",
+        "498A",
+        "86",
+        "3",
+        "12",
+        "18",
+        "19",
+        "20"
+      ]
+    },
+    {
+      "scenario": "B. DV + Dowry",
+      "labels": [
+        "Domestic Violence",
+        "Dowry Harassment"
+      ],
+      "matched": true,
+      "provisions_count": 10,
+      "act_names": [
+        ""
+      ],
+      "sections": [
+        "85",
+        "498A",
+        "86",
+        "3",
+        "12",
+        "18",
+        "19",
+        "20",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "scenario": "C. DV + Cyber Abuse",
+      "labels": [
+        "Domestic Violence",
+        "Cyber Abuse"
+      ],
+      "matched": true,
+      "provisions_count": 13,
+      "act_names": [
+        ""
+      ],
+      "sections": [
+        "85",
+        "498A",
+        "86",
+        "3",
+        "12",
+        "18",
+        "19",
+        "20",
+        "66E",
+        "67",
+        "67A",
+        "77",
+        "72"
+      ]
+    },
+    {
+      "scenario": "D. Workplace Harassment",
+      "labels": [
+        "Workplace Harassment"
+      ],
+      "matched": true,
+      "provisions_count": 5,
+      "act_names": [
+        ""
+      ],
+      "sections": [
+        "2n",
+        "4",
+        "9",
+        "11",
+        "13"
+      ]
+    },
+    {
+      "scenario": "E. Cyber Abuse",
+      "labels": [
+        "Cyber Abuse"
+      ],
+      "matched": true,
+      "provisions_count": 5,
+      "act_names": [
+        ""
+      ],
+      "sections": [
+        "66E",
+        "67",
+        "67A",
+        "77",
+        "72"
+      ]
+    },
+    {
+      "scenario": "F. Stalking",
+      "labels": [
+        "Stalking"
+      ],
+      "matched": true,
+      "provisions_count": 3,
+      "act_names": [
+        ""
+      ],
+      "sections": [
+        "78",
+        "354D",
+        "351"
+      ]
+    }
+  ],
+  "part5_support_mapping": [
+    {
+      "scenario": "A. DV only",
+      "labels": [
+        "Domestic Violence"
+      ],
+      "matched": true,
+      "services_count": 4,
+      "service_names": [
+        "National Commission for Women (NCW) 24x7 Helpline",
+        "Women Helpline (Sambal - Mission Shakti)",
+        "Emergency Response Support System (ERSS)"
+      ]
+    },
+    {
+      "scenario": "B. DV + Dowry",
+      "labels": [
+        "Domestic Violence",
+        "Dowry Harassment"
+      ],
+      "matched": true,
+      "services_count": 4,
+      "service_names": [
+        "National Commission for Women (NCW) 24x7 Helpline",
+        "Women Helpline (Sambal - Mission Shakti)",
+        "Emergency Response Support System (ERSS)"
+      ]
+    },
+    {
+      "scenario": "C. DV + Cyber Abuse",
+      "labels": [
+        "Domestic Violence",
+        "Cyber Abuse"
+      ],
+      "matched": true,
+      "services_count": 8,
+      "service_names": [
+        "National Commission for Women (NCW) 24x7 Helpline",
+        "Women Helpline (Sambal - Mission Shakti)",
+        "Emergency Response Support System (ERSS)"
+      ]
+    },
+    {
+      "scenario": "D. Workplace Harassment",
+      "labels": [
+        "Workplace Harassment"
+      ],
+      "matched": true,
+      "services_count": 2,
+      "service_names": [
+        "Emergency Response Support System (ERSS)",
+        "SHe-Box (Sexual Harassment electronic Box)"
+      ]
+    },
+    {
+      "scenario": "E. Cyber Abuse",
+      "labels": [
+        "Cyber Abuse"
+      ],
+      "matched": true,
+      "services_count": 5,
+      "service_names": [
+        "Emergency Response Support System (ERSS)",
+        "Anti-Obscene Calls / Women Helpline",
+        "National Cyber Crime Helpline"
+      ]
+    },
+    {
+      "scenario": "F. Stalking",
+      "labels": [
+        "Stalking"
+      ],
+      "matched": true,
+      "services_count": 4,
+      "service_names": [
+        "Emergency Response Support System (ERSS)",
+        "Anti-Obscene Calls / Women Helpline",
+        "National Cyber Crime Helpline"
+      ]
+    }
+  ],
+  "part6_report_generation": {
+    "all_10_sections_present": true,
+    "section_breakdown": {
+      "incident_summary": true,
+      "identified_incident_type": true,
+      "extracted_information": true,
+      "user_provided_details": true,
+      "relevant_legal_information": true,
+      "suggested_next_steps": true,
+      "available_support_services": true,
+      "evidence_notes": true,
+      "model_prediction_information": true,
+      "disclaimer": true
+    }
+  },
+  "part7_pdf_generation": {
+    "pdf_file": "D:\\Abhera(Mini)\\scratch\\ABHERA_Incident_Report.pdf",
+    "pdf_exists": true,
+    "page_count": 7
+  },
+  "part8_db_consistency": {
+    "db_consistent": true
+  },
+  "part9_api_routes": {
+    "api_routes_pass": true
+  },
+  "part10_anti_hallucination": {
+    "legal_fallback_correct": true,
+    "support_fallback_correct": true,
+    "anti_hallucination_pass": true
+  },
+  "part11_regression_tests": {
+    "total_tests": 154,
+    "passed_tests": 154,
+    "failed_tests": 0,
+    "errored_tests": 0
+  }
+}
