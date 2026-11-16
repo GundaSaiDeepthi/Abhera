@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: abhera-backend
+    env: python
+    plan: starter # 2 GB RAM, 1 vCPU required for PyTorch BERT and NER inference
+    region: singapore
+    buildCommand: pip install --upgrade pip && pip install torch==2.14.0 --extra-index-url https://download.pytorch.org/whl/cpu && pip install transformers==5.17.0 tokenizers==0.23.2 safetensors==0.8.0 huggingface-hub==1.31.0 && pip install -r requirements.txt && python scripts/download_models.py
+    startCommand: python scripts/download_models.py && uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ENVIRONMENT
+        value: production
+      - key: DATABASE_URL
+        sync: false # Set manually in Render dashboard from Supabase connection string
+      - key: CORS_ORIGINS
+        value: '["https://your-app.vercel.app"]'
+      - key: HF_TOKEN
+        sync: false # Read-only Hugging Face token set in Render dashboard
+      - key: HF_MODEL_REPO
+        sync: false # e.g., your-username/abhera-models
