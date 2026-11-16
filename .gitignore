@@ -88,24 +88,3 @@ logs/
 *.swo
 .DS_Store
 Thumbs.db
-
-# =========================
-# Local Databases & Backups
-# =========================
-*.db
-*.db-journal
-*.db-wal
-*.db-shm
-*.sqlite
-*.sqlite3
-*.sqlite3-journal
-_backup_pre_deployment/
-
-# Specific Scratch Artifacts & Generated Reports
-scratch/cli_test.sqlite
-scratch/test_init_db.sqlite
-scratch/verified_test_db.sqlite
-scratch/ABHERA_Incident_Report.pdf
-scratch/sample_report.json
-scratch/test_header.pdf
-scratch/out.txt
