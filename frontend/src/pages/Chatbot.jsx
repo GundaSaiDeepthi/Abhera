@@ -27,6 +27,18 @@ const INITIAL_ASSISTANT_MESSAGE = {
   timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
 };
 
+// Input relevance statuses returned by the backend validator (NOT incident categories).
+const INPUT_STATUS_MESSAGES = {
+  OUT_OF_SCOPE:
+    "The description does not appear to contain information related to harassment or women's safety. Please describe an incident so that ABHERA can analyse it.",
+  INSUFFICIENT_INFORMATION:
+    'Could you provide a little more information about the situation? This will help ABHERA understand whether assistance is relevant.',
+  UNCERTAIN_CLASSIFICATION:
+    'The information provided is not sufficient to identify the nature of the incident. Could you clarify what happened?',
+  INVALID_INPUT:
+    'The message appears to be empty or unreadable. Please describe what happened in your own words.',
+};
+
 const Chatbot = () => {
   const navigate = useNavigate();
   const {
@@ -54,6 +66,7 @@ const Chatbot = () => {
   } = useConversation();
 
   const [initializingSession, setInitializingSession] = useState(false);
+  const [inputStatus, setInputStatus] = useState(null);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -118,25 +131,45 @@ const Chatbot = () => {
 
       const res = await sendChatMessage(currentSessId, cleanText);
 
+      const status = res.input_status || 'VALID_INCIDENT';
+      const isNonIncident = status !== 'VALID_INCIDENT';
+      setInputStatus(isNonIncident ? status : null);
+
       if (res.session_id) setSessionId(res.session_id);
       if (res.submission_id) setSubmissionId(res.submission_id);
-      if (res.predicted_labels) setPredictedLabels(res.predicted_labels);
-      if (res.entities) setEntities(res.entities);
-      if (res.current_question !== undefined) setCurrentQuestion(res.current_question);
-      if (res.conversation_status) setConversationStatus(res.conversation_status);
-      if (res.report) setReport(res.report);
+      if (isNonIncident) {
+        // Never display categories, legal guidance or reports for non-incident input.
+        setPredictedLabels([]);
+        setEntities({});
+        setCurrentQuestion(null);
+        setReport(null);
+        if (res.conversation_status) setConversationStatus(res.conversation_status);
+      } else {
+        if (res.predicted_labels) setPredictedLabels(res.predicted_labels);
+        if (res.entities) setEntities(res.entities);
+        if (res.current_question !== undefined) setCurrentQuestion(res.current_question);
+        if (res.conversation_status) setConversationStatus(res.conversation_status);
+        if (res.report) setReport(res.report);
+      }
+
+      const assistantText =
+        isNonIncident && !res.assistant_message
+          ? INPUT_STATUS_MESSAGES[status]
+          : res.assistant_message;
 
       const assistantMessage = {
         id: `assistant-${Date.now()}`,
         role: 'assistant',
         sender: 'assistant',
-        content: res.assistant_message,
-        text: res.assistant_message,
+        content: assistantText,
+        text: assistantText,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
 
       addMessage(assistantMessage);
       setLoading(false);
+
+      if (isNonIncident) return;
 
       if (res.conversation_status === 'PROCESSING') {
         navigate('/processing');
@@ -151,6 +184,7 @@ const Chatbot = () => {
 
   const handleReset = () => {
     resetConversation();
+    setInputStatus(null);
     setError(null);
   };
 
@@ -252,6 +286,21 @@ const Chatbot = () => {
             <div className="error-doc-banner">
               <AlertCircle size={16} />
               <span>{error}</span>
+            </div>
+          )}
+
+          {/* Input relevance notice (OUT_OF_SCOPE / INSUFFICIENT_INFORMATION / UNCERTAIN_CLASSIFICATION / INVALID_INPUT) */}
+          {inputStatus && INPUT_STATUS_MESSAGES[inputStatus] && (
+            <div className="information-needed-block" data-input-status={inputStatus}>
+              <div className="block-header font-sans">
+                <HelpCircle size={15} className="text-gold" />
+                <span className="block-kicker">
+                  {inputStatus === 'OUT_OF_SCOPE' || inputStatus === 'INVALID_INPUT'
+                    ? 'NO INCIDENT DETECTED'
+                    : 'CLARIFICATION NEEDED'}
+                </span>
+              </div>
+              <p className="block-intro font-serif">{INPUT_STATUS_MESSAGES[inputStatus]}</p>
             </div>
           )}
 

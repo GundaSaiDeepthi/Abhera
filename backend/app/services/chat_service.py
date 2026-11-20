@@ -36,6 +36,13 @@ from app.models.incident_submission import IncidentSubmission
 from app.services.session_service import SessionService
 from app.question_engine.engine import process_submission, record_answer
 from app.services.report_generator import generate_incident_report
+from app.services.input_validator import (
+    validate_input,
+    VALID_INCIDENT,
+    INSUFFICIENT_INFORMATION,
+    UNCERTAIN_CLASSIFICATION,
+    NON_INCIDENT_STATUSES,
+)
 
 # Import ML Predictors lazily to handle environments cleanly
 try:
@@ -97,7 +104,46 @@ class ChatService:
         if not session:
             raise KeyError(f"Session with ID '{session_id}' not found")
 
-        # Retrieve or create incident submission record
+        messages_list = list(session.messages or [])
+        prior_user_msgs = [
+            m for m in messages_list if m.get("role") == "user" or m.get("sender") == "user"
+        ]
+
+        # 0. Input Relevance Validation (runs BEFORE BERT / NER / Question Engine / Report).
+        # Once an incident has been accepted, later messages are answers to follow-up
+        # questions and are not re-validated (short answers like "Delhi" are legitimate).
+        # Legacy messages without a relevance tag were processed by the original pipeline.
+        incident_established = bool(session.current_question) or any(
+            m.get("relevance_status", VALID_INCIDENT) == VALID_INCIDENT for m in prior_user_msgs
+        )
+
+        validation: Dict[str, Any]
+        incident_narrative: Optional[str] = None
+        if incident_established:
+            validation = {"status": VALID_INCIDENT, "reason": "follow-up message for an accepted incident"}
+        else:
+            # Combine earlier clarification-stage messages with the current one so that a
+            # user who first wrote "I am facing a problem." can complete the description.
+            pending = [
+                (m.get("content") or m.get("text") or "")
+                for m in prior_user_msgs
+                if m.get("relevance_status") in (INSUFFICIENT_INFORMATION, UNCERTAIN_CLASSIFICATION)
+            ]
+            candidate = " ".join([t for t in pending if t] + [clean_text])
+            bert_for_validation = ChatService.get_bert_predictor()
+            validation = validate_input(
+                candidate,
+                bert_predict=bert_for_validation.predict if bert_for_validation else None,
+            )
+            if validation["status"] == VALID_INCIDENT:
+                incident_narrative = candidate
+
+        input_status = validation["status"]
+
+        if input_status != VALID_INCIDENT:
+            return ChatService._respond_without_analysis(db, session, messages_list, clean_text, validation)
+
+        # Retrieve or create incident submission record (only for accepted incidents)
         submission = (
             db.query(IncidentSubmission)
             .filter(IncidentSubmission.submission_id == session.submission_id)
@@ -107,7 +153,7 @@ class ChatService:
             submission = IncidentSubmission(
                 submission_id=session.submission_id,
                 session_id=session.session_id,
-                narrative_text=clean_text,
+                narrative_text=incident_narrative or clean_text,
                 predicted_labels=[],
                 extracted_entities=[],
             )
@@ -133,23 +179,31 @@ class ChatService:
             "content": clean_text,
             "text": clean_text,
             "timestamp": now_str,
+            "relevance_status": input_status,
         }
 
-        messages_list = list(session.messages or [])
         messages_list.append(user_msg_obj)
         session.messages = messages_list
         flag_modified(session, "messages")
 
-        # Build full narrative for ML evaluation while preserving initial narrative text
+        # Build full narrative for ML evaluation from incident-relevant user messages only
+        # (greetings / out-of-scope / invalid messages are excluded).
         user_messages_texts = [
             m.get("content") or m.get("text")
             for m in messages_list
-            if m.get("role") == "user" or m.get("sender") == "user"
+            if (m.get("role") == "user" or m.get("sender") == "user")
+            and m.get("relevance_status", VALID_INCIDENT) not in NON_INCIDENT_STATUSES
         ]
         full_narrative = "\n".join([t for t in user_messages_texts if t])
 
-        # Initial incident description is STRICTLY the first user message in the session
-        initial_narrative = user_messages_texts[0] if user_messages_texts else clean_text
+        # Initial incident description: the text accepted by the relevance validator
+        # (falls back to the first relevant user message for legacy sessions).
+        if incident_narrative:
+            initial_narrative = incident_narrative
+        elif submission.narrative_text:
+            initial_narrative = submission.narrative_text
+        else:
+            initial_narrative = user_messages_texts[0] if user_messages_texts else clean_text
         submission.narrative_text = initial_narrative
 
         # 1. BERT Classifier Integration
@@ -164,9 +218,9 @@ class ChatService:
                     for nl in new_labels:
                         if nl not in predicted_labels:
                             predicted_labels.append(nl)
-                elif not predicted_labels and user_messages_texts:
-                    # Check initial user message if short follow-up answers diluted the full narrative
-                    initial_text = user_messages_texts[0]
+                elif not predicted_labels and initial_narrative:
+                    # Check initial incident narrative if short follow-up answers diluted the full narrative
+                    initial_text = initial_narrative
                     init_res = bert_predictor.predict(initial_text)
                     init_objs = init_res.get("predicted_labels", [])
                     for il in [l["name"] for l in init_objs]:
@@ -274,4 +328,52 @@ class ChatService:
             "current_question": session.current_question,
             "conversation_status": session.conversation_status,
             "report": report_obj,
+            "input_status": input_status,
+            "validation_reason": validation.get("reason"),
+        }
+
+    @staticmethod
+    def _respond_without_analysis(
+        db: DBSession,
+        session: UserSession,
+        messages_list: List[Dict[str, Any]],
+        clean_text: str,
+        validation: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        """
+        Handles OUT_OF_SCOPE, INVALID_INPUT, INSUFFICIENT_INFORMATION and
+        UNCERTAIN_CLASSIFICATION: stores the exchange but runs NO BERT labelling,
+        NER, question engine, legal/support retrieval or report generation, and
+        does not create an incident submission record.
+        """
+        ts = int(datetime.now(timezone.utc).timestamp() * 1000)
+        now_str = datetime.now(timezone.utc).strftime("%H:%M")
+        assistant_text = validation["message"]
+        messages_list.append({
+            "id": f"msg-{ts}", "role": "user", "sender": "user",
+            "content": clean_text, "text": clean_text, "timestamp": now_str,
+            "relevance_status": validation["status"],
+        })
+        messages_list.append({
+            "id": f"msg-{ts + 1}", "role": "assistant", "sender": "assistant",
+            "content": assistant_text, "text": assistant_text, "timestamp": now_str,
+        })
+        session.messages = messages_list
+        flag_modified(session, "messages")
+        session.current_question = None
+        session.conversation_status = "ACTIVE"
+        db.commit()
+        db.refresh(session)
+
+        return {
+            "session_id": session.session_id,
+            "submission_id": session.submission_id,
+            "assistant_message": assistant_text,
+            "predicted_labels": [],
+            "entities": {},
+            "current_question": None,
+            "conversation_status": session.conversation_status,
+            "report": None,
+            "input_status": validation["status"],
+            "validation_reason": validation.get("reason"),
         }

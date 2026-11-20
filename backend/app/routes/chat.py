@@ -50,7 +50,10 @@ def send_chat_message(
     if not payload.message or not payload.message.strip():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Message content cannot be empty.",
+            detail={
+                "input_status": "INVALID_INPUT",
+                "message": "Message content cannot be empty.",
+            },
         )
 
     try:

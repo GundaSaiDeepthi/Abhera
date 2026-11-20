@@ -18,5 +18,9 @@ class ChatMessageResponse(BaseModel):
     current_question: Optional[Dict[str, Any]] = None
     conversation_status: str
     report: Optional[Dict[str, Any]] = None
+    # Input relevance status (NOT a BERT label): VALID_INCIDENT, OUT_OF_SCOPE,
+    # INSUFFICIENT_INFORMATION, UNCERTAIN_CLASSIFICATION or INVALID_INPUT.
+    input_status: str = "VALID_INCIDENT"
+    validation_reason: Optional[str] = None
 
     model_config = ConfigDict(from_attributes=True)

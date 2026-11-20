@@ -131,6 +131,14 @@ def get_report_endpoint(
             detail=f"Report or submission '{clean_sub_id}' not found.",
         )
 
+    # Sessions pre-create an empty submission. If no incident was ever accepted by the
+    # input relevance validator (no narrative), do not fabricate a formal report.
+    if not (submission_rec.narrative_text or "").strip():
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"No valid incident has been described for submission '{clean_sub_id}'.",
+        )
+
     # Generate report dynamically for existing submission
     try:
         report = generate_incident_report(submission_id=clean_sub_id, db=db)
